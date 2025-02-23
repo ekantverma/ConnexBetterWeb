@@ -96,31 +96,6 @@ export const menuItemsData = [
     ],
   },
   {
-    title: 'Developer',
-    submenu: [
-      {
-        title: 'Bulk SMS Pricing',
-        link:"/SMSpricing"
-      },
-      {
-        title: 'RCS Pricing',
-         link:"/RCSpricing"
-      },
-      {
-        title: 'WhatsApp API pricing',
-         link:"/WhatsApppricing"
-      },
-      {
-        title: 'Bulk Email Pricing',
-         link:"/EmailPricing"
-      },
-      {
-        title: 'Voice Pricing',
-         link:"/Voicepricing"
-      },
-    ],
-  },
-  {
     title: 'About us',
    link:"#",
     submenu: [
