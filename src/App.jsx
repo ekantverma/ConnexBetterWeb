@@ -4,7 +4,6 @@ import Multilevelnav from "./Component/Multilevelnav";
 import { Footer } from "./Component/Footer";
 import ScrollToTop from "./ScrollToTop";
 
-// Lazy Load Pages with Extensions
 const Home = lazy(() => import("./Pages/Home/Home.jsx"));
 const About = lazy(() => import("./Pages/About/About.jsx"));
 const SMSPricing = lazy(() => import("./Pages/Pricing/SMSPricing.jsx"));
