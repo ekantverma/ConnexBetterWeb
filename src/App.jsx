@@ -2,50 +2,50 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Multilevelnav from "./Component/Multilevelnav";
 import { Footer } from "./Component/Footer";
-
-// Lazy Load Pages
-const Home = lazy(() => import("./Pages/Home/Home"));
-const About = lazy(() => import("./Pages/About/About"));
-const SMSPricing = lazy(() => import("./Pages/Pricing/SMSPricing"));
-const WhatsAppPricing = lazy(() => import("./Pages/Pricing/WhatsAppPricing"));
-const RCSPricing = lazy(() => import("./Pages/Pricing/RCSPricing"));
-const EmailPricing = lazy(() => import("./Pages/Pricing/EmailPricing"));
-const VoicePricing = lazy(() => import("./Pages/Pricing/VoicePricing"));
-const Contact = lazy(() => import("./Pages/Contact"));
-const ScheduleDemo = lazy(() => import("./Pages/ScheduleDemo"));
-const Career = lazy(() => import("./Pages/Career"));
-const Error = lazy(() => import("./Pages/Error"));
-const RCS = lazy(() => import("./Pages/RCS/RCS"));
-const SMS = lazy(() => import("./Pages/SMS/SMS"));
-const SMSAPI = lazy(() => import("./Pages/SMS/SMSAPI"));
-const BulkSMS = lazy(() => import("./Pages/SMS/BulkSMS"));
-const InternationalSMS = lazy(() => import("./Pages/SMS/InternationalSMS"));
-const TwoFactorAuthentication = lazy(() => import("./Pages/SMS/TwoFactorAuthentication"));
-const Email = lazy(() => import("./Pages/Email/Email"));
-const WhatsApp = lazy(() => import("./Pages/WHATSAPP/WhatsApp"));
-const TermsOfService = lazy(() => import("./Pages/TermandCondition"));
-const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy"));
-const MainVoicePage = lazy(() => import("./Pages/Voice/Mainvoicepage"));
-const CallPatch = lazy(() => import("./Pages/Voice/CallPatch"));
-const ContactCenter = lazy(() => import("./Pages/Voice/ContactCenter"));
-const IVR = lazy(() => import("./Pages/Voice/IVR"));
-const Voice = lazy(() => import("./Pages/Voice/Voice"));
-const VoiceOBD = lazy(() => import("./Pages/Voice/VoiceOBD"));
-const BulkSmsBlog = lazy(() => import("./Pages/Blog/BulkSmsBlog"));
-const BulkEmailBlog = lazy(() => import("./Pages/Blog/BulkEmailBlog"));
-const SmsApiBlog = lazy(() => import("./Pages/Blog/SmsApiBlog"));
-const Blog=lazy(()=>import("./Pages/Blog/Blog"))
 import ScrollToTop from "./ScrollToTop";
+
+// Lazy Load Pages with Extensions
+const Home = lazy(() => import("./Pages/Home/Home.jsx"));
+const About = lazy(() => import("./Pages/About/About.jsx"));
+const SMSPricing = lazy(() => import("./Pages/Pricing/SMSPricing.jsx"));
+const WhatsAppPricing = lazy(() => import("./Pages/Pricing/WhatsAppPricing.jsx"));
+const RCSPricing = lazy(() => import("./Pages/Pricing/RCSPricing.jsx"));
+const EmailPricing = lazy(() => import("./Pages/Pricing/EmailPricing.jsx"));
+const VoicePricing = lazy(() => import("./Pages/Pricing/VoicePricing.jsx"));
+const Contact = lazy(() => import("./Pages/Contact.jsx"));
+const ScheduleDemo = lazy(() => import("./Pages/ScheduleDemo.jsx"));
+const Career = lazy(() => import("./Pages/Career.jsx"));
+const Error = lazy(() => import("./Pages/Error.jsx"));
+const RCS = lazy(() => import("./Pages/RCS/RCS.jsx"));
+const SMS = lazy(() => import("./Pages/SMS/SMS.jsx"));
+const SMSAPI = lazy(() => import("./Pages/SMS/SMSAPI.jsx"));
+const BulkSMS = lazy(() => import("./Pages/SMS/BulkSMS.jsx"));
+const InternationalSMS = lazy(() => import("./Pages/SMS/InternationalSMS.jsx"));
+const TwoFactorAuthentication = lazy(() => import("./Pages/SMS/TwoFactorAuthentication.jsx"));
+const Email = lazy(() => import("./Pages/Email/Email.jsx"));
+const WhatsApp = lazy(() => import("./Pages/WHATSAPP/WhatsApp.jsx"));
+const TermsOfService = lazy(() => import("./Pages/TermandCondition.jsx"));
+const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy.jsx"));
+const MainVoicePage = lazy(() => import("./Pages/Voice/Mainvoicepage.jsx"));
+const CallPatch = lazy(() => import("./Pages/Voice/CallPatch.jsx"));
+const ContactCenter = lazy(() => import("./Pages/Voice/ContactCenter.jsx"));
+const IVR = lazy(() => import("./Pages/Voice/IVR.jsx"));
+const Voice = lazy(() => import("./Pages/Voice/Voice.jsx"));
+const VoiceOBD = lazy(() => import("./Pages/Voice/VoiceOBD.jsx"));
+const BulkSmsBlog = lazy(() => import("./Pages/Blog/BulkSmsBlog.jsx"));
+const BulkEmailBlog = lazy(() => import("./Pages/Blog/BulkEmailBlog.jsx"));
+const SmsApiBlog = lazy(() => import("./Pages/Blog/SmsApiBlog.jsx"));
+const Blog = lazy(() => import("./Pages/Blog/Blog.jsx"));
+
 // Action Functions
 import { handelScheduleDemo } from "./Pages/ScheduleDemo";
 import { handleContact } from "./Pages/Contact";
 import { handelCareer } from "./Pages/Career";
 
-// Reusable Page Wrapper
+// Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
-  
   <>
-     <ScrollToTop /> {/* Ensure ScrollToTop is included here */}
+    <ScrollToTop />
     <Multilevelnav />
     <Suspense fallback={<div className="flex items-center justify-center w-screen h-screen">Loading...</div>}>
       {children}
@@ -58,7 +58,7 @@ const PageWrapper = ({ children }) => (
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <About /> },
-{ path: "/SMSPricing", element: <SMSPricing /> },
+  { path: "/SMSPricing", element: <SMSPricing /> },
   { path: "/WhatsAppPricing", element: <WhatsAppPricing /> },
   { path: "/RCSPricing", element: <RCSPricing /> },
   { path: "/EmailPricing", element: <EmailPricing /> },
@@ -82,13 +82,12 @@ const routes = [
   { path: "/IVR", element: <IVR /> },
   { path: "/Voice", element: <Voice /> },
   { path: "/VoiceOBD", element: <VoiceOBD /> },
-  {path: "/Blog", element: <Blog></Blog>},
+  { path: "/Blog", element: <Blog /> },
   { path: "/BulkSmsBlog", element: <BulkSmsBlog /> },
   { path: "/BulkEmailBlog", element: <BulkEmailBlog /> },
   { path: "/SmsApiBlog", element: <SmsApiBlog /> },
   { path: "*", element: <Home /> },
 ];
-
 
 // Router Configuration
 const router = createBrowserRouter(
@@ -100,12 +99,8 @@ const router = createBrowserRouter(
 );
 
 // Main App Component
-export const App = () => {
-  return <>
-    <RouterProvider router={router}>
-   
-    </RouterProvider>
-  </>
- 
+const App = () => {
+  return <RouterProvider router={router} />;
 };
 
+export default App;
