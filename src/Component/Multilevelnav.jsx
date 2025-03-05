@@ -1,71 +1,82 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from "/Logo.svg";
 import { menuItemsData } from "../Constant/menuItemsData";
 import MenuItems from "./MenuItems";
-import { NavLink } from 'react-router-dom';
-import { FaBars} from "react-icons/fa";
-import Sidebar from './Sidebar';
-import { Button } from '../CommonComponent/Button';
+import { NavLink } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import Sidebar from "./Sidebar";
+import { Button } from "../CommonComponent/Button";
+
 export default function Multilevelnav() {
-     const [mobiletoggle, setmobiletoggle] = useState(false);
-    const depthLevel = 0;
-const CloseNavbar=()=>{
-      setmobiletoggle(false)
-    }
-   
-    return(
-        <>
-        <header className="text-lg pt-2 border-b-2 sticky top-0 z-50 h-20 bg-white" >
-             <section className="flex items-center justify-between h-14 z-10">
+  const [mobiletoggle, setmobiletoggle] = useState(false);
+  const depthLevel = 0;
+
+  const CloseNavbar = () => {
+    setmobiletoggle(false);
+  };
+
+  return (
+    <>
+      <header className="text-lg pt-2 sticky top-0 z-50 h-20 bg-transparent backdrop-blur-lg transition-all duration-300 ease-in-out">
+        <section className="flex items-center justify-between px-6 md:px-16 h-20 z-10 transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-lg shadow-sm">
           {/* Logo Section */}
-          <NavLink to="/">
-          <div id="logo" className="flex items-center gap-2">
-            <img src={logo} alt="logo" loading="lazy" className="h-10 w-10" />
-            <div className="text-3xl font-medium md:text-2xl">Connex Better</div>
-          </div>
+          <NavLink to="/" className="flex items-center gap-3 group">
+            <div
+              id="logo"
+              className="flex items-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105"
+            >
+              <img
+                src={logo}
+                alt="logo"
+                loading="lazy"
+                className="h-12 w-12 drop-shadow-lg rounded-full border border-gray-200"
+              />
+              <div className="text-2xl font-semibold md:text-xl text-gray-800 group-hover:text-gray-900 transition-all duration-300">
+                Connex <span className="text-blue-600">Better</span>
+              </div>
+            </div>
           </NavLink>
-          {/* nav mid item */}
+
+          {/* Desktop Navigation */}
           <nav className="main-nav hidden lg:flex">
-            <ul className="menus flex gap-4">
-                {menuItemsData.map((menu,index)=>{
-                    return(
-                        <MenuItems items={menu} key={index} depthLevel={depthLevel} />
-                    );
-                })}
+            <ul className="menus flex gap-3 text-gray-800 text-sm font-medium">
+              {menuItemsData.map((menu, index) => (
+                <li key={index} className="relative group">
+                  <MenuItems items={menu} depthLevel={depthLevel} />
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              ))}
             </ul>
-        </nav>
+          </nav>
+
           {/* Secondary Navigation */}
-                  <div className="hidden lg:flex gap-5 items-center text-xl">
-                  <Button name="Try for Free" link="/Contact" btnstyle="change"></Button>
-                  <Button name="📞+91-9220696606" link="tel:+919220696606"></Button>
-
-                  </div>
-
-     {/* Mobile Navigation Toggle */}
-     <div className=" cursor-pointer text-3xl lg:hidden" onClick={()=>setmobiletoggle((pre)=>!pre)}>
-            {mobiletoggle ? "X" : <FaBars />}
+          <div className="hidden lg:flex gap-5 items-center text-base">
+            <Button name="Try for Free" link="/Contact" btnstyle="change" />
+            <Button name="📞 +91-9220696606" link="tel:+919220696606" />
           </div>
 
-
+          {/* Mobile Navigation Toggle */}
+          <div
+            className="cursor-pointer text-2xl lg:hidden transition-transform transform hover:scale-110 hover:text-blue-600"
+            onClick={() => setmobiletoggle((prev) => !prev)}
+          >
+            {mobiletoggle ? "✖" : <FaBars />}
+          </div>
         </section>
-        </header>
+      </header>
 
-        {/* Mobile View Navbar */}
-              {mobiletoggle && (
-                <div className="fixed flex flex-col gap-5 h-full lg:hidden container text-xl z-30 top-8 bg-secondary">
-                  
-             <Sidebar onButtonClick={CloseNavbar}></Sidebar>
-             <div className="flex flex-col gap-10 lg:hidden text-xl">
-             <div onClick={CloseNavbar}>   <Button name="Try for Free" link="/Contact" btnstyle="change" ></Button></div>
-               
-                  <Button name="📞+91-9220696606" link="tel:+919220696606" ></Button>
-
-                  </div>
-                </div>
-              )}
-
-
-        </>    
-    );
+      {/* Mobile View Navbar */}
+      {mobiletoggle && (
+        <div className="fixed flex flex-col gap-5 w-full h-full lg:hidden text-lg z-30 top-16 left-0 bg-white shadow-xl py-5 px-4">
+          <Sidebar onButtonClick={CloseNavbar} />
+          <div className="flex flex-col gap-4 text-xl">
+            <div onClick={CloseNavbar}>
+              <Button name="Try for Free" link="/Contact" btnstyle="change" />
+            </div>
+            <Button name="📞+91-9220696606" link="tel:+919220696606" />
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
