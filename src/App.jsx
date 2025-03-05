@@ -4,6 +4,7 @@ import Multilevelnav from "./Component/Multilevelnav";
 import { Footer } from "./Component/Footer";
 import ScrollToTop from "./ScrollToTop";
 
+// Lazy-loaded components
 const Home = lazy(() => import("./Pages/Home/Home.jsx"));
 const About = lazy(() => import("./Pages/About/About.jsx"));
 const SMSPricing = lazy(() => import("./Pages/Pricing/SMSPricing.jsx"));
@@ -36,11 +37,6 @@ const BulkEmailBlog = lazy(() => import("./Pages/Blog/BulkEmailBlog.jsx"));
 const SmsApiBlog = lazy(() => import("./Pages/Blog/SmsApiBlog.jsx"));
 const Blog = lazy(() => import("./Pages/Blog/Blog.jsx"));
 
-// Action Functions
-import { handelScheduleDemo } from "./Pages/ScheduleDemo";
-import { handleContact } from "./Pages/Contact";
-import { handelCareer } from "./Pages/Career";
-
 // Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
   <>
@@ -62,9 +58,9 @@ const routes = [
   { path: "/RCSPricing", element: <RCSPricing /> },
   { path: "/EmailPricing", element: <EmailPricing /> },
   { path: "/VoicePricing", element: <VoicePricing /> },
-  { path: "/Contact", element: <Contact />, action: handleContact },
-  { path: "/ScheduleDemo", element: <ScheduleDemo />, action: handelScheduleDemo },
-  { path: "/Career", element: <Career />, action: handelCareer },
+  { path: "/Contact", element: <Contact /> },
+  { path: "/ScheduleDemo", element: <ScheduleDemo /> },
+  { path: "/Career", element: <Career /> },
   { path: "/RCS", element: <RCS /> },
   { path: "/SMS", element: <SMS /> },
   { path: "/SMSAPI", element: <SMSAPI /> },
@@ -90,10 +86,9 @@ const routes = [
 
 // Router Configuration
 const router = createBrowserRouter(
-  routes.map(({ path, element, action }) => ({
+  routes.map(({ path, element }) => ({
     path,
     element: <PageWrapper>{element}</PageWrapper>,
-    action,
   }))
 );
 
