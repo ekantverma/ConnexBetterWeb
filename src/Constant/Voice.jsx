@@ -3,7 +3,7 @@ import voice from "../assets/VoiceImage/IMAGE/voice.svg";
 import call from "../assets/VoiceImage/IMAGE/call.svg";
 // ivr box
 import hostedimg from "../assets/VoiceImage/IMAGE/hostedivr.svg";
-import agentivg from "../assets/VoiceImage/IMAGE/agentivr.svg";
+import agentivr from "../assets/VoiceImage/IMAGE/Agentivr.svg"
 // ivr ziczac
 import realtime from  "../assets/VoiceImage/IMAGE/Real-time Engagement.webp";
 import enhanced from "../assets/VoiceImage/IMAGE/Enhanced voice recognition system.webp";
@@ -102,7 +102,7 @@ export const voiceBox=[
     },
     {
       id: 3,
-      img: agentivg,
+      img: agentivr,
       title: "Agent-Assisted IVR",
       content:
         "Agent-assisted IVR software integrates voice recognition into existing IVR systems, helping contact centers cut costs and streamline operations by handling basic questions, reducing call volume, and easing wait times.",
