@@ -36,13 +36,14 @@ const BulkSmsBlog = lazy(() => import("./Pages/Blog/BulkSmsBlog.jsx"));
 const BulkEmailBlog = lazy(() => import("./Pages/Blog/BulkEmailBlog.jsx"));
 const SmsApiBlog = lazy(() => import("./Pages/Blog/SmsApiBlog.jsx"));
 const Blog = lazy(() => import("./Pages/Blog/Blog.jsx"));
+const ShimmerUI = lazy(() => import("./Component/ShimmerUI.jsx"));
 
 // Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
   <>
     <ScrollToTop />
     <Multilevelnav />
-    <Suspense fallback={<div className="flex items-center justify-center w-screen h-screen">Loading...</div>}>
+    <Suspense fallback={<ShimmerUI />}>
       {children}
     </Suspense>
     <Footer />
