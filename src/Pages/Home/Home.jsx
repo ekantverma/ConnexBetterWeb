@@ -280,12 +280,14 @@ export const Home = () => {
         </div>
 
         {/* Cards Section */}
+        <div className="pb-8">
         <LazyComponent
           Component={Boxcontainer}
           props={{
             carddata: Boostrevenue,
           }}
         />
+        </div>
       </div>
 
       {/* Insights Section */}

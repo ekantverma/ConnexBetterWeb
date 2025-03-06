@@ -1,11 +1,21 @@
-export const CommonHeading = ({ h, p,width }) => {
+export const CommonHeading = ({ h, p, width = "half", align = "center" }) => {
   return (
-    <>
-      <div className="flex flex-col gap-3 pb-6">
-        <h2 className="text-3xl font-medium md:text-4xl ">{h}</h2>
-        <p className={`text-lg text-paracolor md:${ width=="full" ?"w-full":"w-1/2"}` }>{p}</p>
-      </div>
-    </>
+    <div className={`flex flex-col gap-4 pb-8 text-${align} items-${align}`}>
+      {/* Main Heading */}
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        {h}
+      </h2>
+
+      {/* Subtext with Dynamic Width */}
+      <p
+        className={`text-lg md:text-xl text-gray-600 ${
+          width === "full" ? "w-full" : "w-2/3 md:w-1/2"
+        } mx-auto`}
+      >
+        {p}
+      </p>
+    </div>
   );
 };
-export default CommonHeading
+
+export default CommonHeading;
