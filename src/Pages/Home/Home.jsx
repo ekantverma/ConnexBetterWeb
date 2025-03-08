@@ -43,29 +43,35 @@ const LazyImage = ({ src, alt, height, width }) => (
 export const Home = () => {
   return (
     <section>
-      {/* Hero Section */}
-      <div className="px-4 my-10 grid gap-10 md:grid-cols-2 items-center">
-        {/* Left Section (Text & Button) */}
-        <div className="flex flex-col gap-6">
-          <p className="text-3xl md:text-5xl font-semibold text-primery animate-fadeIn">
-            Connect Better, Engage Better
-          </p>
-          <h1 className="text-2xl md:text-4xl font-normal leading-snug animate-slideInLeft">
-            Transform customer interactions with intelligent communication
-          </h1>
-          <SequentialText />
-          <Button name="Request a Demo" link="/ScheduleDemo" />
-        </div>
+      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center mt-4">
+        {/* Gradient Background */}
+        <div className="absolute top-16 left-8 w-[20vw] h-[16vh] bg-gradient-to-br from-blue-500 to-transparent blur-2xl opacity-50"></div>
+        <div className="absolute top-14 right-14 w-[20vw] h-[20vh] bg-gradient-to-bl from-blue-700 to-transparent blur-3xl opacity-50"></div>
 
-        {/* Right Section (Image) */}
-        <div className="relative flex justify-center animate-zoomIn">
-          <LazyImage
-            src={heroimage}
-            alt="Hero"
-            height={200}
-            width={600}
-            className="max-w-full rounded-lg shadow-lg"
-          />
+        {/* Hero Section */}
+        <div className="relative px-4 my-10 grid gap-10 md:grid-cols-2 items-center">
+          {/* Left Section (Text & Button) */}
+          <div className="flex flex-col gap-6">
+            <p className="text-3xl md:text-5xl font-semibold text-primery animate-fadeIn">
+              Connect Better, Engage Better
+            </p>
+            <h1 className="text-2xl md:text-4xl font-normal leading-snug animate-slideInLeft">
+              Transform customer interactions with intelligent communication
+            </h1>
+            <SequentialText />
+            <Button name="Request a Demo" link="/ScheduleDemo" />
+          </div>
+
+          {/* Right Section (Image) */}
+          <div className="relative flex justify-center animate-zoomIn">
+            <LazyImage
+              src={heroimage}
+              alt="Hero"
+              height={200}
+              width={600}
+              className="max-w-full rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
 
@@ -281,12 +287,12 @@ export const Home = () => {
 
         {/* Cards Section */}
         <div className="pb-8">
-        <LazyComponent
-          Component={Boxcontainer}
-          props={{
-            carddata: Boostrevenue,
-          }}
-        />
+          <LazyComponent
+            Component={Boxcontainer}
+            props={{
+              carddata: Boostrevenue,
+            }}
+          />
         </div>
       </div>
 

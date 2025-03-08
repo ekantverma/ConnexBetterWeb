@@ -33,7 +33,7 @@ import nosetup from "../assets/VoiceImage/IMAGE/Nosetup.svg";
 import webbased from "../assets/VoiceImage/IMAGE/webbased.svg";
 import voicecall from "../assets/VoiceImage/IMAGE/Voicecall.svg";
 import scheduleVoice from "../assets/VoiceImage/IMAGE/Schedulevoice.svg";
-import trueCaller from "../assets/VoiceImage/IMAGE/trueCall.svg";
+import trueCall from "../assets/VoiceImage/IMAGE/trueCall.svg";
 import upload from "../assets/VoiceImage/IMAGE/Uploadcontact.svg";
 import CRM from "../assets/VoiceImage/IMAGE/CRMintegration.svg";
 import realTime from "../assets/VoiceImage/IMAGE/Realtime.svg";
@@ -428,7 +428,7 @@ export const voiceBox=[
     },
     {
       id:5,
-      img:trueCaller,
+      img:trueCall,
       title:"Truecaller White Listing",
       content:"Enhance your business calling experience with Truecaller Verified Business Caller ID.",
     },
