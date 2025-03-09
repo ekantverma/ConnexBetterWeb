@@ -151,7 +151,7 @@ export const Home = () => {
       {/* Offerings Section */}
       <div className="container mx-auto px-4 py-12 text-center">
         {/* Heading & Subtext */}
-        <div className="mb-10">
+        <div className="">
           <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-fade-in">
             What We Offer
           </h2>
@@ -239,21 +239,21 @@ export const Home = () => {
 
       {/* Ecosystem Section */}
       <div className="container mx-auto px-8 py-20 md:py-24 bg-gray-100 rounded-2xl shadow-lg">
-        <div className="grid md:grid-cols-2 items-center gap-16">
+        <div className="grid md:grid-cols-2 items-center gap-12 md:gap-16">
           {/* Left Side - Heading & Content */}
-          <div className="text-center md:text-left space-y-6 animate-fade-in">
+          <div className="space-y-6 text-center md:text-left animate-fade-in">
             <CommonHeading
               h="Create Your Conversational Ecosystem"
               p="Integrate multiple options easily with our platform."
               width="full"
             />
-            <p className="text-lg text-gray-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+            <p className="text-lg text-gray-700 max-w-lg mx-auto md:mx-0 leading-relaxed tracking-wide">
               Scale your business communication effortlessly with our seamless
               integrations and intelligent automation tools.
             </p>
 
             {/* CTA Button */}
-            <div className="mt-6">
+            <div className="mt-8 flex justify-center md:justify-start">
               <a
                 href="/explore"
                 className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"

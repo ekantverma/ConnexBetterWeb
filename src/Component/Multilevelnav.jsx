@@ -50,9 +50,19 @@ export default function Multilevelnav() {
           </nav>
 
           {/* Secondary Navigation */}
-          <div className="hidden lg:flex gap-5 items-center text-base">
-            <Button name="Try for Free" link="/Contact" btnstyle="change" />
-            <Button name="📞 +91-9220696606" link="tel:+919220696606" />
+          <div className="hidden lg:flex gap-4 items-center text-base">
+            <a
+              href="/Contact"
+              className="bg-primary text-white bg-blue-600 text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all duration- hover:bg-opacity-90"
+            >
+              Try for Free
+            </a>
+            <a
+              href="tel:+919220696606"
+              className="bg-primary text-white bg-blue-600 text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all duration- hover:bg-opacity-90"
+            >
+              📞 +91 92206 96606
+            </a>
           </div>
 
           {/* Mobile Navigation Toggle */}
