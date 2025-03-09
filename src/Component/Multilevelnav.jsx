@@ -69,15 +69,21 @@ export default function Multilevelnav() {
         </section>
       </header>
 
-      {/* Mobile Navbar */}
+      {/* Mobile View Navbar */}
       {mobiletoggle && (
-        <div className="fixed flex flex-col gap-5 w-full h-full lg:hidden text-lg z-30 top-16 left-0 bg-white shadow-xl py-5 px-4">
-          <Sidebar onButtonClick={CloseNavbar} />
-          <div className="flex flex-col gap-4 text-xl">
+        <div className="fixed flex flex-col gap-5 h-full lg:hidden container text-xl z-30 top-8 bg-secondary">
+          <Sidebar onButtonClick={CloseNavbar}></Sidebar>
+          <div className="flex flex-col gap-10 lg:hidden text-xl">
             <div onClick={CloseNavbar}>
-              <Button name="Try for Free" link="/Contact" btnstyle="change" />
+              {" "}
+              <Button
+                name="Try for Free"
+                link="/Contact"
+                btnstyle="change"
+              ></Button>
             </div>
-            <Button name="📞+91-9220696606" link="tel:+919220696606" />
+
+            <Button name="📞+91-9220696606" link="tel:+919220696606"></Button>
           </div>
         </div>
       )}
