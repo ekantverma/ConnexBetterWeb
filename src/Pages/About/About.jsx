@@ -43,7 +43,7 @@ const About = () => {
     <>
       <div className="bg-[#f8f8f8] flex flex-col justify-center items-center gap-6 py-16 px-6 text-center animate-fadeInUp mt-6">
         {/* Title */}
-        <h1 className="text-5xl font-extrabold text-primary tracking-wide animate-scaleIn">
+        <h1 className="text-5xl font-extrabold text-primary tracking-wide animate-scaleIn text-blue-600">
           ABOUT US
         </h1>
 
@@ -101,7 +101,7 @@ const About = () => {
       <section>
         <div className="bg-[#f8f8f8] py-16 px-6 md:px-12 lg:px-20 text-center animate-fadeInUp mt-2">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-wide mb-6 animate-scaleIn">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-wide mb-6 animate-scaleIn text-blue-600">
             About Connex Better
           </h1>
 
@@ -118,7 +118,7 @@ const About = () => {
         <div className="w-full bg-secondary py-14 px-6 md:px-12 flex flex-col items-center text-center gap-4 animate-fadeInUp shadow-lg rounded-xl mt-8">
           {/* Heading */}
           <h2 className="text-4xl font-bold text-primary tracking-wide">
-            Connex Better
+            Connex <span className="text-blue-600">Better</span>
           </h2>
 
           {/* Subtitle */}
@@ -194,7 +194,7 @@ const About = () => {
         <div className="container py-14 bg-gray-100">
           <div className="max-w-5xl mx-auto text-center py-10">
             {/* Heading */}
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
+            <h2 className="text-4xl font-extrabold text-blue-600 pb-4">
               Future of Omni-Channel Communications
             </h2>
 
