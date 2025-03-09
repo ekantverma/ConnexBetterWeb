@@ -69,38 +69,17 @@ export default function Multilevelnav() {
         </section>
       </header>
 
+      {/* Mobile Navbar */}
       {mobiletoggle && (
-        <>
-          {/* Dark Overlay for Better Focus */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
-            onClick={CloseNavbar}
-          ></div>
-
-          {/* Sliding Sidebar (100% Visible on Small Screens) */}
-          <div className="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-2xl py-6 px-6 z-50 rounded-l-2xl border-l-4 border-blue-500 transition-transform transform ease-in-out duration-300">
-            {/* Close Button */}
-            <div className="flex justify-end mb-4">
-              <button
-                className="text-3xl text-gray-600 hover:text-red-500 transition duration-200"
-                onClick={CloseNavbar}
-              >
-                ✖
-              </button>
+        <div className="fixed flex flex-col gap-5 w-full h-full lg:hidden text-lg z-30 top-16 left-0 bg-white shadow-xl py-5 px-4">
+          <Sidebar onButtonClick={CloseNavbar} />
+          <div className="flex flex-col gap-4 text-xl">
+            <div onClick={CloseNavbar}>
+              <Button name="Try for Free" link="/Contact" btnstyle="change" />
             </div>
-
-            {/* Sidebar Navigation */}
-            <Sidebar onButtonClick={CloseNavbar} />
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col gap-4 text-xl mt-6">
-              <div onClick={CloseNavbar}>
-                <Button name="Try for Free" link="/Contact" btnstyle="change" />
-              </div>
-              <Button name="📞 +91-9220696606" link="tel:+919220696606" />
-            </div>
+            <Button name="📞+91-9220696606" link="tel:+919220696606" />
           </div>
-        </>
+        </div>
       )}
     </>
   );
