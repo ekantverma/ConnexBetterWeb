@@ -37,6 +37,7 @@ const BulkEmailBlog = lazy(() => import("./Pages/Blog/BulkEmailBlog.jsx"));
 const SmsApiBlog = lazy(() => import("./Pages/Blog/SmsApiBlog.jsx"));
 const Blog = lazy(() => import("./Pages/Blog/Blog.jsx"));
 const ShimmerUI = lazy(() => import("./Component/ShimmerUI.jsx"));
+const BlogDetail = lazy(() => import("./Pages/Blog/BlogDetail.jsx"));
 
 // Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
@@ -82,6 +83,7 @@ const routes = [
   { path: "/BulkSmsBlog", element: <BulkSmsBlog /> },
   { path: "/BulkEmailBlog", element: <BulkEmailBlog /> },
   { path: "/SmsApiBlog", element: <SmsApiBlog /> },
+  { path: "/BlogDetail/:id", element: <BlogDetail /> },
   { path: "*", element: <Home /> },
 ];
 

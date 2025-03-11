@@ -1,5 +1,12 @@
 const express = require('express');
-const { createPost, getAllPosts, getPostById, updatePost, deletePost } = require('../controllers/blogController');
+const {
+    createPost,
+    getAllPosts,
+    getPostsByCategory,
+    getPostById,
+    updatePost,
+    deletePost
+} = require('../controllers/blogController');
 
 const router = express.Router();
 
@@ -8,6 +15,9 @@ router.post('/create', createPost);
 
 // Get all blog posts
 router.get('/all', getAllPosts);
+
+// Get blog posts by category
+router.get('/category/:category', getPostsByCategory);
 
 // Get a single blog post by ID
 router.get('/:id', getPostById);
