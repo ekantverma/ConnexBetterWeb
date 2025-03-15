@@ -149,19 +149,19 @@ export default function Admin() {
 
             {selectedPage === "postBlog" && (
               <div>
-                <PostBlog/>
+                <PostBlog />
               </div>
             )}
 
             {selectedPage === "updateBlog" && (
               <div>
-                <UpdateBlog/>
+                <UpdateBlog />
               </div>
             )}
 
             {selectedPage === "deleteBlog" && (
               <div>
-                <DeleteBlog/>
+                <DeleteBlog />
               </div>
             )}
           </div>

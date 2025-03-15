@@ -34,4 +34,7 @@ const blogSchema = new mongoose.Schema({
   isPublished: { type: Boolean, default: false },
 });
 
+// const Blog = mongoose.model("Blog", blogSchema);
+// export default  Blog;
+
 module.exports = mongoose.model("Blog", blogSchema);
