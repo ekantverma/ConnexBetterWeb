@@ -33,7 +33,6 @@ const contactRoutes = require("./routes/emailRoutes");
 app.use("/api", contactRoutes);
 app.use("/api", blogRoutes);
 
-
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 5000;
@@ -46,5 +45,7 @@ connectDB()
   })
   .catch((err) => {
     console.error("Database Connection Failed!", err);
-    process.exit(1); 
+    process.exit(1);
   });
+
+module.exports = app;
