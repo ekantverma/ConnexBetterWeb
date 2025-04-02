@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/database");
 const http = require("http");
-const blogRoutes = require('./routes/blogRoutes');
+const blogRoutes = require("./routes/blogRoutes");
 
 const app = express();
 
@@ -35,13 +35,13 @@ app.use("/api", blogRoutes);
 
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; 
 connectDB()
   .then(() => {
     console.log("Database Connected successfully!");
     server.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);
-  });
+    }); 
   })
   .catch((err) => {
     console.error("Database Connection Failed!", err);
