@@ -33,6 +33,10 @@ const contactRoutes = require("./routes/emailRoutes");
 app.use("/api", contactRoutes);
 app.use("/api", blogRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API WORKING!");
+})
+
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 3000; 
