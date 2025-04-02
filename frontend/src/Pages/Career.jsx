@@ -1,46 +1,72 @@
 import { CommonHeading } from "../CommonComponent/CommonHeading";
-import { Form, useActionData } from "react-router-dom";
 import { useState } from "react";
-
-// Action function for handling form submissions
-export const handelCareer = async ({ request }) => {
-  try {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
-
-    const { email, phone } = data;
-
-    // Validate Email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return { error: "Invalid email format" };
-    }
-
-    // Validate Phone Number (example for 10-digit number)
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(phone)) {
-      return { error: "Invalid phone number. Must be 10 digits." };
-    }
-
-    console.log("Validated data:", data);
-    return { success: "Form submitted successfully!" };
-  } catch (error) {
-    console.error("Error handling form submission:", error);
-    return { error: "An unexpected error occurred. Please try again." };
-  }
-};
+import axios from "axios";
 
 function Career() {
-  const [error, setError] = useState(null);
-  const actionData = useActionData();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    companyname: "",
+    companysize: "",
+    intrestproduct: "",
+    msg: "",
+  });
 
-  // Update error state when actionData has errors
-  if (actionData?.error && actionData.error !== error) {
-    setError(actionData.error);
-  }
+  const [responseMessage, setResponseMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle Form Submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage(null);
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/contact",
+        formData
+      );
+
+      setLoading(false);
+      setResponseMessage({
+        type: "success",
+        text: data.success || "Message sent successfully!",
+      });
+
+      // Reset Form Data
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        companyname: "",
+        companysize: "",
+        intrestproduct: "",
+        msg: "",
+      });
+    } catch (error) {
+      setLoading(false);
+
+      let errorMsg = "Something went wrong!";
+      if (error.response) {
+        errorMsg = error.response.data.error || "Server error!";
+      } else if (error.request) {
+        errorMsg = "No response from server!";
+      } else {
+        errorMsg = error.message;
+      }
+
+      setResponseMessage({ type: "error", text: errorMsg });
+    }
+  };
 
   return (
-    <section>
+    <section className="pt-10">
       <div className="container grid md:grid-cols-2 gap-10">
         <div className="flex flex-col justify-between">
           <div>
@@ -58,125 +84,169 @@ function Career() {
             <div>
               <p>Connex Better headquarters</p>
               <p className="font-semibold">
-                Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3, Delhi, Delhi 110020, IN
+                Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3, Delhi, Delhi
+                110020, IN
               </p>
             </div>
           </div>
         </div>
-        <div className="bg-[#f8f8f8] p-4 rounded-lg">
-          <Form
-            method="POST"
-            action="/Career"
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+
+        <div className="bg-gray-100 p-6 rounded-xl shadow-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 md:grid-cols-2 gap-5"
           >
             {/* Email Field */}
             <div className="col-span-2">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
+              <label className="text-gray-700 font-semibold">Email</label>
               <input
                 type="email"
-                id="email"
                 name="email"
                 required
-                className="mt-1 p-2 w-full border border-[#555555] rounded-md bg-[#f4f4f4] focus:ring-blue-500 focus:border-blue-500"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your email"
               />
             </div>
+
             {/* Name Field */}
-            <div className="col-span-2 md:col-span-1">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Your Name
+            <div className="md:col-span-1">
+              <label className="text-gray-700 font-semibold">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your name"
+              />
+            </div>
+
+            {/* Company Name Field */}
+            <div className="md:col-span-1">
+              <label className="text-gray-700 font-semibold">
+                Company Name
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1 p-2 w-full border border-[#555555] rounded-md bg-[#f4f4f4] focus:ring-blue-500 focus:border-blue-500"
+                name="companyname"
+                value={formData.companyname}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your company name"
               />
             </div>
+
             {/* Phone Number Field */}
-            <div className="col-span-2 md:col-span-1">
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+            <div className="md:col-span-1">
+              <label className="text-gray-700 font-semibold">
                 Phone Number
               </label>
               <input
                 type="tel"
-                id="phone"
                 name="phone"
                 required
+                value={formData.phone}
+                onChange={handleChange}
                 pattern="[0-9]{10}"
                 title="Phone number must be 10 digits."
-                className="mt-1 p-2 w-full border border-[#555555] rounded-md bg-[#f4f4f4] focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your phone number"
               />
             </div>
-            {/* Department Field */}
+
+            {/* Company Size Field */}
+            <div className="md:col-span-1">
+              <label className="text-gray-700 font-semibold">
+                Company Size
+              </label>
+              <input
+                type="number"
+                name="companysize"
+                value={formData.companysize}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Number of employees"
+              />
+            </div>
+
+            {/* Interest Product Field */}
             <div className="col-span-2">
-              <label htmlFor="department" className="block text-sm font-medium text-gray-700">
-                Department
+              <label className="text-gray-700 font-semibold">
+                What product are you interested in?
               </label>
               <select
-                name="department"
+                name="intrestproduct"
                 required
-                className="mt-1 p-2 w-full border border-[#555555] rounded-md bg-[#f4f4f4] focus:ring-blue-500 focus:border-blue-500"
+                value={formData.intrestproduct}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
               >
-                <option value="">Select Your Department</option>
-                <option value="Tech">Tech</option>
-                <option value="Product">Product</option>
-                <option value="Sales&Marketing">Sales & Marketing</option>
-                <option value="Operation">Operation</option>
-                <option value="HR">HR</option>
-                <option value="Other">Other</option>
+                <option value="">Select a Product</option>
+                <option value="SMS">SMS</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="RCS">RCS</option>
+                <option value="Email">Email</option>
+                <option value="Voice">Voice</option>
               </select>
             </div>
+
             {/* Message Field */}
             <div className="col-span-2">
-              <label htmlFor="msg" className="block text-sm font-medium text-gray-700">
-                Message
-              </label>
+              <label className="text-gray-700 font-semibold">Message</label>
               <textarea
-                id="msg"
                 name="msg"
                 rows={4}
                 required
-                className="mt-1 p-2 w-full border border-[#555555] rounded-md bg-[#f4f4f4] focus:ring-blue-500 focus:border-blue-500"
+                value={formData.msg}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                placeholder="Write your message here..."
               />
             </div>
+
             {/* Agreement Checkbox */}
-            <div className="col-span-2">
-              <label className="flex items-center">
-                <input type="checkbox" required className="mr-2" />
-                By clicking "Contact Us," I agree to receive communication on newsletters, promotional content, offers and events through SMS, RCS, WhatsApp.
-              </label>
+            <div className="col-span-2 flex items-start gap-2">
+              <input type="checkbox" className="mt-1" />
+              <span className="text-gray-700 text-sm">
+                By clicking "Contact Us," I agree to receive communication on
+                newsletters, promotional content, offers, and events through
+                SMS, RCS, WhatsApp.
+              </span>
             </div>
+
             {/* Submit Button */}
             <div className="col-span-2">
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+                disabled={loading}
+                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-lg w-full transition duration-300 ease-in-out ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Submit
+                {loading ? "Submitting..." : "Contact Us"}
               </button>
             </div>
-          </Form>
-          {/* Error/Success Messages */}
-          {error && <p className="text-red-500 text-base mt-2">{error}</p>}
-          {actionData?.success && <p className="text-green-500 text-base mt-2">{actionData.success}</p>}
-        </div>
-      </div>
-      <div className="container md:hidden">
-        <div>
-          <p>More inquiries:</p>
-          <p className="font-semibold">Support@connexbetter.com</p>
-        </div>
-        <div>
-          <p>Connex Better headquarters</p>
-          <p className="font-semibold">
-            Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3, Delhi, Delhi 110020, IN
-          </p>
+          </form>
+
+          {/* Display Success or Error Messages */}
+          {responseMessage && (
+            <p
+              className={`text-sm mt-3 ${
+                responseMessage.type === "success"
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              {responseMessage.text}
+            </p>
+          )}
         </div>
       </div>
     </section>
   );
 }
+
 export default Career;

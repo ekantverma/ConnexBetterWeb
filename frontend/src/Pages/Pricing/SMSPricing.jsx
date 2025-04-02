@@ -120,7 +120,12 @@ export default function SMSPricing() {
                 {/* Features List */}
                 <ul className="text-gray-700 text-lg space-y-3 mt-6 text-left">
                   {plan.description.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
+                    <li
+                      key={i}
+                      className={`flex items-center gap-3 opacity-0 translate-y-4 animate-fadeIn delay-[${
+                        i * 200
+                      }ms]`}
+                    >
                       <span className="text-green-500 text-xl">✔</span>
                       <RadiobuttonwithText text={item} />
                     </li>
