@@ -30,8 +30,8 @@ app.use(express.json());
 
 // Routes
 const contactRoutes = require("./routes/emailRoutes");
-app.use(contactRoutes);
-app.use(blogRoutes)
+app.use("/api", contactRoutes);
+app.use("/api", blogRoutes);
 
 
 const server = http.createServer(app);
