@@ -28,7 +28,7 @@ function Contact() {
     setResponseMessage(null);
 
     try {
-      const { data } = await axios.post("http://localhost:3000/contact", formData);
+      const { data } = await axios.post(`https://connexbetterwebbackend.vercel.app/api/contact`, formData);
 
       setLoading(false);
       setResponseMessage({ type: "success", text: data.success || "Message sent successfully!" });

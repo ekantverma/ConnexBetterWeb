@@ -6,7 +6,7 @@ const BulkEmailBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/category/Email%20Marketing") 
+    axios.get("https://connexbetterwebbackend.vercel.app/api/category/Email%20Marketing") 
       .then((res) => setBlogs(res.data))
       .catch((err) => console.log(err));
   }, []);

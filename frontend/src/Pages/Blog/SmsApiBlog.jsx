@@ -6,7 +6,7 @@ const BulkEmailBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/category/SMS%20API%20Integration") 
+    axios.get("https://connexbetterwebbackend.vercel.app/api/category/SMS%20API%20Integration") 
       .then((res) => setBlogs(res.data))
       .catch((err) => console.log(err));
   }, []);

@@ -48,7 +48,7 @@ export default function PostBlog(){
         setLoading(true);
 
         try {
-            await axios.post("http://localhost:3000/create", formData);
+            await axios.post("https://connexbetterwebbackend.vercel.app/api/create", formData);
             alert("✅ Blog Posted Successfully!");
             setFormData({
                 title: "",

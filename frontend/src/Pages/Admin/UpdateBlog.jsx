@@ -21,7 +21,7 @@ const UpdateBlog = () => {
   // 🟢 Sabhi blogs fetch karna
   useEffect(() => {
     axios
-      .get("http://localhost:3000/all")
+      .get("https://connexbetterwebbackend.vercel.app/api/all")
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error("Error fetching blogs:", err));
   }, []);
@@ -67,7 +67,7 @@ const UpdateBlog = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/update/${selectedBlog._id}`,
+        `https://connexbetterwebbackend.vercel.app/api/update/${selectedBlog._id}`,
         formData
       );
       alert("Blog updated successfully!");

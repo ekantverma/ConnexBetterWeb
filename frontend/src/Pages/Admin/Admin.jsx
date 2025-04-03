@@ -26,7 +26,8 @@ export default function Admin() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/all");
+      // const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/all`);
+      const res = await axios.get("https://connexbetterwebbackend.vercel.app/api/all");
       setBlogs(res.data);
     } catch (error) {
       console.error("Error fetching blogs:", error);

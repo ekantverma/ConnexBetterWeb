@@ -11,7 +11,7 @@ const BlogDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/${id}`)
+      .get(`https://connexbetterwebbackend.vercel.app/api/${id}`)
       .then((res) => {
         setBlog(res.data);
         setLikes(res.data.stats.likes);

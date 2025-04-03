@@ -8,7 +8,7 @@ export default function BlogList() {
     // ✅ Fetch all published blogs
     const fetchBlogs = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/all");
+            const response = await axios.get("https://connexbetterwebbackend.vercel.app/api/all");
             setBlogs(response.data);
         } catch (error) {
             console.error("Error fetching blogs:", error);
@@ -22,7 +22,7 @@ export default function BlogList() {
       if (!window.confirm("Are you sure you want to delete this blog?")) return;
   
       try {
-          await axios.delete(`http://localhost:3000/delete/${id}`);
+          await axios.delete(`https://connexbetterwebbackend.vercel.app/api/delete/${id}`);
           alert("✅ Blog deleted successfully!");
           setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id));
       } catch (error) {

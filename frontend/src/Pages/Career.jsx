@@ -29,7 +29,7 @@ function Career() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/contact",
+        "https://connexbetterwebbackend.vercel.app/api/contact",
         formData
       );
 
