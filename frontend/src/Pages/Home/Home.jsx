@@ -226,12 +226,11 @@ export const Home = () => {
           </div>
 
           {/* Right Side - Image */}
-          <div className="flex justify-center h-full">
-            <LazyComponent
-              Component={ContentImageBlock}
-              props={{
-                img: smscallimg,
-              }}
+          <div className="flex justify-center h-full items-center">
+            <img
+              src={smscallimg}
+              alt="SMS Call"
+              className="max-w-full h-auto rounded-lg animate-fade-in-up w-[400px] h-[250px]"
             />
           </div>
         </div>
@@ -247,13 +246,13 @@ export const Home = () => {
               p="Integrate multiple options easily with our platform."
               width="full"
             />
-            <p className="text-lg text-gray-700 max-w-lg mx-auto md:mx-0 leading-relaxed tracking-wide">
+            <p className="text-lg text-gray-700 max-w-lg mx-auto leading-relaxed tracking-wide">
               Scale your business communication effortlessly with our seamless
               integrations and intelligent automation tools.
             </p>
 
             {/* CTA Button */}
-            <div className="mt-8 flex justify-center md:justify-start">
+            <div className="mt-8 flex justify-center items-center">
               <a
                 href="/explore"
                 className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
@@ -286,7 +285,7 @@ export const Home = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="pb-8">
+        <div className="pb-2">
           <LazyComponent
             Component={Boxcontainer}
             props={{
