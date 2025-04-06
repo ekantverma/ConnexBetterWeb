@@ -39,12 +39,13 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
               aria-haspopup="menu"
               aria-expanded={dropdown ? "true" : "false"}
               onClick={() => setDropdown((prev) => !prev)}
+              className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-600 focus:outline-none"
             >
               {items.title}{" "}
               {depthLevel > 0 ? (
                 <span>&raquo;</span>
               ) : (
-                <span className="arrow"></span>
+                <span className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-90">▼</span>
               )}
             </button>
           </NavLink>
