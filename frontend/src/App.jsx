@@ -8,7 +8,9 @@ import ScrollToTop from "./ScrollToTop";
 const Home = lazy(() => import("./Pages/Home/Home.jsx"));
 const About = lazy(() => import("./Pages/About/About.jsx"));
 const SMSPricing = lazy(() => import("./Pages/Pricing/SMSPricing.jsx"));
-const WhatsAppPricing = lazy(() => import("./Pages/Pricing/WhatsAppPricing.jsx"));
+const WhatsAppPricing = lazy(() =>
+  import("./Pages/Pricing/WhatsAppPricing.jsx")
+);
 const RCSPricing = lazy(() => import("./Pages/Pricing/RCSPricing.jsx"));
 const EmailPricing = lazy(() => import("./Pages/Pricing/EmailPricing.jsx"));
 const VoicePricing = lazy(() => import("./Pages/Pricing/VoicePricing.jsx"));
@@ -21,7 +23,9 @@ const SMS = lazy(() => import("./Pages/SMS/SMS.jsx"));
 const SMSAPI = lazy(() => import("./Pages/SMS/SMSAPI.jsx"));
 const BulkSMS = lazy(() => import("./Pages/SMS/BulkSMS.jsx"));
 const InternationalSMS = lazy(() => import("./Pages/SMS/InternationalSMS.jsx"));
-const TwoFactorAuthentication = lazy(() => import("./Pages/SMS/TwoFactorAuthentication.jsx"));
+const TwoFactorAuthentication = lazy(() =>
+  import("./Pages/SMS/TwoFactorAuthentication.jsx")
+);
 const Email = lazy(() => import("./Pages/Email/Email.jsx"));
 const WhatsApp = lazy(() => import("./Pages/WHATSAPP/WhatsApp.jsx"));
 const TermsOfService = lazy(() => import("./Pages/TermandCondition.jsx"));
@@ -40,14 +44,16 @@ const ShimmerUI = lazy(() => import("./Component/ShimmerUI.jsx"));
 const BlogDetail = lazy(() => import("./Pages/Blog/BlogDetail.jsx"));
 const Admin = lazy(() => import("./Pages/Admin/Admin.jsx"));
 const DeveloperSMSAPI = lazy(() => import("./Pages/Developers/SmsApi.jsx"));
+const EmailApi = lazy(() => import("./Pages/Developers/EmailApi.jsx"));
+const VoiceApi = lazy(() => import("./Pages/Developers/VoiceApi.jsx"));
+// const WhatsdocsApi = lazy(() => import("./Pages/Developers/WhatsdocsApi.jsx"));
+
 // Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
   <>
     <ScrollToTop />
     <Multilevelnav />
-    <Suspense fallback={<ShimmerUI />}>
-      {children}
-    </Suspense>
+    <Suspense fallback={<ShimmerUI />}>{children}</Suspense>
     <Footer />
   </>
 );
@@ -86,6 +92,9 @@ const routes = [
   { path: "/SmsApiBlog", element: <SmsApiBlog /> },
   { path: "/BlogDetail/:id", element: <BlogDetail /> },
   { path: "/Developers/SMSAPI", element: <DeveloperSMSAPI /> },
+  { path: "/Developers/EmailApi", element: <EmailApi /> },
+  { path: "/Developers/VoiceApi", element: <VoiceApi /> },
+  // { path: "/Developers/WhatsdocsApi", element: <WhatsdocsApi /> },
   { path: "admin", element: <Admin /> },
   { path: "*", element: <Home /> },
 ];

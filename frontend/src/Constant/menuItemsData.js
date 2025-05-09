@@ -50,7 +50,7 @@ export const menuItemsData = [
       { title: "SMS API", link: "/Developers/SMSAPI" },
       { title: "Email API", link: "/Developers/EmailAPI" },
       { title: "Voice API", link: "/Developers/VoiceAPI" },
-      { title: "OTP API", link: "/Developers/OTPAPI" },
+      // { title: "Whatsapp API", link: "/Developer/WhatsdocsApi" },
     ],
   },
   {
