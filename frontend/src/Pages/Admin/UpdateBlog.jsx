@@ -80,6 +80,7 @@ const UpdateBlog = () => {
 
   return (
     <div className="p-4">
+    <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">📜 All Published Blogs</h2>
       {/* 🟢 Sabhi blogs dikhana */}
       <div className="grid grid-cols-3 gap-6 p-4">
         {blogs.map((blog) => (
