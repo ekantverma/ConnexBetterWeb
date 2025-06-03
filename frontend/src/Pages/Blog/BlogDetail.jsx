@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -46,7 +44,7 @@ const BlogDetail = () => {
 
       {/* Blog Title & Created At */}
       <div className="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center">
-        <h1 className="text-4xl font-bold text-gray-800 transition-all duration-300 hover:text-blue-600">
+        <h1 className="text-4xl font-bold text-gray-800 transition-colors duration-300 hover:text-blue-600">
           {blog.title}
         </h1>
         <p className="text-gray-500 text-sm mt-2 sm:mt-0">
@@ -59,66 +57,64 @@ const BlogDetail = () => {
         <img
           src={blog.authorImage}
           alt={blog.authorName}
-          className="w-12 h-12 rounded-full border border-gray-300 hover:scale-110 transition-transform"
+          className="w-12 h-12 rounded-full border border-gray-300 hover:scale-110 transition-transform duration-300"
         />
         <p className="text-gray-700 font-medium">By {blog.authorName}</p>
       </div>
 
-      {/* Blog Description */}
-      <p className="mt-4 text-gray-600 text-lg leading-relaxed">
-        {blog.description}
-      </p>
+      {/* Blog Description with Tailwind Typography */}
+      <div
+        className="mt-6 prose max-w-none prose-blue prose-lg prose-headings:font-semibold prose-headings:text-blue-700 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 hover:prose-a:text-blue-800 transition-colors duration-300"
+        dangerouslySetInnerHTML={{ __html: blog.description }}
+      ></div>
 
       {/* Blog Subsections */}
       {blog.subheadings.map((section, index) => (
-        <div key={index} className="mt-8">
+        <div key={index} className="mt-10">
           <h2 className="text-2xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-3">
             {section.heading}
           </h2>
-          <p className="mt-2 text-gray-700 text-lg leading-relaxed">
-            {section.content}
-          </p>
+          <p className="mt-3 text-gray-700 text-lg leading-relaxed">{section.content}</p>
         </div>
       ))}
 
       {/* Bullet Points */}
-      <ul className="mt-6 list-disc pl-6 text-gray-700 space-y-2">
+      <ul className="mt-8 list-disc pl-6 text-gray-700 space-y-2">
         {blog.bulletPoints.map((point, index) => (
-          <li key={index} className="text-lg">{point}</li>
+          <li key={index} className="text-lg">
+            {point}
+          </li>
         ))}
       </ul>
 
       {/* Additional Images */}
-      <div className="grid grid-cols-2 gap-4 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
         {blog.additionalImages.map((image, index) => (
           <img
             key={index}
             src={image}
-            alt="blog-content"
+            alt="blog content"
             className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           />
         ))}
       </div>
 
       {/* Blog Stats & Like Button */}
-      <div className="mt-6 bg-gray-100 p-4 rounded-lg flex items-center justify-between shadow-md">
-        <p className="text-gray-800 font-medium text-lg">
-          🔥 {blog.stats.views} Views | ❤️ {likes} Likes | 🔄{" "}
-          {blog.stats.shares} Shares
+      <div className="mt-8 bg-gray-100 p-4 rounded-lg flex flex-col sm:flex-row items-center justify-between shadow-md gap-4">
+        <p className="text-gray-800 font-medium text-lg select-none">
+          🔥 {blog.stats.views} Views | ❤️ {likes} Likes | 🔄 {blog.stats.shares} Shares
         </p>
         <button
           onClick={handleLike}
-          className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg font-medium shadow-md hover:bg-red-600 transition-transform duration-300"
+          className="flex items-center gap-2 px-5 py-2 bg-red-500 text-white rounded-lg font-semibold shadow-md hover:bg-red-600 active:scale-95 transition-transform duration-200"
         >
           ❤️ Like
         </button>
       </div>
 
       {/* Related Posts */}
-      <div className="mt-8">
-        <h3 className="text-xl font-bold text-gray-800 border-b-2 pb-2">
-          Related Posts
-        </h3>
+      <div className="mt-10">
+        <h3 className="text-xl font-bold text-gray-800 border-b-2 pb-2">Related Posts</h3>
         <ul className="mt-4 space-y-2">
           {blog.relatedPosts.map((post, index) => (
             <li key={index}>
@@ -134,10 +130,10 @@ const BlogDetail = () => {
       </div>
 
       {/* Call to Action Button */}
-      <div className="mt-8 text-center">
+      <div className="mt-10 text-center">
         <a
           href={blog?.cta?.link || "#"}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
+          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
         >
           {blog?.cta?.text || "Read More"}
         </a>

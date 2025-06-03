@@ -142,7 +142,7 @@ export default function Admin() {
                   </div>
                 ) : (
                   <p className="text-gray-500 text-center">
-                    No blogs available
+                    Blog loading.....
                   </p>
                 )}
               </>

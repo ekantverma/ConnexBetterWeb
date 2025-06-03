@@ -76,19 +76,18 @@ exports.getPostsByCategory = async (req, res) => {
 exports.getPostById = async (req, res) => {
     try {
         const post = await Blog.findById(req.params.id);
-
         if (!post) return res.status(404).json({ message: "Post not found" });
 
-        // ✅ Increment view count
-        post.views += 1;
+        post.views = post.views ? post.views + 1 : 1;
         await post.save();
 
-        res.status(200).json(post);
+        return res.status(200).json(post);
     } catch (error) {
         console.error("Get Post by ID Error:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        return res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 // ✅ Update a blog post
 exports.updatePost = async (req, res) => {

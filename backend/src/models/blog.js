@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 
 const blogSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String, required: true },  // Ye HTML string store karega (rich text)
   authorName: { type: String, required: true },
-  authorImage: { type: String }, // Optional author image
+  authorImage: { type: String }, // URL string optional
   category: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
-  mainImage: { type: String, required: true },
+  mainImage: { type: String, required: true }, // URL string
   subheadings: [
     {
       heading: { type: String, required: true },
-      content: { type: String, required: true },
+      content: { type: String, required: true }, // HTML string (rich text)
     },
   ],
-  bulletPoints: [{ type: String }],
-  additionalImages: [{ type: String }],
+  bulletPoints: [{ type: String }], // Plain text list
+  additionalImages: [{ type: String }], // URLs
   stats: {
     views: { type: Number, default: 0 },
     likes: { type: Number, default: 0 },
@@ -33,8 +33,5 @@ const blogSchema = new mongoose.Schema({
   },
   isPublished: { type: Boolean, default: false },
 });
-
-// const Blog = mongoose.model("Blog", blogSchema);
-// export default  Blog;
 
 module.exports = mongoose.model("Blog", blogSchema);
