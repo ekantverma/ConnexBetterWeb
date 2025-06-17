@@ -4,7 +4,7 @@ import { memo } from "react";
 
 const Boxcontainer = memo(({ heading, para, carddata }) => {
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-12">
+    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-12 mx-auto">
       
       {/* Heading Section */}
       <div className="text-center max-w-3xl w-full">
@@ -15,8 +15,16 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
         />
       </div>
 
-      {/* Card Grid */}
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full px-4">
+      {/* Responsive Card Grid */}
+      <div
+        className={`grid gap-6 w-full justify-center
+          grid-cols-1
+          sm:grid-cols-2
+          md:grid-cols-2
+          lg:grid-cols-${carddata.length < 3 ? carddata.length : 3}
+          xl:grid-cols-${carddata.length < 4 ? carddata.length : 4}
+        `}
+      >
         {carddata.map((ele) => (
           <div key={ele.id} className="flex justify-center">
             <Card

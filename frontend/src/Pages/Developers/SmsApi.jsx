@@ -16,10 +16,10 @@ const SmsApi = () => {
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-gray-800">Base URL</h2>
           <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
-            Authkey.io's GET APIs are exclusively served over
+            ConnexBetter's GET APIs are exclusively served over
             <span className="font-semibold text-blue-600"> HTTPS</span>. This
             ensures that all data transmitted between your application and
-            Authkey.io's servers is encrypted and protected.
+            ConnexBetter's servers is encrypted and protected.
           </p>
         </div>
 

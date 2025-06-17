@@ -236,34 +236,32 @@ export const Home = () => {
         </div>
       </div>
 
-      {/* Ecosystem Section */}
-      <div className="container mx-auto px-8 py-20 md:py-24 bg-gray-100 rounded-2xl shadow-lg">
-        <div className="grid md:grid-cols-2 items-center gap-12 md:gap-16">
-          {/* Left Side - Heading & Content */}
-          <div className="space-y-6 text-center md:text-left animate-fade-in">
+      {/* ───────── Ecosystem Section ───────── */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-gray-100 rounded-2xl shadow-lg">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text */}
+          <div className="space-y-6 text-center lg:text-left">
             <CommonHeading
               h="Create Your Conversational Ecosystem"
               p="Integrate multiple options easily with our platform."
               width="full"
             />
-            <p className="text-lg text-gray-700 max-w-lg mx-auto leading-relaxed tracking-wide">
+            <p className="mx-auto lg:mx-0 max-w-lg text-base sm:text-lg text-gray-700 leading-relaxed tracking-wide">
               Scale your business communication effortlessly with our seamless
               integrations and intelligent automation tools.
             </p>
-
-            {/* CTA Button */}
-            <div className="mt-8 flex justify-center items-center">
+            <div className="pt-4 sm:pt-6 lg:pt-8 flex justify-center lg:justify-start">
               <a
                 href="/explore"
-                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
               >
                 Explore More
               </a>
             </div>
           </div>
 
-          {/* Right Side - Image / Branding */}
-          <div className="flex justify-center animate-fade-in-up">
+          {/* Slider */}
+          <div className="flex justify-center animate-fade-in-up overflow-hidden h-auto lg:h-full">
             <LazyComponent
               Component={BrandSection}
               props={{ data: Brandimage2 }}

@@ -41,63 +41,48 @@ const About = () => {
   ];
   return (
     <>
-      <div className="bg-[#f8f8f8] flex flex-col justify-center items-center gap-6 py-16 px-6 text-center animate-fadeInUp mt-6">
-        {/* Title */}
-        <h1 className="text-5xl font-extrabold text-primary tracking-wide animate-scaleIn text-blue-600">
-          ABOUT US
-        </h1>
+      <div className="bg-gradient-to-b from-[#f9fafb] to-[#f1f5f9] px-4 sm:px-8 py-20 flex flex-col items-center gap-8 text-center animate-fadeInUp">
 
-        {/* Subtitle */}
-        <p className="text-lg text-gray-700 max-w-2xl animate-slideIn">
-          We enable enterprises to deliver messaging content across multiple
-          channels in a matter of seconds, across the globe.
-        </p>
+      {/* Title */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight animate-scaleIn">
+        ABOUT US
+      </h1>
 
-        {/* Rating & Brand Logos */}
-        <div className="flex flex-col md:flex-row items-center gap-4 animate-fadeIn">
-          {/* Rating */}
-          <div className="flex items-center gap-2 bg-white shadow-md px-4 py-2 rounded-full">
-            <p className="font-semibold text-gray-800">Rating</p>
-            <p className="flex items-center text-lg font-semibold text-gray-900">
-              <FaStar className="text-yellow-400 mr-1" /> 4.9+
-            </p>
+      {/* Subtitle */}
+      <p className="text-gray-600 max-w-2xl text-base sm:text-lg leading-relaxed animate-slideIn">
+        We enable enterprises to deliver messaging content across multiple
+        channels in a matter of seconds, across the globe.
+      </p>
+
+      {/* Rating and Logos Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 animate-fadeIn">
+
+        {/* Rating Card */}
+        <div className="backdrop-blur-lg bg-white/60 border border-gray-200 shadow-lg px-6 py-3 rounded-xl flex items-center gap-3 transition-transform duration-300 hover:scale-105">
+          <p className="text-gray-700 font-semibold">Rating</p>
+          <div className="flex items-center text-lg font-bold text-gray-900">
+            <FaStar className="text-yellow-400 mr-1" /> 4.9+
           </div>
+        </div>
 
-          {/* Brand Logos */}
-          <div className="flex items-center gap-3">
+        {/* Brand Logos */}
+        <div className="flex items-center flex-wrap justify-center gap-4">
+          {[brand3, brand4, brand11, brand13, brand14].map((src, index) => (
             <img
-              src={brand3}
-              className="h-10 w-10 object-contain"
-              alt="Brand 1"
+              key={index}
+              src={src}
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+              alt={`Brand ${index + 1}`}
             />
-            <img
-              src={brand4}
-              className="h-10 w-10 object-contain"
-              alt="Brand 2"
-            />
-            <img
-              src={brand11}
-              className="h-10 w-10 object-contain"
-              alt="Brand 3"
-            />
-            <img
-              src={brand13}
-              className="h-10 w-10 object-contain"
-              alt="Brand 4"
-            />
-            <img
-              src={brand14}
-              className="h-10 w-10 object-contain"
-              alt="Brand 5"
-            />
+          ))}
 
-            {/* More Brands */}
-            <div className="bg-primary text-black px-5 py-2 rounded-full font-semibold flex items-center justify-center">
-              1k+
-            </div>
+          {/* Extra Brands Count */}
+          <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow-md hover:bg-blue-200 transition">
+            1k+
           </div>
         </div>
       </div>
+    </div>
       <section>
         <div className="bg-[#f8f8f8] py-16 px-6 md:px-12 lg:px-20 text-center animate-fadeInUp mt-2">
           {/* Title */}

@@ -28,12 +28,15 @@ const sections = [
 
 const Voice = () => {
   return (
-    <section>
+    <section className="bg-white w-full py-8 md:py-12 lg:py-16">
       {sections.map((section, index) =>
         section.custom ? (
           <React.Fragment key={index}>{section.custom()}</React.Fragment>
         ) : (
-          <div key={index} className="container">
+          <div
+            key={index}
+            className="max-w-[1280px] px-4 sm:px-6 md:px-8 mx-auto mb-12"
+          >
             <section.component {...section.props} />
           </div>
         )

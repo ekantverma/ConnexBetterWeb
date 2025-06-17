@@ -55,7 +55,7 @@ export default function Multilevelnav() {
               href="/Contact"
               className="bg-primary text-white bg-blue-600 text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all duration- hover:bg-opacity-90"
             >
-              Try for Free
+              Get 500 free SMS
             </a>
             <a
               href="tel:+919220696606"
@@ -67,36 +67,80 @@ export default function Multilevelnav() {
 
           {/* Mobile Navigation Toggle */}
           <div
-            className="cursor-pointer text-3xl lg:hidden p-2 rounded-md transition-all duration-300 ease-in-out hover:bg-gray-200 hover:text-blue-600 active:scale-90"
+            className={`
+    flex items-center justify-center cursor-pointer text-2xl lg:hidden p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-600 active:scale-95 shadow-sm ring-1 ring-gray-200 backdrop-blur-sm`}
             onClick={() => setmobiletoggle((prev) => !prev)}
+            aria-label="Toggle navigation"
           >
-            {mobiletoggle ? (
-              <FaTimes className="transition-transform duration-300 rotate-180" />
-            ) : (
-              <FaBars className="transition-transform duration-300 rotate-0" />
-            )}
+            <span className="inline-block transition-transform duration-300">
+              {mobiletoggle ? (
+                <FaTimes className="transform scale-100 rotate-180 transition-all duration-300 ease-in-out" />
+              ) : (
+                <FaBars className="transform scale-100 rotate-0 transition-all duration-300 ease-in-out" />
+              )}
+            </span>
           </div>
         </section>
       </header>
 
-      {/* Mobile View Navbar */}
-      {mobiletoggle && (
-        <div className="fixed flex flex-col gap-5 h-full lg:hidden container text-xl z-30 top-8 bg-secondary">
-          <Sidebar onButtonClick={CloseNavbar}></Sidebar>
-          <div className="flex flex-col gap-10 lg:hidden text-xl">
-            <div onClick={CloseNavbar}>
-              {" "}
-              <Button
-                name="Try for Free"
-                link="/Contact"
-                btnstyle="change"
-              ></Button>
-            </div>
+      {/* ───────── Mobile View Navbar ───────── */}
+      <div
+        className={`
+    fixed inset-0 z-[9999] lg:hidden overflow-hidden
+    ${
+      mobiletoggle
+        ? "opacity-100 pointer-events-auto"
+        : "opacity-0 pointer-events-none"
+    }
+    transition-opacity duration-300
+  `}
+      >
+        {/* Backdrop */}
+        <div
+          onClick={CloseNavbar}
+          className={`
+      absolute inset-0 bg-black/70 backdrop-blur-sm
+      transition-opacity duration-300
+      ${mobiletoggle ? "opacity-100" : "opacity-0"}
+    `}
+        />
 
-            <Button name="📞+91-9220696606" link="tel:+919220696606"></Button>
-          </div>
-        </div>
-      )}
+        {/* Slide-in Panel */}
+        <aside
+          className={`
+      absolute right-0 top-0 h-full w-[85%] max-w-xs bg-white shadow-xl
+      flex flex-col gap-6 p-6
+      transform transition-transform duration-500 ease-in-out
+      ${mobiletoggle ? "translate-x-0" : "translate-x-full"}
+    `}
+        >
+          {/* ✖ Close Button */}
+          <button
+            onClick={CloseNavbar}
+            className="self-end text-3xl p-2 rounded-full hover:bg-gray-100 active:scale-95 transition"
+            aria-label="Close Navigation"
+          >
+            <FaTimes />
+          </button>
+
+          {/* Links */}
+          <Sidebar onButtonClick={CloseNavbar} />
+
+          {/* CTA Buttons */}
+          <Button
+            name="Get 5000 Free SMS"
+            link="/Contact"
+            btnstyle="change"
+            className="w-full"
+            onClick={CloseNavbar}
+          />
+          <Button
+            name="📞 +91 92206 96606"
+            link="tel:+919220696606"
+            className="w-full"
+          />
+        </aside>
+      </div>
     </>
   );
 }

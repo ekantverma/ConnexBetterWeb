@@ -26,9 +26,9 @@ export const footerpart = [
   },
   {
     h: "Contact",
-    l1: { text: "support@connexbetter.com", link: "mailto:support@connexbetter.com" },
-    l2: { text: "Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3 , Delhi 110020, IN", link: "/contact" },
-    l3: { text: "", link: "" },
+    l1: { text: "📞 +91 92206 96606", link: "" },
+    l2: { text: "support@connexbetter.com", link: "mailto:support@connexbetter.com" },
+    l3: { text: "Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3 , Delhi 110020, IN", link: "/contact" },
     l4: { text: "", link: "" },
     l5: { text: "", link: "" },
   },

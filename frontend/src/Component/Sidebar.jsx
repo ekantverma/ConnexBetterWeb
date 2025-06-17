@@ -4,11 +4,16 @@ import { menuItemsData } from "../Constant/menuItemsData";
 
 const Sidebar = ({ onButtonClick }) => {
   return (
-    <div className="w-full text-2xl">
+    <nav className="w-full flex flex-col gap-3 text-xl font-medium">
       {menuItemsData.map((ele, index) => (
-        <SidebarItem key={index} ele={ele} onButtonClick={onButtonClick} />
+        <div
+          key={index}
+          className="rounded-md px-4 transition-colors duration-300"
+        >
+          <SidebarItem ele={ele} onButtonClick={onButtonClick} />
+        </div>
       ))}
-    </div>
+    </nav>
   );
 };
 
