@@ -59,7 +59,7 @@ export const Home = () => {
               Transform customer interactions with intelligent communication
             </h1>
             <SequentialText />
-            <Button name="Request a Demo" link="/ScheduleDemo" />
+            <Button name="Get Started" link="/ScheduleDemo" />
           </div>
 
           {/* Right Section (Image) */}
