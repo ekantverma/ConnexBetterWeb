@@ -110,7 +110,7 @@ const routes = [
 const router = createBrowserRouter(
   routes.map(({ path, element }) => {
     if (path === "admin") {
-      return { path, element }; // No wrapper for admin
+      return { path, element }; 
     }
 
     return {
