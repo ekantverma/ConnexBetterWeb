@@ -46,7 +46,7 @@ const Admin = lazy(() => import("./Pages/Admin/Admin.jsx"));
 const DeveloperSMSAPI = lazy(() => import("./Pages/Developers/SmsApi.jsx"));
 const EmailApi = lazy(() => import("./Pages/Developers/EmailApi.jsx"));
 const VoiceApi = lazy(() => import("./Pages/Developers/VoiceApi.jsx"));
-// const WhatsdocsApi = lazy(() => import("./Pages/Developers/WhatsdocsApi.jsx"));
+const WhatsdocsApi = lazy(() => import("./Pages/Developers/WhatsdocsApi.jsx"));
 
 // Page Wrapper for Layout Consistency
 const PageWrapper = ({ children }) => (
@@ -94,7 +94,7 @@ const routes = [
   { path: "/Developers/SMSAPI", element: <DeveloperSMSAPI /> },
   { path: "/Developers/EmailApi", element: <EmailApi /> },
   { path: "/Developers/VoiceApi", element: <VoiceApi /> },
-  // { path: "/Developers/WhatsdocsApi", element: <WhatsdocsApi /> },
+  { path: "/Developers/WhatsdocsApi", element: <WhatsdocsApi /> },
   { path: "admin", element: <Admin /> },
   { path: "*", element: <Home /> },
 ];

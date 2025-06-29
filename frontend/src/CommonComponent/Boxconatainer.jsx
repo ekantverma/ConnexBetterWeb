@@ -4,7 +4,7 @@ import { memo } from "react";
 
 const Boxcontainer = memo(({ heading, para, carddata }) => {
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-12 mx-auto">
+    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-1 mx-auto">
       
       {/* Heading Section */}
       <div className="text-center max-w-3xl w-full">

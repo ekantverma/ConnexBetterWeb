@@ -43,7 +43,7 @@ const LazyImage = ({ src, alt, height, width }) => (
 export const Home = () => {
   return (
     <section>
-      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center mt-4">
+      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Gradient Background */}
         <div className="absolute top-16 left-8 w-[20vw] h-[16vh] bg-gradient-to-br from-blue-500 to-transparent blur-2xl opacity-50"></div>
         <div className="absolute top-14 right-14 w-[20vw] h-[20vh] bg-gradient-to-bl from-blue-700 to-transparent blur-3xl opacity-50"></div>
@@ -75,7 +75,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="px-4 my-6 text-center">
+      <div className="px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 animate-fade-in">
           Best Bulk SMS, RCS, IVR, and WhatsApp Service Provider in India
         </h2>
@@ -149,7 +149,7 @@ export const Home = () => {
       </div>
 
       {/* Offerings Section */}
-      <div className="container mx-auto px-4 py-12 text-center">
+      <div className="container mx-auto px-4 py-4 text-center">
         {/* Heading & Subtext */}
         <div className="">
           <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-fade-in">
@@ -193,87 +193,88 @@ export const Home = () => {
       </div>
 
       {/* Get Started Section */}
-      <div className="container mx-auto px-8 py-20 bg-gray-100 rounded-2xl shadow-xl min-h-[50vh] flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 w-full">
-          {/* Left Side - Text Content */}
-          <div className="text-center md:text-left px-8 my-14">
-            <h3 className="text-lg md:text-xl font-semibold text-blue-600 uppercase tracking-wide animate-fade-in">
-              Get Started Today
-            </h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight animate-fade-in-up">
-              Start Sending SMS with Connex Better for Free
-            </h2>
-            <p className="text-lg md:text-xl mt-6 text-gray-700 leading-relaxed max-w-2xl animate-fade-in-up">
-              Sign up today and create your perfect customer engagement
-              experience.
-            </p>
+      <div className="w-full flex items-center justify-center px-4">
+        <div className="w-full max-w-[92%] bg-gray-100 rounded-2xl shadow-xl px-6 py-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 w-full">
+            {/* Left Side - Text Content */}
+            <div className="text-center md:text-left">
+              <h3 className="text-lg md:text-xl font-semibold text-blue-600 uppercase tracking-wide animate-fade-in">
+                Get Started Today
+              </h3>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight animate-fade-in-up text-balance">
+                Start Sending SMS with Connex Better for Free
+              </h2>
+              <p className="text-lg md:text-xl mt-6 text-gray-700 leading-relaxed max-w-2xl animate-fade-in-up mx-auto md:mx-0">
+                Sign up today and create your perfect customer engagement
+                experience.
+              </p>
 
-            {/* CTA Buttons */}
-            <div className="mt-10 flex flex-wrap md:justify-start justify-center gap-6">
-              <a
-                href="/contact"
-                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
-              >
-                Try it for Free
-              </a>
-              <a
-                href="/contact"
-                className="border border-gray-500 text-gray-700 hover:bg-gray-300 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
-              >
-                Contact Us
-              </a>
+              {/* CTA Buttons */}
+              <div className="mt-10 flex flex-wrap md:justify-start justify-center gap-6">
+                <a
+                  href="/contact"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
+                >
+                  Try it for Free
+                </a>
+                <a
+                  href="/contact"
+                  className="border border-gray-500 text-gray-700 hover:bg-gray-300 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
+                >
+                  Contact Us
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Right Side - Image */}
-          <div className="flex justify-center h-full items-center">
-            <img
-              src={smscallimg}
-              alt="SMS Call"
-              className="max-w-full h-auto rounded-lg animate-fade-in-up w-[400px] h-[250px]"
-            />
+            {/* Right Side - Image */}
+            <div className="flex justify-center items-center h-full">
+              <img
+                src={smscallimg}
+                alt="SMS Call"
+                className="rounded-lg animate-fade-in-up w-[400px] h-[250px] object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* ───────── Ecosystem Section ───────── */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-gray-100 rounded-2xl shadow-lg">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text */}
-          <div className="space-y-6 text-center lg:text-left">
-            <CommonHeading
-              h="Create Your Conversational Ecosystem"
-              p="Integrate multiple options easily with our platform."
-              width="full"
-            />
-            <p className="mx-auto lg:mx-0 max-w-lg text-base sm:text-lg text-gray-700 leading-relaxed tracking-wide">
-              Scale your business communication effortlessly with our seamless
-              integrations and intelligent automation tools.
-            </p>
-            <div className="pt-4 sm:pt-6 lg:pt-8 flex justify-center lg:justify-start">
-              <a
-                href="/explore"
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
-              >
-                Explore More
-              </a>
-            </div>
+      <div className="mx-auto w-full max-w-[90%] px-4 sm:px-6 lg:px-8 py-14 bg-gray-100 rounded-2xl shadow-lg mt-16">
+        {/* Text Section */}
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <CommonHeading
+            h="Create Your Conversational Ecosystem"
+            p="Integrate multiple options easily with our platform."
+            width="full"
+          />
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed tracking-wide">
+            Scale your business communication effortlessly with our seamless
+            integrations and intelligent automation tools.
+          </p>
+          <div className="pt-2">
+            <a
+              href="/explore"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
+            >
+              Explore More
+            </a>
           </div>
+        </div>
 
-          {/* Slider */}
-          <div className="flex justify-center animate-fade-in-up overflow-hidden h-auto lg:h-full">
-            <LazyComponent
-              Component={BrandSection}
-              props={{ data: Brandimage2 }}
-            />
-          </div>
+        {/* Slider Section - Below */}
+        <div className="mt-10 flex justify-center items-center">
+          <LazyComponent
+            Component={BrandSection}
+            props={{ data: Brandimage2 }}
+          />
         </div>
       </div>
 
       {/* Boost Revenue Section */}
-      <div className="container mx-auto py-16 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-white rounded-2xl shadow-lg">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight pt-8">
+      <div className="w-full max-w-[90%] mx-auto py-10 px-4 sm:px-6 lg:px-12 bg-gradient-to-r from-blue-50 to-white rounded-2xl shadow-lg mt-16">
+        {/* Heading Section */}
+        <div className="text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Boost Revenue & Grow Your Business
           </h2>
           <p className="text-lg md:text-xl mt-4 text-gray-600 max-w-3xl mx-auto">
@@ -283,12 +284,10 @@ export const Home = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="pb-2">
+        <div className="pt-4">
           <LazyComponent
             Component={Boxcontainer}
-            props={{
-              carddata: Boostrevenue,
-            }}
+            props={{ carddata: Boostrevenue }}
           />
         </div>
       </div>
@@ -296,7 +295,7 @@ export const Home = () => {
       {/* Insights Section */}
       <div className="container mx-auto py-16 px-6 md:px-12">
         {/* Heading Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <CommonHeading
             h="Insights & Updates"
             p="Stay updated with the latest trends and guides on API solutions."

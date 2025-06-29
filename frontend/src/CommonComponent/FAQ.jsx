@@ -5,15 +5,16 @@ import { memo } from "react";
 
 export const FAQ = memo(({ data }) => {
   return (
-    <div className="container mx-auto py-16 px-6 md:px-12">
-      <div className="grid md:grid-cols-2 gap-12 items-start bg-gray-50 rounded-2xl shadow-lg p-8">
+    <div className="w-full max-w-[94%] mx-auto py-20 px-4 sm:px-6 lg:px-12">
+      <div className="grid md:grid-cols-2 gap-16 items-start bg-gray-50 rounded-2xl shadow-xl p-10">
         {/* Left Section - Heading & CTA */}
-        <div>
+        <div className="flex flex-col justify-center space-y-2">
           <CommonHeading
             h="FAQ"
             p="Find quick answers to your questions about our API services, integration, and support."
           />
-          <div className="mt-6 space-y-4">
+
+          <div className="flex flex-col items-center text-center space-y-2">
             <p className="text-gray-800 font-medium text-lg">
               Any questions left unanswered?
             </p>

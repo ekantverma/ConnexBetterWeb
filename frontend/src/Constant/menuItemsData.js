@@ -14,11 +14,14 @@ export const menuItemsData = [
           { title: "SMS API", link: "/SMSAPI" },
           { title: "Bulk SMS", link: "/BulkSMS" },
           { title: "International SMS", link: "/InternationalSMS" },
-          { title: "Two Factor Authentication", link: "/TwoFactorAuthentication" },
+          {
+            title: "Two Factor Authentication",
+            link: "/TwoFactorAuthentication",
+          },
         ],
       },
       { title: "RCS Messaging", link: "/RCS" },
-      { title: "WhatsApp API Pricing", link: "/Whatsapp" },
+      { title: "WhatsApp Business API", link: "/Whatsapp" },
       { title: "Bulk Email", link: "/Email" },
       {
         title: "Voice Services",
@@ -50,7 +53,7 @@ export const menuItemsData = [
       { title: "SMS API", link: "/Developers/SMSAPI" },
       { title: "Email API", link: "/Developers/EmailAPI" },
       { title: "Voice API", link: "/Developers/VoiceAPI" },
-      // { title: "Whatsapp API", link: "/Developer/WhatsdocsApi" },
+      { title: "Whatsapp API", link: "/Developers/WhatsdocsApi" },
     ],
   },
   {

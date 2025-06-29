@@ -63,7 +63,7 @@ const SmsApi = () => {
         <div className="space-y-4">
           <DocsAPI
             title="SMS API with Message Template"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&pe_id=ENTITY_ID&template_id=DLT_TEMPLATE_ID"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&pe_id=ENTITY_ID&template_id=DLT_TEMPLATE_ID"
           />
           <div className="text-red-600 text-sm italic">
             *Note: If message content is Unicode, kindly add parameter
@@ -98,7 +98,7 @@ const SmsApi = () => {
         <div className="space-y-4">
           <DocsAPI
             title="SMS API with SID"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sid=1001&name=Twinkle&otp=1234"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sid=1001&name=Twinkle&otp=1234"
             description="Here, 'name' and 'otp' parameters are auto-added to the API and their values shall be replaced in the template body. You can also create Voice and Email templates and use them in the above API for parallel or fallback usages."
           />
         </div>
@@ -107,7 +107,7 @@ const SmsApi = () => {
         <div className="space-y-4">
           <DocsAPI
             title="Parallel Usage"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&voice=Hello, your otp is 1234"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&voice=Hello, your otp is 1234"
             description="If you wish to send both voice call and SMS message to the recipient mobile, you can do that using the below API:"
           />
           <div className="text-red-600 text-sm italic">
@@ -120,7 +120,7 @@ const SmsApi = () => {
         <div className="space-y-4">
           <DocsAPI
             title="Use Fallback"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&fb1voice=Hello, your otp is 1234"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&fb1voice=Hello, your otp is 1234"
             description="If you wish to trigger fallback only if SMS delivery fails, you can do that by using the below API:"
           />
           <div className="text-red-600 text-sm italic">
@@ -136,7 +136,7 @@ const SmsApi = () => {
             <div className="space-y-4">
               <DocsAPI
                 title="Send SMS in Other Country (International):"
-                apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID"
+                apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID"
               />
             </div>
 
@@ -153,7 +153,7 @@ const SmsApi = () => {
               </p>
               <DocsAPI
                 title="Event API"
-                apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&eid=EventId"
+                apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&eid=EventId"
                 description="Event APIs are shorter and can include fallback and parallel mechanisms on all three channels — SMS, Voice, and Email."
               />
               <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
@@ -185,7 +185,7 @@ const SmsApi = () => {
               </p>
               <DocsAPI
                 title="API Request with Dynamic Values"
-                apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&email=RecepientEmail&country_code=CountryCode&eid=EventId&name=Ashish&otp=1234&company=Datagen"
+                apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&email=RecepientEmail&country_code=CountryCode&eid=EventId&name=Ashish&otp=1234&company=Datagen"
               />
             </div>
           </div>

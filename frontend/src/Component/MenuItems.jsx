@@ -4,7 +4,9 @@ import { useState, useEffect, useRef } from "react";
 
 const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
   const [dropdown, setDropdown] = useState(false);
-  let ref = useRef();
+  const ref = useRef();
+  const timeoutRef = useRef(null);
+
   useEffect(() => {
     const handler = (event) => {
       if (dropdown && ref.current && !ref.current.contains(event.target)) {
@@ -16,14 +18,21 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
     return () => {
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("touchstart", handler);
+      clearTimeout(timeoutRef.current);
     };
   }, [dropdown]);
+
   const onMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
     setDropdown(true);
   };
+
   const onMouseLeave = () => {
-    setDropdown(false);
+    timeoutRef.current = setTimeout(() => {
+      setDropdown(false);
+    }, 200); // 👈 user has 200ms to move into the dropdown
   };
+
   return (
     <li
       className={`${mobiletoggle ? "pl-2" : "menu-items"}`}
@@ -45,7 +54,9 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
               {depthLevel > 0 ? (
                 <span>&raquo;</span>
               ) : (
-                <span className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-90">▼</span>
+                <span className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-90">
+                  ▼
+                </span>
               )}
             </button>
           </NavLink>

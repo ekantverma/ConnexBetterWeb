@@ -18,14 +18,14 @@ const VoiceApi = () => {
 
         <DocsAPI
           title="Example Usage:"
-          apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&voice=Hello, your OTP is 1234"
+          apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&voice=Hello, your OTP is 1234"
         />
 
         {/* Parallel Usage Section */}
         <div className="space-y-4">
           <DocsAPI
             title="Parallel Usage"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&voice=Hello, your otp is 1234"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&sms=Hello, your OTP is 1234&sender=SENDERID&voice=Hello, your otp is 1234"
             description="If you wish to send both voice call and sms message to the recepientmobile, you can do that using below API:"
           />
           <div className="text-red-600 text-sm italic">
@@ -38,7 +38,7 @@ const VoiceApi = () => {
         <div className="space-y-4">
           <DocsAPI
             title="Use Fallback"
-            apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&voice=Hello, your OTP is 1234&sender=SENDERID&fb1sms=Hello, your otp is 1234"
+            apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&voice=Hello, your OTP is 1234&sender=SENDERID&fb1sms=Hello, your otp is 1234"
             description="If you wish to trigger fallback through sms, if voice call fails, you can do that by using below API:"
           />
           <div className="text-red-600 text-sm italic">
@@ -72,7 +72,7 @@ const VoiceApi = () => {
             Example usage for above template, assuming template id generated is
             1001
           </p>
-          <DocsAPI apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&vid=1001&name=Twinkle&otp=1234" />
+          <DocsAPI apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&country_code=CountryCode&vid=1001&name=Twinkle&otp=1234" />
           <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
             Here, <b>#name#</b> and <b>#otp#</b> parameters are auto-added to
             the API and their values shall be replaced in the template body ...
@@ -84,7 +84,7 @@ const VoiceApi = () => {
         </div>
         <DocsAPI
           title="Events:"
-          apiCode="https://api.authkey.io/request?authkey=AUTHKEY&msisdn=RecepientMobile&country_code=COUNTRYCode&eid=EventId"
+          apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&msisdn=RecepientMobile&country_code=COUNTRYCode&eid=EventId"
           description="Events are combinations of templates which you can create on the Authkey portal. Event definitions will include parallel sendings, fallback channels and setting up of requiredness of dynamic parameters in the chosen templates. Once created, you will have an event-id, which can be used to trigger the event using below API:"
         />
         <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
@@ -115,7 +115,7 @@ const VoiceApi = () => {
         </p>
         <DocsAPI
           title="Voice:"
-          apiCode="https://api.authkey.io/request?authkey=AUTHKEY&mobile=RecepientMobile&email=RecepientEmail&country_code=CountryCode&eid=EventId&name=Ashish&otp=1234&company=Datagen"
+          apiCode="https://api.connexbetter.com/request?authkey=AUTHKEY&mobile=RecepientMobile&email=RecepientEmail&country_code=CountryCode&eid=EventId&name=Ashish&otp=1234&company=Datagen"
           description="If we create an event using above three templates, the dynamic values shall be: name, otp & company Corresponding API request shall be:"
         />
         <div className="flex items-center justify-center">
