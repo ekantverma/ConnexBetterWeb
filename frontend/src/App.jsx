@@ -100,12 +100,26 @@ const routes = [
 ];
 
 // Router Configuration
+// const router = createBrowserRouter(
+//   routes.map(({ path, element }) => ({
+//     path,
+//     element: <PageWrapper>{element}</PageWrapper>,
+//   }))
+// );
+
 const router = createBrowserRouter(
-  routes.map(({ path, element }) => ({
-    path,
-    element: <PageWrapper>{element}</PageWrapper>,
-  }))
+  routes.map(({ path, element }) => {
+    if (path === "admin") {
+      return { path, element }; // No wrapper for admin
+    }
+
+    return {
+      path,
+      element: <PageWrapper>{element}</PageWrapper>,
+    };
+  })
 );
+
 
 // Main App Component
 const App = () => {
