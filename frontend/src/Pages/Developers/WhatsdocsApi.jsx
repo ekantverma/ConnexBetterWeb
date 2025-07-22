@@ -10,8 +10,8 @@ const WhatsdocsApi = () => {
           WhatsApp API Documentation
         </h1>
         <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
-          Sending WhatsApp using authkey.io APIs is a breeze and lightning fast.
-          Simply pass the message body, mobile number & authkey.io in the API
+          Sending WhatsApp using ConnexBetter.io APIs is a breeze and lightning fast.
+          Simply pass the message body, mobile number & ConnexBetter.io in the API
           request to send WhatsApp Message instantly.
         </p>
         {/* Email Templates */}
@@ -20,7 +20,7 @@ const WhatsdocsApi = () => {
             WhatsApp Templates:
           </h2>
           <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
-            You can also create templates in the authkey.io portal and use the
+            You can also create templates in the ConnexBetter.io portal and use the
             template ID (wid) in the API request. Templates are necessary in
             case of dynamic content present in the message. For example, in
             order to send an OTP message, you can create a template as below:
@@ -38,16 +38,16 @@ const WhatsdocsApi = () => {
             Example usage for above template, assuming WhatsApp Template id
             (wid) generated as 101 is as follows:
           </p>
-          <DocsAPI apiCode="https://console.connexbetter.com/request? authkey=authkey.io&mobile=RecepientMobile&country_code=CountryCode&wid=101&name=Twinkle&otp=1234" />
+          <DocsAPI apiCode="https://console.connexbetter.com/request? ConnexBetter=ConnexBetter.io&mobile=RecepientMobile&country_code=CountryCode&wid=101&name=Twinkle&otp=1234" />
           <p className="text-lg text-gray-700 bg-gray-50 p-5 rounded-lg shadow-md border border-gray-200 leading-relaxed">
             Here, #name# and #otp# parameters are auto-added to the API and
             their values shall be replaced in the template body ...
           </p>
         </div>
         <DocsAPI
-          title="Authkey Balance:"
-          apiCode="https://console.connexbetter.com/restapi/getbalance.php?authkey=authkey"
-          description="To fetch your authkey balance just pass your {#authkey#} as parameter, You can find {#authkey#} into your My Account > Profile"
+          title="ConnexBetter Balance:"
+          apiCode="https://console.connexbetter.com/restapi/getbalance.php?ConnexBetter=ConnexBetter"
+          description="To fetch your ConnexBetter balance just pass your {#ConnexBetter#} as parameter, You can find {#ConnexBetter#} into your My Account > Profile"
         />
 
         <div className="font-bold text-lg">
@@ -56,7 +56,7 @@ const WhatsdocsApi = () => {
 
         <DocsAPI
           title="API using GET Request [Multimedia]:"
-          apiCode="https://console.connexbetter.com/restapi/request.php? authkey=XXXXXX&mobile=XXXXXXXXXX&country_code=91&wid=templateid&template_type=media&headerFileName=BillDetails&HeaderData=https://abc.pdf"
+          apiCode="https://console.connexbetter.com/restapi/request.php? ConnexBetter=XXXXXX&mobile=XXXXXXXXXX&country_code=91&wid=templateid&template_type=media&headerFileName=BillDetails&HeaderData=https://abc.pdf"
         ></DocsAPI>
 
         <DocsAPI
@@ -84,7 +84,7 @@ const WhatsdocsApi = () => {
                 <tr>
                   <td className="px-6 py-4 text-gray-800">Authorization</td>
                   <td className="px-6 py-4 text-gray-600">
-                    Basic &lt;Your Api_Key&gt; = Your authkey portal authkey
+                    Basic &lt;Your Api_Key&gt; = Your ConnexBetter portal ConnexBetter
                   </td>
                 </tr>
                 <tr>
@@ -117,7 +117,7 @@ const WhatsdocsApi = () => {
           <strong>WhatsApp API Parameters:</strong>
           <br />
           <br />
-          &lt;Your authkey&gt; = Your portal authkey
+          &lt;Your ConnexBetter&gt; = Your portal ConnexBetter
           <br />
           country_code = xx
           <br />

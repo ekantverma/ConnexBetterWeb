@@ -4,7 +4,7 @@ const codeSnippets = {
   PHP: `<?php
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://console.authkey.io/restapi/requestjson.php",
+  CURLOPT_URL => "https://console.ConnexBetter.io/restapi/requestjson.php",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => json_encode([
@@ -22,7 +22,7 @@ curl_close($curl);
 echo $response;
 ?>`,
   Python: `import requests
-url = "https://console.authkey.io/restapi/requestjson.php"
+url = "https://console.ConnexBetter.io/restapi/requestjson.php"
 headers = {
   "Content-Type": "application/json",
   "Authorization": "Basic <Api_Key>"
@@ -42,7 +42,7 @@ import (
   "net/http"
 )
 func main() {
-  url := "https://console.authkey.io/restapi/requestjson.php"
+  url := "https://console.ConnexBetter.io/restapi/requestjson.php"
   data := map[string]string{
     "country_code": "91",
     "mobile": "xxxxx",
@@ -62,7 +62,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 public class Main {
   public static void main(String[] args) throws Exception {
-    URL url = new URL("https://console.authkey.io/restapi/requestjson.php");
+    URL url = new URL("https://console.ConnexBetter.io/restapi/requestjson.php");
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
     conn.setRequestMethod("POST");
     conn.setRequestProperty("Content-Type", "application/json");
@@ -79,7 +79,7 @@ public class Main {
   JavaScript: `var request = require('request');
 var options = {
   method: 'POST',
-  url: 'https://console.authkey.io/restapi/requestjson.php',
+  url: 'https://console.ConnexBetter.io/restapi/requestjson.php',
   headers: {
     'Content-Type': 'application/json',
     'Authorization': 'Basic <Api_Key>'
@@ -94,7 +94,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
 });`,
-  cURL: `curl -X POST https://console.authkey.io/restapi/requestjson.php \\
+  cURL: `curl -X POST https://console.ConnexBetter.io/restapi/requestjson.php \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Basic <Api_Key>" \\
   -d '{"country_code":"91","mobile":"xxxxx","sid":"**"}'`,
@@ -103,7 +103,7 @@ request(options, function (error, response) {
   "Authorization" = "Basic <Api_Key>"
 }
 $body = '{"country_code":"91","mobile":"xxxxx","sid":"**"}'
-Invoke-RestMethod -Uri "https://console.authkey.io/restapi/requestjson.php" -Method Post -Headers $headers -Body $body`,
+Invoke-RestMethod -Uri "https://console.ConnexBetter.io/restapi/requestjson.php" -Method Post -Headers $headers -Body $body`,
   "C#": `using System;
 using System.Net.Http;
 using System.Text;
@@ -113,7 +113,7 @@ class Program {
     using var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Basic <Api_Key>");
     var content = new StringContent("{\"country_code\":\"91\",\"mobile\":\"xxxxx\",\"sid\":\"**\"}", Encoding.UTF8, "application/json");
-    var response = await client.PostAsync("https://console.authkey.io/restapi/requestjson.php", content);
+    var response = await client.PostAsync("https://console.ConnexBetter.io/restapi/requestjson.php", content);
     string result = await response.Content.ReadAsStringAsync();
     Console.WriteLine(result);
   }
@@ -121,7 +121,7 @@ class Program {
   "Node.js": `var request = require('request');
 var options = {
   method: 'POST',
-  url: 'https://console.authkey.io/restapi/requestjson.php',
+  url: 'https://console.ConnexBetter.io/restapi/requestjson.php',
   headers: {
     'Content-Type': 'application/json',
     'Authorization': 'Basic <Api_Key>'
@@ -138,14 +138,14 @@ request(options, function (error, response) {
 });`,
   Ruby: `require 'net/http'
 require 'json'
-uri = URI('https://console.authkey.io/restapi/requestjson.php')
+uri = URI('https://console.ConnexBetter.io/restapi/requestjson.php')
 req = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')
 req['Authorization'] = 'Basic <Api_Key>'
 req.body = {country_code: '91', mobile: 'xxxxx', sid: '**'}.to_json
 res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) {|http| http.request(req)}
 puts res.body`,
   Swift: `import Foundation
-var request = URLRequest(url: URL(string: "https://console.authkey.io/restapi/requestjson.php")!)
+var request = URLRequest(url: URL(string: "https://console.ConnexBetter.io/restapi/requestjson.php")!)
 request.httpMethod = "POST"
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 request.addValue("Basic <Api_Key>", forHTTPHeaderField: "Authorization")
