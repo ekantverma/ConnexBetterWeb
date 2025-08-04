@@ -1,8 +1,8 @@
 import { CommonHeading } from "../CommonComponent/CommonHeading";
-import { Card } from "./Card";
+import { TextCard } from "./TextCard";
 import { memo } from "react";
 
-const Boxcontainer = memo(({ heading, para, carddata }) => {
+const TextCardContainer = memo(({ heading, para, carddata }) => {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-1 mx-auto">
       
@@ -15,9 +15,10 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
         />
       </div>
 
-      {/* Responsive Card Grid */}
+      {/* Fixed 3 Cards Per Line on Large Screens */}
       <div
-        className={`grid gap-6 w-full justify-center
+        className={`
+          grid gap-6 w-full justify-center
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
@@ -25,7 +26,7 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
       >
         {carddata.map((ele) => (
           <div key={ele.id} className="flex justify-center">
-            <Card
+            <TextCard
               ele={ele}
               className="w-full max-w-xs sm:max-w-sm"
             />
@@ -36,4 +37,4 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
   );
 });
 
-export default Boxcontainer;
+export default TextCardContainer;

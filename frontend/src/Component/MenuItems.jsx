@@ -30,7 +30,7 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
   const onMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setDropdown(false);
-    }, 200); // 👈 user has 200ms to move into the dropdown
+    }, 200);
   };
 
   return (
@@ -40,7 +40,7 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {items.submenu ? (
+      {items.submenu && items.submenu.length > 0 ? (
         <>
           <NavLink to={items.link}>
             <button
@@ -50,7 +50,7 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
               onClick={() => setDropdown((prev) => !prev)}
               className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-600 focus:outline-none"
             >
-              {items.title}{" "}
+              {items.title}
               {depthLevel > 0 ? (
                 <span>&raquo;</span>
               ) : (

@@ -3,6 +3,13 @@ import whatsappicon from "../assets/HomeImage/IMAGE/WhatsappSVG.svg";
 import emailicon from "../assets/HomeImage/IMAGE/EmailSVG.svg";
 import voiceicon from "../assets/HomeImage/IMAGE/VoiceSVG.svg";
 import smsicon from "../assets/HomeImage/IMAGE/SmsSVG.svg"
+import aiagent from "../assets/HomeImage/IMAGE/hugeicons_ai-network.svg"
+import mainsmsapiimg from "../assets/HomeImage/IMAGE/smsapiimg.png"
+import whatsappapiimg from "../assets/HomeImage/IMAGE/whatsapapiimg.png"
+import voiceapiimg from "../assets/HomeImage/IMAGE/voiceapiimg.png";
+import mailapiimg from "../assets/HomeImage/IMAGE/mailapiimg.png"
+import rcs_img from "../assets/HomeImage/IMAGE/rcs-img.png";
+import aiagent_img from "../assets/HomeImage/IMAGE/AI-agents-img.png"
 // image of why choose 
 import savingicon from "../assets/HomeImage/IMAGE/SavingSVG.svg";
 import benifiticon from "../assets/HomeImage/IMAGE/verticleLine.svg";
@@ -72,8 +79,8 @@ export const Brandimage=[
     { "name": "Brand 6", "logo": brands4},
     { "name": "Brand 7", "logo": brands5},
     { "name": "Brand 7", "logo": brands6},
-    { "name": "Brand 8", "logo": brands7},
-    { "name": "Brand 9", "logo": brands8},
+    // { "name": "Brand 8", "logo": brands7},
+    // { "name": "Brand 9", "logo": brands8},
     // { "name": "Brand 10", "logo": brands9},
     { "name": "Brand 5", "logo": brands3},
     { "name": "Brand 6", "logo": brands4},
@@ -89,7 +96,8 @@ export const Brandimage=[
         "Send bulk SMS to boost customer interaction. Integrate SMS API into your applications for automated SMS and instant OTP delivery solutions.",
       showbtton:true,
       bttonlink:"/SMS" ,
-      btnstyle:"change" 
+      btnstyle:"change",
+      mainImg : mainsmsapiimg
     },
     {
       id: "offer-2",
@@ -99,7 +107,8 @@ export const Brandimage=[
         "Rich communication, verified sender info, better UX with rich media, boosted engagement, and real-time analytics with read receipts via Google Messages.",
         showbtton:true,
         bttonlink:"/RCS"  ,
-        btnstyle:"change" 
+        btnstyle:"change" ,
+        mainImg: rcs_img,
     },
     {
       id: "offer-3",
@@ -109,7 +118,8 @@ export const Brandimage=[
       "Broadcast promotions, automate support, enhance engagement with chatbots and send automatic payment confirmations.",
       showbtton:true,
       bttonlink:"/WhatsApp",
-      btnstyle:"change" 
+      btnstyle:"change" ,
+      mainImg : whatsappapiimg
     },
     {
       id: "offer-4",
@@ -119,7 +129,8 @@ export const Brandimage=[
       "Enhance Engagement with Targeted Bulk Emails: High Open Rates, Real-Time Updates, and Personalized Marketing Campaigns.",
       showbtton:true,
       bttonlink:"/Email",
-      btnstyle:"change" 
+      btnstyle:"change" ,
+      mainImg : mailapiimg
     },
     {
       id: "offer-5",
@@ -129,7 +140,18 @@ export const Brandimage=[
         "Our IVR system offers cloud-based solutions to boost customer acquisition, enhance engagement, and improve ROI and efficiency.",
       showbtton:true,
       bttonlink:"/Voice",
-      btnstyle:"change" 
+      btnstyle:"change" ,
+      mainImg : voiceapiimg
+    },
+    {
+      id: "offer-6",
+      img: aiagent,
+      title: "AI Agent",
+      content:"Generate more leads, close deals faster, and automate support with AI agents designed for your business needs.",
+      showbtton:true,
+      bttonlink:"/AIagent",
+      btnstyle:"change",
+      mainImg : aiagent_img,
     }
   ];
 

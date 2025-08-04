@@ -17,13 +17,13 @@ export default function Multilevelnav() {
 
   return (
     <>
-      <header className="text-lg pt-2 sticky top-0 z-50 h-20 bg-transparent backdrop-blur-lg transition-all duration-300 ease-in-out">
-        <section className="flex items-center justify-between px-6 md:px-16 h-20 z-10 transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-lg shadow-sm">
+      <header className="text-lg sticky top-0 z-50 h-20 transition-all duration-300 ease-in-out border-b-[0.5px] border-solid border-[#E5E5E5]/10 bg-white shadow-[0_1px_5.7px_0_rgba(0,0,0,0.25)]">
+        <section className="flex items-center justify-between md:px-16 h-20 z-10 transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-lg shadow-sm">
           {/* Logo Section */}
           <NavLink to="/" className="flex items-center gap-3 group">
             <div
               id="logo"
-              className="flex items-center gap-3 transform transition-all duration-300 ease-in-out hover:scale-105"
+              className="flex items-center transform transition-all duration-300 ease-in-out hover:scale-105"
             >
               <img
                 src={logo}
@@ -39,7 +39,7 @@ export default function Multilevelnav() {
 
           {/* Desktop Navigation */}
           <nav className="main-nav hidden lg:flex">
-            <ul className="menus flex gap-3 text-gray-800 text-sm font-medium">
+            <ul className="menus flex gap-8 text-gray-800 text-sm font-semibold">
               {menuItemsData.map((menu, index) => (
                 <li key={index} className="relative group">
                   <MenuItems items={menu} depthLevel={depthLevel} />
@@ -53,13 +53,13 @@ export default function Multilevelnav() {
           <div className="hidden lg:flex gap-4 items-center text-base">
             <a
               href="/Contact"
-              className="bg-primary text-white bg-blue-600 text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all duration- hover:bg-opacity-90"
+              className="bg-primary text-white bg-[#5956D6] text-lg font-semibold px-6 py-3 rounded-[8px] shadow-md transition-all duration- hover:bg-opacity-90"
             >
               Get 500 free SMS
             </a>
             <a
               href="tel:+919220696606"
-              className="bg-primary text-white bg-blue-600 text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all duration- hover:bg-opacity-90"
+              className="bg-primary text-white bg-[#5956D6] text-lg font-semibold px-6 py-3 rounded-[8px] shadow-md transition-all duration- hover:bg-opacity-90"
             >
               📞 +91 92206 96606
             </a>

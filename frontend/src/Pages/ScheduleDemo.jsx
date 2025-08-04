@@ -2,6 +2,12 @@ import { CommonHeading } from "../CommonComponent/CommonHeading";
 import RadiobuttonwithText from "../CommonComponent/RadiobuttonwithText";
 import { useState } from "react";
 import axios from "axios";
+import truecallerlogo from "../assets/HomeImage/IMAGE/truecallerlogo.png";
+import metalogo from "../assets/HomeImage/IMAGE/metalogo.png";
+import BrandSection from "../CommonComponent/BrandSection";
+import ShimmerUI from "../Component/ShimmerUI";
+import { Suspense } from "react";
+import {Brandimage} from "../Constant/Homedata.js"
 
 function ScheduleDemo() {
   const [formData, setFormData] = useState({
@@ -16,6 +22,12 @@ function ScheduleDemo() {
 
   const [responseMessage, setResponseMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const LazyComponent = ({ Component, props = {} }) => (
+  <Suspense fallback={<ShimmerUI />}>
+    <Component {...props} />
+  </Suspense>
+);
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -67,41 +79,101 @@ function ScheduleDemo() {
   };
 
   return (
-    <section className="pt-10">
-      <div className="container grid md:grid-cols-2 gap-10">
-        <div className="flex flex-col justify-between">
-          <div>
+    <section className="pt-6 mx-16 md:mx-20 lg:mx-24 xl:mx-32">
+      <CommonHeading h="Schedule a Demo" width="full" />
+      <div className="container grid md:grid-cols-2 gap-20">
+        <div className="flex flex-col gap-10">
+          {/* Heading and Radio Options */}
+          <div className="space-y-1">
             <CommonHeading
-              h="Schedule a Demo"
               p="Interested in learning more about Connex Better? You came to the right place. Feel free to ask whatever comes to mind."
               width="full"
             />
             <RadiobuttonwithText text="We are happy to answer your questions and get you acquainted with Workwize! Please submit your details." />
             <RadiobuttonwithText text="One of our experts will listen to your specific needs, show our platform, and explore with you to see if there's a fit." />
           </div>
-          <div className="container hidden md:block">
-            <div>
-              <p>More inquiries:</p>
-              <p className="font-semibold">Support@connexbetter.com</p>
+
+          {/* Contact Info Box (Visible on md+) */}
+          <div className="hidden md:block bg-[#3E058A]/90 rounded-xl text-white p-8 max-w-4xl mx-auto shadow-lg">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Inquiries Section */}
+              <div>
+                <p className="text-xl text-white opacity-80">More inquiries:</p>
+                <p className="text-lg font-semibold text-white">
+                  Support@connexbetter.com
+                </p>
+              </div>
+
+              {/* Address Section */}
+              <div>
+                <p className="text-xl text-white opacity-80">
+                  Connex Better Headquarters:
+                </p>
+                <p className="text-lg font-semibold leading-relaxed text-white">
+                  Innov8, 3rd Floor, Plot No. 211,
+                  <br />
+                  Okhla Phase 3, Delhi, Delhi 110020, IN
+                </p>
+              </div>
             </div>
-            <div>
-              <p>Connex Better headquarters</p>
-              <p className="font-semibold">
-                Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3, Delhi, Delhi
-                110020, IN
+          </div>
+          {/* Highlight Boxes */}
+          <div className="flex flex-wrap md:flex-nowrap gap-2">
+            <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
+              <p className="text-blue-700 font-semibold text-lg text-center leading-snug">
+                7 Days <br /> Free Trial
               </p>
+              <p className="text-[10px] text-grey-200 text-center leading-tight text-xs">
+                No payment required
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
+              <p className="text-blue-700 font-semibold text-lg text-center leading-snug">
+                An IIM- <br /> Alumni
+              </p>
+              <p className="text-[10px] text-grey-200 text-center leading-tight text-xs">
+                Founded Company
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center p-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
+              <img
+                src={metalogo}
+                alt="Meta logo"
+                className="max-h-[80px] object-contain"
+              />
+            </div>
+
+            <div className="flex items-center justify-center p-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
+              <img
+                src={truecallerlogo}
+                alt="Truecaller logo"
+                className="max-h-[80px] object-contain"
+              />
             </div>
           </div>
         </div>
 
-        <div className="bg-gray-100 p-6 rounded-xl shadow-lg">
+        <div className="bg-white p-6 rounded-sm shadow-lg">
+          <div className="flex flex-col items-center text-center mb-5">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+              Get Started Risk Free
+            </h2>
+            <p className="text-gray-600 text-xl">
+              7 days money back guarantee. No questions asked.
+            </p>
+          </div>
+
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-5"
           >
             {/* Email Field */}
             <div className="col-span-2">
-              <label className="text-gray-700 font-semibold">Email</label>
+              <label className="text-black font-semibold text-lg">
+                Email <span className="text-red-500">*</span>
+              </label>
               <input
                 type="email"
                 name="email"
@@ -115,7 +187,9 @@ function ScheduleDemo() {
 
             {/* Name Field */}
             <div className="md:col-span-1">
-              <label className="text-gray-700 font-semibold">Your Name</label>
+              <label className="text-black font-semibold text-lg">
+                Your Name <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
                 name="name"
@@ -129,7 +203,7 @@ function ScheduleDemo() {
 
             {/* Company Name Field */}
             <div className="md:col-span-1">
-              <label className="text-gray-700 font-semibold">
+              <label className="text-black font-semibold text-lg">
                 Company Name
               </label>
               <input
@@ -144,8 +218,8 @@ function ScheduleDemo() {
 
             {/* Phone Number Field */}
             <div className="md:col-span-1">
-              <label className="text-gray-700 font-semibold">
-                Phone Number
+              <label className="text-black font-semibold text-lg">
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
@@ -162,7 +236,7 @@ function ScheduleDemo() {
 
             {/* Company Size Field */}
             <div className="md:col-span-1">
-              <label className="text-gray-700 font-semibold">
+              <label className="text-black font-semibold text-lg">
                 Company Size
               </label>
               <input
@@ -177,7 +251,7 @@ function ScheduleDemo() {
 
             {/* Interest Product Field */}
             <div className="col-span-2">
-              <label className="text-gray-700 font-semibold">
+              <label className="text-black font-semibold text-lg">
                 What product are you interested in?
               </label>
               <select
@@ -198,7 +272,9 @@ function ScheduleDemo() {
 
             {/* Message Field */}
             <div className="col-span-2">
-              <label className="text-gray-700 font-semibold">Message</label>
+              <label className="text-black font-semibold text-lg">
+                Message
+              </label>
               <textarea
                 name="msg"
                 rows={4}
@@ -225,7 +301,7 @@ function ScheduleDemo() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-lg w-full transition duration-300 ease-in-out ${
+                className={`bg-[#5956D6] hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-lg w-full transition duration-300 ease-in-out ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
@@ -246,6 +322,68 @@ function ScheduleDemo() {
               {responseMessage.text}
             </p>
           )}
+        </div>
+      </div>
+      <div className="w-full mx-0">
+        {/* Header Section */}
+        <div className="px-4 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-700 animate-fade-in-up">
+            Trusted by 1100+ Businesses
+          </h2>
+        </div>
+
+        {/* Brand Section */}
+        <div className="px-4 my-4">
+          <LazyComponent
+            Component={BrandSection}
+            props={{ data: Brandimage }}
+            className="animate-fade-in-up"
+          />
+        </div>
+
+        {/* Stats Cards Section */}
+        <div className="py-12 px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+              <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
+                10<span className="text-[#5956D6]">+</span>
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-1">
+                Registered Users
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+              <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
+                254<span className="text-[#5956D6]">+</span>
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-1">
+                Millions Voice Pulses Annually
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+              <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
+                99.9<span className="text-[#5956D6]">%</span>
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-1">
+                API Uptime
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+              <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
+                600<span className="text-[#5956D6]">+</span>
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-1">
+                Operators Connections
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

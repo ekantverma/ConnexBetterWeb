@@ -1,8 +1,8 @@
 import { CommonHeading } from "../CommonComponent/CommonHeading";
-import { Card } from "./Card";
+import { RevenueCard } from "./RevenueCard";
 import { memo } from "react";
 
-const Boxcontainer = memo(({ heading, para, carddata }) => {
+const RevenueCardContainer = memo(({ heading, para, carddata }) => {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-1 mx-auto">
       
@@ -15,20 +15,17 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
         />
       </div>
 
-      {/* Responsive Card Grid */}
+      {/* Grid: 1-2-3-4 Columns */}
       <div
-        className={`grid gap-6 w-full justify-center
+        className="grid gap-8 w-full
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-        `}
+          xl:grid-cols-4"
       >
         {carddata.map((ele) => (
           <div key={ele.id} className="flex justify-center">
-            <Card
-              ele={ele}
-              className="w-full max-w-xs sm:max-w-sm"
-            />
+            <RevenueCard ele={ele} />
           </div>
         ))}
       </div>
@@ -36,4 +33,4 @@ const Boxcontainer = memo(({ heading, para, carddata }) => {
   );
 });
 
-export default Boxcontainer;
+export default RevenueCardContainer;

@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 *{
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: "Afacad", "Helvetica";
 }
 html {
   font-size: 80%;
@@ -18,7 +18,7 @@ section {
 }
 h1,h2,h3,h4{
   
-    font-family: "Montserrat", serif;
+    font-family: "Afacad", Helvetica;
 }
 :root {
   color-scheme: light;
@@ -26,6 +26,10 @@ h1,h2,h3,h4{
   --secondarycolor: #f5f7ff;
   --tertiarycolor: #555555;
   --supportcolor: #f8f8f8;
+  --background: #E9F8F6;
+}
+body {
+  background-color: var(--background);
 }
 p{
   color: var(--tertiarycolor);
@@ -199,4 +203,3 @@ html{
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out forwards;
 }
-

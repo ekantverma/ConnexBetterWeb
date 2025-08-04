@@ -1,8 +1,8 @@
 export const menuItemsData = [
-  {
-    title: "Home",
-    link: "/",
-  },
+  // {
+  //   title: "Home",
+  //   link: "/",
+  // },
   {
     title: "Products",
     link: "#",
@@ -37,7 +37,7 @@ export const menuItemsData = [
     ],
   },
   {
-    title: "Pricing",
+    title: "Solutions",
     submenu: [
       { title: "Bulk SMS Pricing", link: "/SMSpricing" },
       { title: "RCS Pricing", link: "/RCSpricing" },
@@ -57,14 +57,24 @@ export const menuItemsData = [
     ],
   },
   {
-    title: "About Us",
-    link: "#",
+    title: "Pricing",
     submenu: [
-      { title: "About Company", link: "/About" },
-      { title: "Blog", link: "/Blog" },
-      { title: "Careers", link: "/Career" },
-      { title: "Contact Us", link: "/Contact" },
-      { title: "Schedule Demo", link: "/ScheduleDemo" },
+      { title: "Bulk SMS Pricing", link: "/SMSpricing" },
+      { title: "RCS Pricing", link: "/RCSpricing" },
+      { title: "WhatsApp API Pricing", link: "/WhatsApppricing" },
+      { title: "Bulk Email Pricing", link: "/EmailPricing" },
+      { title: "Voice Pricing", link: "/Voicepricing" },
+    ],
+  },
+  {
+    title: "About Us",
+    link: "/About",
+    submenu: [
+      // { title: "About Company", link: "/About" },
+      // { title: "Blog", link: "/Blog" },
+      // { title: "Careers", link: "/Career" },
+      // { title: "Contact Us", link: "/Contact" },
+      // { title: "Schedule Demo", link: "/ScheduleDemo" },
     ],
   },
 ];
