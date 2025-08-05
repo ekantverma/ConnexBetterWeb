@@ -56,7 +56,7 @@ export const Home = () => {
     <section>
       <div className="relative w-full h-full overflow-hidden flex items-start justify-center mb-16">
         {/* Hero Section */}
-        <div className="relative px-4 grid gap-10 md:grid-cols-2 items-center">
+        <div className="relative grid gap-10 md:grid-cols-2 items-center">
           {/* Left Section (Text & Button) */}
           <div className="flex flex-col gap-4 md:gap-6 items-start justify-center animate-fadeIn mt-36 md:mt-10 sm:mt-4">
             {/* Title */}

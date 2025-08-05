@@ -14,7 +14,7 @@ html {
 section {
   max-width: 1280px;
   margin: auto;
-  padding: 0 1rem 0 1rem;
+  /* padding: 0 1rem 0 1rem; */
 }
 h1,h2,h3,h4{
   
@@ -202,4 +202,19 @@ html{
 
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 79px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0E80A9; /* Your color */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }
