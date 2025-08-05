@@ -2,7 +2,7 @@ export const CommonHeading = ({ h, p, width = "half", align = "center" }) => {
   return (
     <div className={`flex flex-col gap-4 pb-2 text-${align} items-${align}`}>
       {/* Main Heading */}
-      <h2 className="text-4xl md:text-5xl font-bold text-[#0052CC] leading-tight">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#0052CC] leading-tight sm:pb-0 sm:gap-0">
         {h}
       </h2>
 

@@ -7,7 +7,7 @@ import metalogo from "../assets/HomeImage/IMAGE/metalogo.png";
 import BrandSection from "../CommonComponent/BrandSection";
 import ShimmerUI from "../Component/ShimmerUI";
 import { Suspense } from "react";
-import {Brandimage} from "../Constant/Homedata.js"
+import { Brandimage } from "../Constant/Homedata.js";
 
 function ScheduleDemo() {
   const [formData, setFormData] = useState({
@@ -24,10 +24,10 @@ function ScheduleDemo() {
   const [loading, setLoading] = useState(false);
 
   const LazyComponent = ({ Component, props = {} }) => (
-  <Suspense fallback={<ShimmerUI />}>
-    <Component {...props} />
-  </Suspense>
-);
+    <Suspense fallback={<ShimmerUI />}>
+      <Component {...props} />
+    </Suspense>
+  );
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -81,249 +81,261 @@ function ScheduleDemo() {
   return (
     <section className="pt-6 mx-16 md:mx-20 lg:mx-24 xl:mx-32">
       <CommonHeading h="Schedule a Demo" width="full" />
-      <div className="container grid md:grid-cols-2 gap-20">
-        <div className="flex flex-col gap-10">
-          {/* Heading and Radio Options */}
-          <div className="space-y-1">
-            <CommonHeading
-              p="Interested in learning more about Connex Better? You came to the right place. Feel free to ask whatever comes to mind."
-              width="full"
-            />
-            <RadiobuttonwithText text="We are happy to answer your questions and get you acquainted with Workwize! Please submit your details." />
-            <RadiobuttonwithText text="One of our experts will listen to your specific needs, show our platform, and explore with you to see if there's a fit." />
-          </div>
+      <div className="container mx-auto px-4 py-10">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-start">
+          {/* Left Section */}
+          <div className="flex flex-col gap-10">
+            {/* Heading and Radio Options */}
+            <div className="space-y-4">
+            <div className="text-black">
+              <CommonHeading
+                p="Interested in learning more about Connex Better? You came to the right place. Feel free to ask whatever comes to mind."
+                width="full"
+              />
+              </div>
+              <RadiobuttonwithText text="We are happy to answer your questions and get you acquainted with Workwize! Please submit your details." />
+              <RadiobuttonwithText text="One of our experts will listen to your specific needs, show our platform, and explore with you to see if there's a fit." />
+            </div>
 
-          {/* Contact Info Box (Visible on md+) */}
-          <div className="hidden md:block bg-[#3E058A]/90 rounded-xl text-white p-8 max-w-4xl mx-auto shadow-lg">
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Inquiries Section */}
-              <div>
-                <p className="text-xl text-white opacity-80">More inquiries:</p>
-                <p className="text-lg font-semibold text-white">
-                  Support@connexbetter.com
-                </p>
+            <div className="w-full bg-[#3E058A] bg-opacity-90 rounded-xl text-white p-6 sm:p-8 max-w-4xl mx-auto shadow-lg">
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Inquiries Section */}
+                <div>
+                  <p className="text-xl text-white opacity-80">More inquiries:</p>
+                  <p className="ttext-lg font-semibold text-white">
+                    Support@connexbetter.com
+                  </p>
+                </div>
+
+                {/* Address Section */}
+                <div>
+                  <p className="ttext-xl text-white opacity-80">
+                    Connex Better Headquarters:
+                  </p>
+                  <p className="text-lg font-semibold leading-relaxed text-white">
+                    Innov8, 3rd Floor, Plot No. 211,
+                    <br />
+                    Okhla Phase 3, Delhi, Delhi 110020, IN
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Highlight Boxes */}
+            <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
+              {[
+                {
+                  heading: "7 Days",
+                  sub: "No payment required",
+                  bold: "Free Trial",
+                },
+                {
+                  heading: "An IIM-",
+                  sub: "Founded Company",
+                  bold: "Alumni",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center gap-1 px-3 py-3 rounded-xl border border-[#D5D1D1] bg-white shadow-md w-[90px]"
+                >
+                  <p className="text-blue-700 font-semibold text-center leading-snug text-sm">
+                    {item.heading} <br /> {item.bold}
+                  </p>
+                  <p className="text-[10px] text-gray-500 text-center">
+                    {item.sub}
+                  </p>
+                </div>
+              ))}
+
+              <div className="flex items-center justify-center p-2 rounded-xl border border-[#D5D1D1] bg-white shadow-md w-[90px] h-[90px]">
+                <img src={metalogo} alt="Meta logo" className="max-h-[80px]" />
               </div>
 
-              {/* Address Section */}
-              <div>
-                <p className="text-xl text-white opacity-80">
-                  Connex Better Headquarters:
-                </p>
-                <p className="text-lg font-semibold leading-relaxed text-white">
-                  Innov8, 3rd Floor, Plot No. 211,
-                  <br />
-                  Okhla Phase 3, Delhi, Delhi 110020, IN
-                </p>
+              <div className="flex items-center justify-center p-2 rounded-xl border border-[#D5D1D1] bg-white shadow-md w-[90px] h-[90px]">
+                <img
+                  src={truecallerlogo}
+                  alt="Truecaller logo"
+                  className="max-h-[80px]"
+                />
               </div>
             </div>
           </div>
-          {/* Highlight Boxes */}
-          <div className="flex flex-wrap md:flex-nowrap gap-2">
-            <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
-              <p className="text-blue-700 font-semibold text-lg text-center leading-snug">
-                7 Days <br /> Free Trial
-              </p>
-              <p className="text-[10px] text-grey-200 text-center leading-tight text-xs">
-                No payment required
-              </p>
-            </div>
 
-            <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
-              <p className="text-blue-700 font-semibold text-lg text-center leading-snug">
-                An IIM- <br /> Alumni
-              </p>
-              <p className="text-[10px] text-grey-200 text-center leading-tight text-xs">
-                Founded Company
+          {/* Right Section (Form) */}
+          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+                Get Started Risk Free
+              </h2>
+              <p className="text-gray-600 text-base sm:text-lg">
+                7 days money back guarantee. No questions asked.
               </p>
             </div>
 
-            <div className="flex items-center justify-center p-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
-              <img
-                src={metalogo}
-                alt="Meta logo"
-                className="max-h-[80px] object-contain"
-              />
-            </div>
-
-            <div className="flex items-center justify-center p-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[80px] h-full">
-              <img
-                src={truecallerlogo}
-                alt="Truecaller logo"
-                className="max-h-[80px] object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-sm shadow-lg">
-          <div className="flex flex-col items-center text-center mb-5">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-              Get Started Risk Free
-            </h2>
-            <p className="text-gray-600 text-xl">
-              7 days money back guarantee. No questions asked.
-            </p>
-          </div>
-
-          <form
-            onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
-          >
-            {/* Email Field */}
-            <div className="col-span-2">
-              <label className="text-black font-semibold text-lg">
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email"
-              />
-            </div>
-
-            {/* Name Field */}
-            <div className="md:col-span-1">
-              <label className="text-black font-semibold text-lg">
-                Your Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your name"
-              />
-            </div>
-
-            {/* Company Name Field */}
-            <div className="md:col-span-1">
-              <label className="text-black font-semibold text-lg">
-                Company Name
-              </label>
-              <input
-                type="text"
-                name="companyname"
-                value={formData.companyname}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your company name"
-              />
-            </div>
-
-            {/* Phone Number Field */}
-            <div className="md:col-span-1">
-              <label className="text-black font-semibold text-lg">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-                pattern="[0-9]{10}"
-                title="Phone number must be 10 digits."
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your phone number"
-              />
-            </div>
-
-            {/* Company Size Field */}
-            <div className="md:col-span-1">
-              <label className="text-black font-semibold text-lg">
-                Company Size
-              </label>
-              <input
-                type="number"
-                name="companysize"
-                value={formData.companysize}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Number of employees"
-              />
-            </div>
-
-            {/* Interest Product Field */}
-            <div className="col-span-2">
-              <label className="text-black font-semibold text-lg">
-                What product are you interested in?
-              </label>
-              <select
-                name="intrestproduct"
-                required
-                value={formData.intrestproduct}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+              <form
+                onSubmit={handleSubmit}
+                className="col-span-full grid grid-cols-2 gap-5"
               >
-                <option value="">Select a Product</option>
-                <option value="SMS">SMS</option>
-                <option value="WhatsApp">WhatsApp</option>
-                <option value="RCS">RCS</option>
-                <option value="Email">Email</option>
-                <option value="Voice">Voice</option>
-              </select>
+                {/* Email */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                {/* Name */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Your Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your name"
+                  />
+                </div>
+
+                {/* Company Name */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    name="companyname"
+                    value={formData.companyname}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your company name"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    pattern="[0-9]{10}"
+                    title="Phone number must be 10 digits."
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+
+                {/* Company Size */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Company Size
+                  </label>
+                  <input
+                    type="number"
+                    name="companysize"
+                    value={formData.companysize}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Number of employees"
+                  />
+                </div>
+
+                {/* Product Interest */}
+                <div>
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    What product are you interested in?
+                  </label>
+                  <select
+                    name="intrestproduct"
+                    required
+                    value={formData.intrestproduct}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="">Select a Product</option>
+                    <option value="SMS">SMS</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="RCS">RCS</option>
+                    <option value="Email">Email</option>
+                    <option value="Voice">Voice</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div className="md:col-span-2">
+                  <label className="text-black font-semibold text-sm sm:text-base">
+                    Message
+                  </label>
+                  <textarea
+                    name="msg"
+                    rows={4}
+                    required
+                    value={formData.msg}
+                    onChange={handleChange}
+                    className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    placeholder="Write your message here..."
+                  />
+                </div>
+
+                {/* Agreement */}
+                <div className="md:col-span-2 flex items-start gap-2">
+                  <input type="checkbox" className="mt-1" />
+                  <span className="text-gray-700 text-sm">
+                    By clicking "Contact Us," I agree to receive communication
+                    on newsletters, promotional content, offers, and events
+                    through SMS, RCS, WhatsApp.
+                  </span>
+                </div>
+
+                {/* Submit */}
+                <div className="md:col-span-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`bg-[#5956D6] hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-lg w-full transition duration-300 ease-in-out ${
+                      loading ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    {loading ? "Submitting..." : "Contact Us"}
+                  </button>
+                </div>
+              </form>
             </div>
 
-            {/* Message Field */}
-            <div className="col-span-2">
-              <label className="text-black font-semibold text-lg">
-                Message
-              </label>
-              <textarea
-                name="msg"
-                rows={4}
-                required
-                value={formData.msg}
-                onChange={handleChange}
-                className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500"
-                placeholder="Write your message here..."
-              />
-            </div>
-
-            {/* Agreement Checkbox */}
-            <div className="col-span-2 flex items-start gap-2">
-              <input type="checkbox" className="mt-1" />
-              <span className="text-gray-700 text-sm">
-                By clicking "Contact Us," I agree to receive communication on
-                newsletters, promotional content, offers, and events through
-                SMS, RCS, WhatsApp.
-              </span>
-            </div>
-
-            {/* Submit Button */}
-            <div className="col-span-2">
-              <button
-                type="submit"
-                disabled={loading}
-                className={`bg-[#5956D6] hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-lg w-full transition duration-300 ease-in-out ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
+            {/* Response Message */}
+            {responseMessage && (
+              <p
+                className={`text-sm mt-3 text-center ${
+                  responseMessage.type === "success"
+                    ? "text-green-500"
+                    : "text-red-500"
                 }`}
               >
-                {loading ? "Submitting..." : "Contact Us"}
-              </button>
-            </div>
-          </form>
-
-          {/* Display Success or Error Messages */}
-          {responseMessage && (
-            <p
-              className={`text-sm mt-3 ${
-                responseMessage.type === "success"
-                  ? "text-green-500"
-                  : "text-red-500"
-              }`}
-            >
-              {responseMessage.text}
-            </p>
-          )}
+                {responseMessage.text}
+              </p>
+            )}
+          </div>
         </div>
       </div>
+
       <div className="w-full mx-0">
         {/* Header Section */}
         <div className="px-4 text-center">
