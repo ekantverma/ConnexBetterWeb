@@ -97,18 +97,44 @@ const DeveloperApis = () => {
   return (
     <div className="w-full bg-[#3b0a84] text-white py-10 px-4 sm:px-10 lg:px-20 mt-16">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-4">
+        <div className="text-center mb-8">
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-8">
             Builder is a mindset, not a job title
           </h1>
 
           {/* Role Tabs */}
-          <div className="flex justify-center gap-6 text-xl font-medium text-white/80 flex-wrap">
+          {/* <div className="flex justify-center">
+            <div className="relative flex gap-12 text-[18px] font-medium text-white/80 pb-4 border-b-4 border-white px-3">
+              {roles.map((role) => (
+                <span
+                  key={role}
+                  className={`relative pb-2 cursor-pointer transition-colors duration-300 ${
+                    activeRole === role ? "text-white" : "hover:text-white"
+                  }`}
+                  onClick={() => setActiveRole(role)}
+                >
+                  {role}
+                </span>
+              ))}
+
+              {/* Cyan slider underline inside white border */}
+              {/* <div
+                className="absolute bottom-[-4px] h-[4px] bg-cyan-400 transition-all duration-300 rounded-xl"
+                style={{
+                  width: `calc(${100 / roles.length})`,
+                  left: `calc(${
+                    roles.indexOf(activeRole) * (100 / roles.length)
+                  } % - 2px)`,
+                }}
+              />
+            </div>
+          </div>  */}
+          <div className="flex justify-center gap-12 text-[18px] font-medium text-white/80 flex-wrap">
             {roles.map((role) => (
               <span
                 key={role}
-                className={`cursor-pointer pb-1 ${
+                className={`relative pb-2 cursor-pointer transition-colors duration-300 ${
                   activeRole === role
                     ? "text-white border-b-2 border-cyan-400"
                     : "hover:text-white"
@@ -167,6 +193,7 @@ const DeveloperApis = () => {
           ) : (
             <div className="w-full max-w-md mx-auto">
               <img
+                key={activeRole}
                 src={
                   activeRole === "Product owners"
                     ? productowner
@@ -175,7 +202,7 @@ const DeveloperApis = () => {
                     : salesimg
                 }
                 alt="Role visual"
-                className="rounded-xl w-[450px] h-[350px] object-contain"
+                className="rounded-xl w-[450px] h-[350px] object-contain transition-opacity duration-500 ease-in-out animate-fade-in"
               />
             </div>
           )}

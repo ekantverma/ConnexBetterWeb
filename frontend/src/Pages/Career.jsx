@@ -81,7 +81,7 @@ function Career() {
   return (
     <section className="pt-6 mx-16 md:mx-20 lg:mx-24 xl:mx-32">
       <CommonHeading h="Explore a Career With Us" width="full" />
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-4 py-4">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-start">
           {/* Left Section */}
           <div className="flex flex-col gap-10">
