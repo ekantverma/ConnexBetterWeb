@@ -64,7 +64,7 @@ export const Home = () => {
               Connect Better, Engage Better
             </p>
 
-            <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(124,122,122,0.80)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-10">
+            <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(124,122,122,0.80)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-6">
               Transform customer interactions with thoughtful{" "}
               <br className="hidden sm:block" />
               intelligent communication
@@ -91,23 +91,24 @@ export const Home = () => {
             </div>
 
             {/* Info Boxes */}
-            <div className="flex justify-start gap-2 mt-10">
+            <div className="flex justify-start gap-2 mt-14">
               {/* Box 1 */}
-              <div className="flex flex-col items-center gap-[4px] px-2 py-[14px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px]">
-                <p className="text-blue-700 font-semibold text-[15px] text-center leading-snug">
+              <div className="flex flex-col items-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px] justify-between text-center">
+                <p className="text-[#1368C7] font-roboto text-[16px] font-semibold leading-[22.5px]">
                   7 Days <br /> Free Trial
                 </p>
-                <p className="text-[12px] text-black text-center leading-tight">
+                <p className="text-[12px] text-black leading-tight whitespace-nowrap">
                   No payment required
                 </p>
               </div>
 
               {/* Box 2 */}
-              <div className="flex flex-col items-center gap-[4px] px-2 py-[14px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px]">
-                <p className="text-blue-700 font-semibold text-[15px] text-center leading-snug">
+              <div className="flex flex-col items-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px] justify-between text-center">
+                <p className="text-[#1368C7] font-roboto text-[16px] font-semibold leading-[22.5px]">
                   An IIM- <br /> Alumni
                 </p>
-                <p className="text-[12px] text-black text-center leading-tight">
+
+                <p className="text-[12px] text-black leading-tight whitespace-nowrap">
                   Founded Company
                 </p>
               </div>
