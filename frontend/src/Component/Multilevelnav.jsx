@@ -68,7 +68,7 @@ export default function Multilevelnav() {
           {/* Mobile Navigation Toggle */}
           <div
             className={`
-    flex items-center justify-center cursor-pointer text-2xl lg:hidden p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-600 active:scale-95 shadow-sm ring-1 ring-gray-200 backdrop-blur-sm`}
+    flex items-center justify-center cursor-pointer text-2xl lg:hidden p-2 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-600 active:scale-95 backdrop-blur-sm`}
             onClick={() => setmobiletoggle((prev) => !prev)}
             aria-label="Toggle navigation"
           >
@@ -108,7 +108,7 @@ export default function Multilevelnav() {
         {/* Slide-in Panel */}
         <aside
           className={`
-      absolute right-0 top-0 h-full w-[85%] max-w-xs bg-white shadow-xl
+      absolute right-0 top-0 h-full w-[100%] max-w-full bg-white shadow-xl
       flex flex-col gap-6 p-6
       transform transition-transform duration-500 ease-in-out
       ${mobiletoggle ? "translate-x-0" : "translate-x-full"}
@@ -117,7 +117,7 @@ export default function Multilevelnav() {
           {/* ✖ Close Button */}
           <button
             onClick={CloseNavbar}
-            className="self-end text-3xl p-2 rounded-full hover:bg-gray-100 active:scale-95 transition"
+            className="self-end text-3xl p-2 hover:bg-gray-100 active:scale-95 transition"
             aria-label="Close Navigation"
           >
             <FaTimes />

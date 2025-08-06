@@ -70,11 +70,11 @@ export const menuItemsData = [
     title: "About Us",
     link: "/About",
     submenu: [
-      // { title: "About Company", link: "/About" },
-      // { title: "Blog", link: "/Blog" },
-      // { title: "Careers", link: "/Career" },
-      // { title: "Contact Us", link: "/Contact" },
-      // { title: "Schedule Demo", link: "/ScheduleDemo" },
+      { title: "About Company", link: "/About" },
+      { title: "Blog", link: "/Blog" },
+      { title: "Careers", link: "/Career" },
+      { title: "Contact Us", link: "/Contact" },
+      { title: "Schedule Demo", link: "/ScheduleDemo" },
     ],
   },
 ];

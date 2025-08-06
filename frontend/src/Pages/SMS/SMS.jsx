@@ -24,7 +24,7 @@ function SMS() {
 
   return (
     <>
-    <section className="">
+    <section className="px-4">
       {/* Navigation Buttons */}
       <div className=' container sticky top-4 z-10'>
       <div className="hidden md:flex gap-10 justify-center items-center bg-blue-100 rounded-lg shadow-inner">

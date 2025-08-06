@@ -109,7 +109,7 @@ const sections = [
 
 const SMSAPI = () => {
   return (
-    <section className="space-y-14">
+    <section className="space-y-14 px-4">
       {sections.map((section, index) =>
         section.custom ? (
           <React.Fragment key={index}>{section.custom()}</React.Fragment>
