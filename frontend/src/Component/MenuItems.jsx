@@ -77,7 +77,6 @@
 
 // export default MenuItems;
 
-
 import { NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
@@ -86,6 +85,7 @@ import ProductsDropdown from "./Dropdowns/ProductsDropdown";
 import PricingDropdown from "./Dropdowns/PricingDropdown";
 import DevelopersDropdown from "./Dropdowns/DevelopersDropdown";
 import AboutDropdown from "./Dropdowns/AboutDropdown";
+import SolutionsDropDown from "./Dropdowns/SolutionsDropDown";
 
 const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -150,15 +150,14 @@ const MenuItems = ({ items, depthLevel, mobiletoggle }) => {
           {items.title === "Products" && (
             <ProductsDropdown dropdown={dropdown} />
           )}
-          {items.title === "Pricing" && (
-            <PricingDropdown dropdown={dropdown} />
+          {items.title === "Solutions" && (
+            <SolutionsDropDown dropdown={dropdown} />
           )}
+          {items.title === "Pricing" && <PricingDropdown dropdown={dropdown} />}
           {items.title === "Developers" && (
             <DevelopersDropdown dropdown={dropdown} />
           )}
-          {items.title === "About Us" && (
-            <AboutDropdown dropdown={dropdown} />
-          )}
+          {items.title === "About Us" && <AboutDropdown dropdown={dropdown} />}
         </>
       ) : (
         <NavLink to={items.link}>{items.title}</NavLink>

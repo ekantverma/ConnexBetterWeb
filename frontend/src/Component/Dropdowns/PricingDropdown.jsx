@@ -9,7 +9,7 @@ const PricingDropdown = ({ dropdown }) => {
         <hr className="mt-1 border-gray-300" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-w-[700px] mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-w-[550px] mt-4">
         {/* Email & SMS */}
         <div>
           <p className="text-lg font-bold text-black mb-3">Email & SMS</p>

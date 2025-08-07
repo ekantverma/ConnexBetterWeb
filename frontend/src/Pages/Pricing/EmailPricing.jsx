@@ -44,12 +44,18 @@ const LazyComponent = ({ Component, props = {} }) => (
 
 export default function Email() {
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <CommonHeading
-          h="Unbeatable Pricing - Find Your Perfect Plan Now"
-          p="Discover How Our Innovative Approach Can Save You Money and Boost Your Business Performance!"
-        />
+    <section className="bg-gray-50">
+      <div className="mx-auto">
+        <div className="w-full bg-[#3E058A] text-white px-4 md:px-20 py-16 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Unbeatable Pricing - Find Your Perfect Plan Now
+          </h2>
+          <p className="text-base md:text-2xl max-w-5xl mx-auto text-gray-300">
+            Discover How Our Innovative Approach Can Save You Money and Boost
+            Your Business Performance!
+          </p>
+        </div>
+
         <div className="text-center text-4xl text-primary font-semibold mt-6">
           Email Pricing
         </div>
@@ -63,7 +69,9 @@ export default function Email() {
             >
               <h2 className="text-3xl font-bold text-blue-700">{plan.plan}</h2>
               {plan.price && (
-                <p className="text-2xl font-semibold text-green-600 my-4">{plan.price}</p>
+                <p className="text-2xl font-semibold text-green-600 my-4">
+                  {plan.price}
+                </p>
               )}
               <ul className="text-gray-700 mb-6 space-y-2">
                 {plan.description.map((item, i) => (

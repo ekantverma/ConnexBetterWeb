@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-const BulkEmailBlogs = () => {
+const AllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("https://connexbetterwebbackend.vercel.app/api/category/Bulk%20WhatsApp%20Marketing") 
+    axios
+      .get("https://connexbetterwebbackend.vercel.app/api/all")
       .then((res) => setBlogs(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -59,4 +60,4 @@ const BulkEmailBlogs = () => {
   );
 };
 
-export default BulkEmailBlogs;
+export default AllBlogs;
