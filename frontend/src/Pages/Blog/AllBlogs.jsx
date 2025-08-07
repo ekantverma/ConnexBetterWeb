@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ShimmerUI from "./BlogsShimmerUI";
 
 const AllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -13,21 +14,21 @@ const AllBlogs = () => {
   }, []);
 
   return (
-    <div className="w-full px-[60px] py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog) => (
+  <div className="w-full px-[60px] py-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {blogs.length === 0 ? (
+        <ShimmerUI />
+      ) : (
+        blogs.map((blog) => (
           <div
             key={blog._id}
             className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white flex flex-col h-[375px] w-full"
           >
-            {/* Image */}
             <img
               src={blog.mainImage}
               alt={blog.title}
               className="w-full h-64 object-cover rounded-t-2xl"
             />
-
-            {/* Card Content */}
             <div className="flex flex-col justify-between flex-1 p-6">
               <div>
                 <h3 className="text-[20px] font-bold text-black mb-1">
@@ -44,8 +45,6 @@ const AllBlogs = () => {
                   {blog.category}
                 </p>
               </div>
-
-              {/* Read More Button */}
               <Link
                 to={`/BlogDetail/${blog._id}`}
                 className="text-blue-600 font-semibold text-[16px] mt-4 block hover:underline"
@@ -54,10 +53,12 @@ const AllBlogs = () => {
               </Link>
             </div>
           </div>
-        ))}
-      </div>
+        ))
+      )}
     </div>
-  );
+  </div>
+);
+
 };
 
 export default AllBlogs;

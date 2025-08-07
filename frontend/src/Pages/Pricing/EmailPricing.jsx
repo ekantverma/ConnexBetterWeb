@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Suspense, lazy } from "react";
 import CommonHeading from "../../CommonComponent/CommonHeading";
 // Ensure you import these components
@@ -11,27 +11,50 @@ import Rangeprice from "../../CommonComponent/Rangeprice";
 import { Button } from "../../CommonComponent/Button";
 
 const pricingData = {
-  Email: [
+  monthly: [
     {
       plan: "Free",
-      price: "₹450/Monthly",
-      description: ["12,000 Emails/monthly", "1,000 Contacts"],
-      button: "Contact Us",
+      price: "₹450",
+      time: "/month",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
     },
     {
       plan: "Premium",
-      price: "",
-      heading: "",
-      description: ["Unlimited E-mails Monthly For the mentioned contacts"],
-      component: true,
-      button: "Contact Us",
+      price: "₹830",
+      time: "/month",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
     },
     {
       plan: "Enterprise",
-      price: "For organizations who need more.",
-      heading: "Do you want a custom plan?",
-      description: ["Price customized based on your needs"],
-      button: "Contact Us",
+      price: "₹1000",
+      time: "/month",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
+    },
+  ],
+  yearly: [
+    {
+      plan: "Free",
+      price: "₹405",
+      time : "/month (Yearly)",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
+    },
+    {
+      plan: "Premium",
+      price: "₹747",
+      time : "/month (Yearly)",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
+    },
+    {
+      plan: "Enterprise",
+      price: "₹900",
+      time : "/month (Yearly)",
+      description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
+      button: "Contact us",
     },
   ],
 };
@@ -43,58 +66,99 @@ const LazyComponent = ({ Component, props = {} }) => (
 );
 
 export default function Email() {
-  return (
-    <section className="bg-gray-50">
-      <div className="mx-auto">
-        <div className="w-full bg-[#3E058A] text-white px-4 md:px-20 py-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Unbeatable Pricing - Find Your Perfect Plan Now
-          </h2>
-          <p className="text-base md:text-2xl max-w-5xl mx-auto text-gray-300">
-            Discover How Our Innovative Approach Can Save You Money and Boost
-            Your Business Performance!
-          </p>
-        </div>
+  const [billingCycle, setBillingCycle] = useState("monthly");
 
-        <div className="text-center text-4xl text-primary font-semibold mt-6">
+  return (
+    <section className="bg-white">
+      <div className="w-full bg-[#3E058A] text-white px-4 md:px-20 py-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          Unbeatable Pricing - Find Your Perfect Plan Now
+        </h2>
+        <p className="text-base md:text-2xl max-w-5xl mx-auto text-gray-300">
+          Discover How Our Innovative Approach Can Save You Money and Boost Your
+          Business Performance!
+        </p>
+      </div>
+      {/* Cards */}
+      <div className="bg-white pt-10 px-4 sm:px-10 lg:px-20">
+        {/* Title */}
+        <h2 className="text-center text-4xl font-semibold text-blue-600 mb-8">
           Email Pricing
+        </h2>
+
+        {/* Toggle Button */}
+        <div className="flex justify-center items-center gap-2 mb-10 bg-gray-200 w-fit mx-auto rounded-full px-2 py-2">
+          <button
+            className={`px-8 py-2 rounded-full text-xl font-medium transition ${
+              billingCycle === "monthly"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-600"
+            }`}
+            onClick={() => setBillingCycle("monthly")}
+          >
+            Monthly
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full text-xl font-medium transition ${
+              billingCycle === "yearly"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-600"
+            }`}
+            onClick={() => setBillingCycle("yearly")}
+          >
+            Yearly (-10%)
+          </button>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {pricingData.Email.map((plan, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {pricingData[billingCycle].map((plan, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-xl p-8 text-center border border-gray-200 flex flex-col items-center justify-center transition-transform transform hover:scale-105"
+              className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 flex flex-col items-center transition-transform hover:scale-[1.01]"
             >
-              <h2 className="text-3xl font-bold text-blue-700">{plan.plan}</h2>
-              {plan.price && (
-                <p className="text-2xl font-semibold text-green-600 my-4">
-                  {plan.price}
-                </p>
-              )}
-              <ul className="text-gray-700 mb-6 space-y-2">
+              <div className="space-y-20 text-center">
+                <div>
+                  <h3 className="text-4xl font-semibold text-[#747474] mb-2">
+                    {plan.plan}
+                  </h3>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-black mb-4">
+                    {plan.price}
+                    <span className="text-[#575757] text-xl">{plan.time}</span>
+                  </p>
+                  <Button
+                    name={plan.button}
+                    link="/Contact"
+                    className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-700 transition text-sm"
+                  />
+                </div>
+              </div>
+              <hr className="w-full border-t border-gray-300 my-6" />{" "}
+              <ul className="text-gray-700 w-full mb-6 space-y-3 text-left">
+                <li className="font-semibold text-xl text-black">
+                  Everything in Free:
+                </li>
                 {plan.description.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-green-500 text-xl">✔</span>
+                  <li key={i} className="flex items-cente text-sm">
                     <RadiobuttonwithText text={item} />
                   </li>
                 ))}
               </ul>
-
-              {/* Conditional rendering for specific components */}
+              {/* Custom component if any */}
               {plan.component && <Rangeprice />}
-
-              <Button
-                name={plan.button}
-                link="/Contact"
-                className="mt-6 bg-blue-600 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition"
-              />
             </div>
           ))}
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-16">
+
+      <div className="mx-auto px-4 mt-32">
+        <div className="px-4 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-700 animate-fade-in-up">
+            Trusted by 1100+ Businesses
+          </h2>
+        </div>
         <LazyComponent Component={BrandSection} props={{ data: Brandimage }} />
       </div>
       {/* Offerings Section */}
