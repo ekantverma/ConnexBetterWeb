@@ -20,46 +20,44 @@ export const Footer = memo(() => {
             <div key={ind}>
               {ind === 0 ? (
                 <>
-                  <p className="text-sm font-medium text-[#FAF8F8CC] mb-8">
-                    © 2025 Connex Integrations Private Limited. All rights reserved.
-                  </p>
-
-                  <div className="flex items-center gap-3 mb-3">
-                    <img
-                      src={logo}
-                      alt="logo"
-                      loading="lazy"
-                      className="h-12 w-12"
-                    />
-                    <div className="text-2xl font-semibold text-white">
-                      Connex Better
+                  <div className="flex mb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <img
+                        src={logo}
+                        alt="logo"
+                        loading="lazy"
+                        className="h-12 w-12"
+                      />
+                      <div className="text-2xl font-semibold text-white">
+                        Connex Better
+                      </div>
                     </div>
                   </div>
 
-                  <p className="text-lg text-[#FAF8F8CC] mb-2 font-medium">
+                  <p className="text-lg text-[#FAF8F8CC] font-medium">
                     Connect Better, Engage Better
                   </p>
                   <p className="text-lg text-[#FAF8F8CC] mb-4">
-                    Our services include Bulk SMS, SMS API, WhatsApp Business API, IVR,
-                    RCS Messaging, and AI Chatbot.
+                    Our services include Bulk SMS, SMS API, WhatsApp Business
+                    API, IVR, RCS Messaging, and AI Chatbot.
                   </p>
 
                   {/* Highlight Boxes */}
                   <div className="flex flex-wrap md:flex-nowrap gap-3 mt-6">
-                    <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[116px] h-[70px]">
-                      <p className="text-blue-700 font-semibold text-xs text-center leading-snug">
+                    <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[116px] h-[70px] justify-between">
+                      <p className="text-blue-700 font-semibold text-md text-center leading-snug">
                         7 Days <br /> Free Trial
                       </p>
-                      <p className="text-[10px] text-black text-center leading-tight">
+                      <p className="text-[8px] text-black text-center leading-tight">
                         No payment required
                       </p>
                     </div>
 
-                    <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[116px] h-[70px]">
-                      <p className="text-blue-700 font-semibold text-xs text-center leading-snug">
+                    <div className="flex flex-col items-center gap-1 px-2 py-2 rounded-[8px] border border-[#D5D1D1] bg-white shadow-md w-[116px] h-[70px] justify-between">
+                      <p className="text-blue-700 font-semibold text-md text-center leading-snug">
                         An IIM- <br /> Alumni
                       </p>
-                      <p className="text-[10px] text-black text-center leading-tight">
+                      <p className="text-[8px] text-black text-center leading-tight">
                         Founded Company
                       </p>
                     </div>
@@ -68,7 +66,7 @@ export const Footer = memo(() => {
                       <img
                         src={metalogo}
                         alt="Meta logo"
-                        className="max-h-[40px] object-contain"
+                        className="max-h-[65px] object-contain"
                       />
                     </div>
 
@@ -76,7 +74,7 @@ export const Footer = memo(() => {
                       <img
                         src={truecallerlogo}
                         alt="Truecaller logo"
-                        className="max-h-[40px] object-contain"
+                        className="max-h-[65px] object-contain"
                       />
                     </div>
                   </div>
@@ -109,7 +107,11 @@ export const Footer = memo(() => {
 
         {/* Social Icons */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-6">
+          <p className="text-lg font-medium text-[#FAF8F8CC] mb-8 text-white">
+            © 2025 Connex Better. All rights reserved.
+          </p>
           <div className="flex gap-6 mt-6 md:mt-0">
+            <h3 className="text-lg">Follow Us: </h3>
             <a
               href="https://www.linkedin.com/company/connex-better/posts/?feedView=all"
               className="text-white text-2xl hover:text-blue-400 transition-all duration-300"

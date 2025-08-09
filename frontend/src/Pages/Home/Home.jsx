@@ -58,7 +58,7 @@ export const Home = () => {
         {/* Hero Section */}
         <div className="relative grid gap-10 md:grid-cols-2 items-center">
           {/* Left Section (Text & Button) */}
-          <div className="flex flex-col gap-4 md:gap-6 items-start justify-center animate-fadeIn mt-36 md:mt-10 sm:mt-4">
+          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-36 md:mt-32 sm:mt-4">
             {/* Title */}
             <p className="text-[28px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight">
               Connect Better, Engage Better
@@ -71,14 +71,14 @@ export const Home = () => {
             </h1>
 
             {/* Buttons */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-2">
               <a href="/Contact">
-                <button className="text-white border border-[#5956D6] bg-[#5956D6] font-medium text-[16px] px-6 py-[10px] rounded-[8px] hover:bg-[#6f6dd1] transition-all duration-300">
+                <button className="text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[16px] px-14 py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300">
                   Get Started
                 </button>
               </a>
               <a href="/SMSpricing">
-                <button className="text-[#5956D6] border border-[#5956D6] font-medium text-[16px] px-6 py-[10px] rounded-[8px] hover:bg-[#5956D6] hover:text-white transition-all duration-300">
+                <button className="text-[#5956D6] border border-[#2A7CF5] font-medium text-[16px] px-14 py-[10px] rounded-[8px] hover:bg-[#0052CC] hover:text-white transition-all duration-300">
                   View Pricing
                 </button>
               </a>
@@ -91,7 +91,7 @@ export const Home = () => {
             </div>
 
             {/* Info Boxes */}
-            <div className="flex justify-start gap-2 mt-14">
+            <div className="flex justify-start gap-2 mt-20">
               {/* Box 1 */}
               <div className="flex flex-col items-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px] justify-between text-center">
                 <p className="text-[#1368C7] font-roboto text-[16px] font-semibold leading-[22.5px]">
@@ -134,7 +134,7 @@ export const Home = () => {
           </div>
 
           {/* Right Section (Image) */}
-          <div className="relative flex justify-center animate-zoomIn mt-[10px] md:mt-[10px]">
+          <div className="relative flex justify-center animate-zoomIn mt-[10px] md:mt-[2px]">
             <LazyImage
               src={heroimage}
               alt="Hero"
