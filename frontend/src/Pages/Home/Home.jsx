@@ -58,15 +58,14 @@ export const Home = () => {
         {/* Hero Section */}
         <div className="relative grid gap-10 md:grid-cols-2 items-center">
           {/* Left Section (Text & Button) */}
-          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-36 md:mt-32 sm:mt-4">
+          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-36 md:mt-32 sm:mt-4 sm:px-2">
             {/* Title */}
             <p className="text-[28px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight">
               Connect Better, Engage Better
             </p>
 
-            <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(124,122,122,0.80)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-6">
-              Transform customer interactions with thoughtful{" "}
-              <br className="hidden sm:block" />
+            <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(109,107,107,0.8)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-6">
+              Transform customer interactions with thoughtful <br />
               intelligent communication
             </h1>
 

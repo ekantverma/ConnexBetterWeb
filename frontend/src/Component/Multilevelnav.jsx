@@ -108,7 +108,7 @@ export default function Multilevelnav() {
         {/* Slide-in Panel */}
         <aside
           className={`
-      absolute right-0 top-0 h-full w-[100%] max-w-full bg-white shadow-xl
+      absolute top-0 h-full w-[95%] max-w-full bg-white shadow-xl
       flex flex-col gap-6 p-6
       transform transition-transform duration-500 ease-in-out
       ${mobiletoggle ? "translate-x-0" : "translate-x-full"}

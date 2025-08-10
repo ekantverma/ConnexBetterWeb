@@ -21,7 +21,7 @@ const SidebarItem = ({ ele, onButtonClick }) => {
         >
           <NavLink
             to={ele.link || "#"}
-            className="text-base text-gray-800 font-semibold hover:text-blue-600 transition-all duration-200"
+            className="text-base text-blue-600 font-semibold hover:text-blue-600 transition-all duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {ele.title}
