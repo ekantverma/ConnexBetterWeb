@@ -79,7 +79,7 @@ const LazyComponent = ({ Component, props = {} }) => (
 
 export default function Voicepricing() {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12">
       <div className="container mx-auto px-4">
         <CommonHeading
           h="Unbeatable Pricing - Find Your Perfect Plan Now"

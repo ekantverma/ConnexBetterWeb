@@ -9,6 +9,7 @@ const BrandSection = lazy(() => import("../../CommonComponent/Brandsection"));
 import RadiobuttonwithText from "../../CommonComponent/RadiobuttonwithText";
 import Rangeprice from "../../CommonComponent/Rangeprice";
 import { Button } from "../../CommonComponent/Button";
+import TextCardContainer from "../../CommonComponent/TextCardContainer"
 
 const pricingData = {
   monthly: [
@@ -38,21 +39,21 @@ const pricingData = {
     {
       plan: "Free",
       price: "₹405",
-      time : "/month (Yearly)",
+      time: "/month (Yearly)",
       description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
       button: "Contact us",
     },
     {
       plan: "Premium",
       price: "₹747",
-      time : "/month (Yearly)",
+      time: "/month (Yearly)",
       description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
       button: "Contact us",
     },
     {
       plan: "Enterprise",
       price: "₹900",
-      time : "/month (Yearly)",
+      time: "/month (Yearly)",
       description: ["135 email/day", "1,000 Contacts", "1,000 Contacts"],
       button: "Contact us",
     },
@@ -69,7 +70,7 @@ export default function Email() {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
   return (
-    <section className="bg-white">
+    <section className="bg-[#E9F8F6]">
       <div className="w-full bg-[#3E058A] text-white px-4 md:px-20 py-16 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
           Unbeatable Pricing - Find Your Perfect Plan Now
@@ -80,7 +81,7 @@ export default function Email() {
         </p>
       </div>
       {/* Cards */}
-      <div className="bg-white pt-10 px-4 sm:px-10 lg:px-20">
+      <div className="pt-10 px-4 sm:px-10 lg:px-20">
         {/* Title */}
         <h2 className="text-center text-4xl font-semibold text-blue-600 mb-8">
           Email Pricing
@@ -162,27 +163,49 @@ export default function Email() {
         <LazyComponent Component={BrandSection} props={{ data: Brandimage }} />
       </div>
       {/* Offerings Section */}
-      <div className="container mx-auto px-4 mt-12">
-        <LazyComponent
-          Component={Boxcontainer}
-          props={{
-            heading: "What we Offer",
-            para: "We offer a full suite of communication APIs designed to connect businesses with customers. Our services include:",
-            carddata: offers,
-          }}
-        />
+      <div className="container mx-auto px-4 py-4 text-center">
+        {/* Heading & Subtext */}
+        <div className="">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 animate-fade-in">
+            What We Offer
+          </h2>
+          <p className="text-2xl text-gray-600 mt-2 max-w-2xl mx-auto animate-fade-in-up">
+            We offer a full suite of communication APIs designed to connect
+            businesses with customers.
+          </p>
+        </div>
+
+        {/* Offerings Cards */}
+        <div className="">
+          <LazyComponent
+            Component={Boxcontainer}
+            props={{
+              carddata: offers,
+            }}
+          />
+        </div>
       </div>
 
-      {/* Why Choose Us Section */}
-      <div className="container mx-auto px-4 mt-12">
-        <LazyComponent
-          Component={Boxcontainer}
-          props={{
-            heading: "Why do businesses choose Connex Better",
-            para: "Connex Better provides reliable communication solutions and seamless API integration, ensuring smooth operations and enhanced customer interactions.",
-            carddata: chooseConnex,
-          }}
-        />
+      {/* Why Choose Us */}
+      <div className="container mx-auto px-6 py-16 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 animate-fade-in">
+            Why Do Businesses Choose Connex Better?
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 mt-4 max-w-2xl mx-auto animate-fade-in-up">
+            Connex Better provides reliable communication solutions and seamless
+            API integration, ensuring smooth operations and enhanced customer
+            interactions.{" "}
+          </p>
+        </div>
+        <div className="">
+          <LazyComponent
+            Component={TextCardContainer}
+            props={{
+              carddata: chooseConnex,
+            }}
+          />
+        </div>
       </div>
     </section>
   );
