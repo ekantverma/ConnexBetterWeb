@@ -61,7 +61,7 @@ export const Home = () => {
           <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-10 px-4 md:mt-32 sm:px-2 w-full">
             <div className="w-full">
               {/* Title */}
-              <p className="text-[32px] max-w-[300px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight md:mb-4">
+              <p className="text-[32px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight md:mb-4">
                 Connect Better, Engage Better
               </p>
 
