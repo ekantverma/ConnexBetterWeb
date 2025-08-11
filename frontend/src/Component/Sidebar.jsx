@@ -4,7 +4,10 @@ import { menuItemsData } from "../Constant/menuItemsData";
 
 const Sidebar = ({ onButtonClick }) => {
   return (
-    <nav className="w-full flex flex-col gap-3 text-xl font-medium">
+    <nav
+      className="w-full flex flex-col gap-2 text-xl font-medium overflow-y-auto"
+      style={{ maxHeight: "100vh" }} // poori screen height tak scroll
+    >
       {menuItemsData.map((ele, index) => (
         <div
           key={index}

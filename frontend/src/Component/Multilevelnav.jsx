@@ -108,8 +108,8 @@ export default function Multilevelnav() {
         {/* Slide-in Panel */}
         <aside
           className={`
-      absolute top-0 h-full w-[95%] max-w-full bg-white shadow-xl
-      flex flex-col gap-6 p-6
+      absolute top-0 h-full w-[100%] max-w-full bg-white shadow-xl
+      flex flex-col gap-6 p-6 mx-4
       transform transition-transform duration-500 ease-in-out
       ${mobiletoggle ? "translate-x-0" : "translate-x-full"}
     `}
@@ -117,7 +117,7 @@ export default function Multilevelnav() {
           {/* ✖ Close Button */}
           <button
             onClick={CloseNavbar}
-            className="self-end text-3xl p-2 hover:bg-gray-100 active:scale-95 transition"
+            className="self-end text-3xl p-2 hover:bg-gray-100 active:scale-95 transition pr-4"
             aria-label="Close Navigation"
           >
             <FaTimes />
@@ -126,7 +126,7 @@ export default function Multilevelnav() {
           {/* Links */}
           <Sidebar onButtonClick={CloseNavbar} />
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons
           <Button
             name="Get 5000 Free SMS"
             link="/Contact"
@@ -138,7 +138,7 @@ export default function Multilevelnav() {
             name="📞 +91 92206 96606"
             link="tel:+919220696606"
             className="w-full"
-          />
+          /> */}
         </aside>
       </div>
     </>
