@@ -58,16 +58,18 @@ export const Home = () => {
         {/* Hero Section */}
         <div className="relative grid gap-10 md:grid-cols-2 items-center">
           {/* Left Section (Text & Button) */}
-          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-36 md:mt-32 sm:mt-4 sm:px-2">
-            {/* Title */}
-            <p className="text-[28px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight">
-              Connect Better, Engage Better
-            </p>
+          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-4 md:mt-32 sm:px-2 w-full">
+            <div className="w-full">
+              {/* Title */}
+              <p className="text-[28px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight md:mb-4">
+                Connect Better, Engage Better
+              </p>
 
-            <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(109,107,107,0.8)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-6">
-              Transform customer interactions with thoughtful <br />
-              intelligent communication
-            </h1>
+              <h1 className="text-[16px] sm:text-[20px] md:text-[26px] text-[rgba(109,107,107,0.8)] font-afacad font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] tracking-[-0.26px] animate-slideInLeft mb-8 md:mb-6">
+                Transform customer interactions with thoughtful <br />
+                intelligent communication
+              </h1>
+            </div>
 
             {/* Buttons */}
             <div className="flex gap-4 mt-2">
@@ -233,10 +235,10 @@ export const Home = () => {
       </div>
 
       {/* Advanced PaaS Section */}
-      <div className="container mx-auto grid gap-x-28 md:grid-cols-2 items-center px-6 md:px-12 py-16">
-        {/* Animation */}
-        <div className="flex justify-center md:justify-end animate-fade-in-up">
-          <div className="w-[300px] md:w-[450px] aspect-[60/61]">
+      <div className="mx-auto flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-12 justify-between md:gap-12">
+        {/* Image - Mobile me upar, md me left */}
+        <div className="flex justify-center md:justify-start animate-fade-in-up order-1">
+          <div className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[580px] aspect-[60/61]">
             <img
               src={features}
               alt="features-img"
@@ -245,22 +247,22 @@ export const Home = () => {
           </div>
         </div>
 
-        {/* Left Side Content */}
-        <div className="flex flex-col gap-4 animate-fade-in">
-          <p className="text-[32px] md:text-[40px] text-[#0052CC] font-medium leading-snug">
+        {/* Text - Mobile me niche, md me right */}
+        <div className="flex flex-col gap-2  md:text-left animate-fade-in order-2">
+          <p className="text-[26px] sm:text-[28px] md:text-[40px] text-[#0052CC] font-medium">
             Enterprise Communications.
           </p>
-          <h2 className="text-2xl md:text-4xl font-semibold text-primary">
+          <h2 className="text-3xl sm:text-2xl md:text-4xl font-semibold text-primary">
             SMS | RCS | WhatsApp | Email | Voice
           </h2>
-          <p className="text-[#6B7280] font-[Afacad] text-[16px] md:text-[18px] font-medium leading-relaxed">
+          <p className="text-[#6B7280] font-[Afacad] text-lg sm:text-base md:text-[17px] font-medium">
             We want to keep your operations running smoothly. That’s why our
             platform is easy to work with. Choose from a wide range of
             integrations.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mt-6">
+          <div className="flex flex-wrap md:justify-start gap-4 mt-6 p-0">
             <Button
               name="Contact us Now"
               link="/Contact"
@@ -276,25 +278,28 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="w-full py-8 px-2 sm:px-4 lg:px-[75px]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className="w-full overflow-x-hidden py-8 px-2 sm:px-4 lg:px-[75px]">
+        <div className="max-w-full mx-auto flex justify-between items-center sm:gap-10">
           {/* Left Content */}
-          <div className="flex-1 max-w-[600px] space-y-5">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-snug">
-              Create Your{" "}
-              <span className="text-blue-600">conversational ecosystem</span>{" "}
-              with multiple <br></br>integration options
-            </h2>
+          <div className="flex-1 max-w-[600px] space-y-10 text-center md:text-left">
+            <div className="">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+                Create Your{" "}
+                <span className="text-blue-600">conversational ecosystem</span>{" "}
+                with multiple <br className="hidden sm:block" />
+                integration options
+              </h2>
 
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-[Afacad] font-medium">
-              We want to keep your operations running smoothly. That’s why our
-              platform is easy to work with. Choose from a wide range of
-              integrations to build and add on top of our SMS API, and easily
-              configure them with your existing systems.
-            </p>
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed font-[Afacad] font-medium md:mt-[20px]">
+                We want to keep your operations running smoothly. That’s why our
+                platform is easy to work with. Choose from a wide range of
+                integrations to build and add on top of our SMS API, and easily
+                configure them with your existing systems.
+              </p>
+            </div>
 
             {/* Brand Slider */}
-            <div className="pt-2">
+            <div className="px-0 sm:px-4 my-4 md:mt-8">
               <LazyComponent
                 Component={BrandSection}
                 props={{ data: Brandimage2 }}
@@ -303,11 +308,11 @@ export const Home = () => {
           </div>
 
           {/* Right Side Image */}
-          <div className="flex justify-end md:pl-4 w-full md:w-auto">
+          <div className="flex justify-center md:justify-end md:pl-4 w-full md:w-auto">
             <img
               src={ecosystemimg}
               alt="Integration Illustration"
-              className="w-[400px] sm:w-[450px] max-w-[500px] h-[250px] object-contain"
+              className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] h-auto md:h-[300px] object-contain"
             />
           </div>
         </div>
