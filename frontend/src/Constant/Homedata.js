@@ -53,6 +53,14 @@ import brands8 from "../assets/BrandImage/IMAGE/WhatsApp Image 2025-01-19 at 11.
 import blog1img from "../assets/HomeImage/IMAGE/Best Email Marketing Tips to Increase B2B Sales in 2025.webp";
 import blog2img from "../assets/HomeImage/IMAGE/How SMS APIs Simplify OTP Integration for Developers with Connex Better.webp";
 import blog3img from "../assets/HomeImage/IMAGE/How to Send Bulk Messages on WhatsApp with Connex Better.webp";
+import glob1 from "../assets/HomeImage/IMAGE/impactImg-1.png"
+import glob2 from "../assets/HomeImage/IMAGE/impactImg-2.png"
+import glob3 from "../assets/HomeImage/IMAGE/impactImg-3.png"
+import glob4 from "../assets/HomeImage/IMAGE/impactImg-4.png"
+import glob5 from "../assets/HomeImage/IMAGE/impactImg-5.png"
+import glob6 from "../assets/HomeImage/IMAGE/impactImg-6.png"
+import glob7 from "../assets/HomeImage/IMAGE/impactImg-7.png"
+import glob8 from "../assets/HomeImage/IMAGE/impactImg-8.png"
 
 export const Brandimage=[
     { "name": "Brand 1", "logo":brand1  },
@@ -85,6 +93,17 @@ export const Brandimage=[
     { "name": "Brand 5", "logo": brands3},
     { "name": "Brand 6", "logo": brands4},
     { "name": "Brand 7", "logo": brands5},
+  ]
+
+  export const globalImpact = [
+    {"name" : "Brand 1", "logo":glob1},
+    {"name" : "Brand 2", "logo":glob2},
+    {"name" : "Brand 3", "logo":glob3},
+    {"name" : "Brand 4", "logo":glob4},
+    {"name" : "Brand 5", "logo":glob5},
+    {"name" : "Brand 6", "logo":glob6},
+    {"name" : "Brand 7", "logo":glob7},
+    {"name" : "Brand 8", "logo":glob8},
   ]
 
   export const offers = [

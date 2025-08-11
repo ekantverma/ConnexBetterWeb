@@ -104,33 +104,7 @@ const DeveloperApis = () => {
           </h1>
 
           {/* Role Tabs */}
-          {/* <div className="flex justify-center">
-            <div className="relative flex gap-12 text-[18px] font-medium text-white/80 pb-4 border-b-4 border-white px-3">
-              {roles.map((role) => (
-                <span
-                  key={role}
-                  className={`relative pb-2 cursor-pointer transition-colors duration-300 ${
-                    activeRole === role ? "text-white" : "hover:text-white"
-                  }`}
-                  onClick={() => setActiveRole(role)}
-                >
-                  {role}
-                </span>
-              ))}
-
-              {/* Cyan slider underline inside white border */}
-              {/* <div
-                className="absolute bottom-[-4px] h-[4px] bg-cyan-400 transition-all duration-300 rounded-xl"
-                style={{
-                  width: `calc(${100 / roles.length})`,
-                  left: `calc(${
-                    roles.indexOf(activeRole) * (100 / roles.length)
-                  } % - 2px)`,
-                }}
-              />
-            </div>
-          </div>  */}
-          <div className="flex justify-center gap-12 text-[18px] font-medium text-white/80 flex-wrap">
+          <div className="flex justify-center md:gap-12 text-[12px] gap-8 md:text-[18px] font-medium text-white/80 flex-wrap">
             {roles.map((role) => (
               <span
                 key={role}

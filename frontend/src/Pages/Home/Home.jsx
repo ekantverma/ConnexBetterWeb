@@ -161,7 +161,7 @@ w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full bg-[linear-gradient(180deg,#E9F8F6_0%,#9EE5DC_100%)] md:bg-none">
         {/* Header Section */}
         <div className="px-4 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-700 animate-fade-in-up">
@@ -293,18 +293,18 @@ w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
       </div>
 
       <div className="w-full overflow-x-hidden py-8 px-2 sm:px-4 lg:px-[75px]">
-        <div className="max-w-full mx-auto flex justify-between items-center sm:gap-10 ">
+        <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between items-center sm:gap-10">
           {/* Left Content */}
-          <div className="flex-1 max-w-[600px] space-y-10 text-center md:text-left">
-            <div className="">
-              <h2 className="text-[28px] text-start sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+          <div className="flex-1 max-w-full md:max-w-[600px] space-y-6 sm:space-y-10 text-center md:text-left">
+            <div>
+              <h2 className="text-[22px] sm:text-[28px] md:text-4xl font-semibold text-gray-900 leading-snug text-start break-words max-w-full">
                 Create Your{" "}
                 <span className="text-blue-600">conversational ecosystem</span>{" "}
                 with multiple <br className="hidden sm:block" />
                 integration options
               </h2>
 
-              <p className="mt-2 text-gray-600 text-[13px] text-start sm:text-base md:text-lg leading-relaxed font-[Afacad] font-medium md:mt-[20px]">
+              <p className="mt-2 text-gray-600 text-[13px] sm:text-base md:text-lg leading-relaxed font-[Afacad] font-medium md:mt-[20px] text-start break-words max-w-full">
                 We want to keep your operations running smoothly. That’s why our
                 platform is easy to work with. Choose from a wide range of
                 integrations to build and add on top of our SMS API, and easily
@@ -322,11 +322,11 @@ w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
           </div>
 
           {/* Right Side Image */}
-          <div className="flex justify-center md:justify-end md:pl-4 w-full md:w-auto">
+          <div className="flex justify-center md:justify-end md:pl-4 w-full md:w-auto mt-6 md:mt-0">
             <img
               src={ecosystemimg}
               alt="Integration Illustration"
-              className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] h-auto md:h-[300px] object-contain"
+              className="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] h-auto md:h-[300px] object-contain"
             />
           </div>
         </div>
