@@ -58,10 +58,10 @@ export const Home = () => {
         {/* Hero Section */}
         <div className="relative grid gap-10 md:grid-cols-2 items-center">
           {/* Left Section (Text & Button) */}
-          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-4 md:mt-32 sm:px-2 w-full">
+          <div className="flex flex-col gap-4 md:gap-2 items-start justify-center animate-fadeIn mt-10 px-4 md:mt-32 sm:px-2 w-full">
             <div className="w-full">
               {/* Title */}
-              <p className="text-[28px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight md:mb-4">
+              <p className="text-[32px] max-w-[300px] sm:text-[40px] md:text-6xl font-semibold text-black animate-fadeIn leading-tight md:mb-4">
                 Connect Better, Engage Better
               </p>
 
@@ -94,41 +94,55 @@ export const Home = () => {
             {/* Info Boxes */}
             <div className="flex justify-start gap-2 mt-20">
               {/* Box 1 */}
-              <div className="flex flex-col items-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px] justify-between text-center">
-                <p className="text-[#1368C7] font-roboto text-[16px] font-semibold leading-[22.5px]">
+              <div
+                className="flex flex-col items-center gap-[4px] px-2 py-[10px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
+w-[90px] h-[80px] md:w-[116px] md:h-[99px] justify-between text-center"
+              >
+                <p className="text-[#1368C7] font-roboto text-[14px] md:text-[16px] font-semibold leading-[20px] md:leading-[22.5px]">
                   7 Days <br /> Free Trial
                 </p>
-                <p className="text-[12px] text-black leading-tight whitespace-nowrap">
+                <p className="text-[10px] md:text-[12px] text-black leading-tight whitespace-nowrap">
                   No payment required
                 </p>
               </div>
 
               {/* Box 2 */}
-              <div className="flex flex-col items-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px] justify-between text-center">
-                <p className="text-[#1368C7] font-roboto text-[16px] font-semibold leading-[22.5px]">
+              <div
+                className="flex flex-col items-center gap-[4px] px-2 py-[10px] rounded-[8px] border border-[#D5D1D1] 
+bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
+w-[90px] h-[80px] sm:w-[116px] sm:h-[99px] justify-between text-center"
+              >
+                <p className="text-[#1368C7] font-roboto text-[14px] sm:text-[16px] font-semibold leading-[20px] sm:leading-[22.5px]">
                   An IIM- <br /> Alumni
                 </p>
-
-                <p className="text-[12px] text-black leading-tight whitespace-nowrap">
+                <p className="text-[10px] sm:text-[12px] text-black leading-tight whitespace-nowrap">
                   Founded Company
                 </p>
               </div>
 
               {/* Box 3 – Image */}
-              <div className="flex flex-col items-center justify-center gap-[4px] px-2 py-[14px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px]">
+              <div
+                className="flex flex-col items-center justify-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] 
+bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
+w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
+              >
                 <img
                   src={metalogo}
                   alt="meta logo"
-                  className="w-30 h-25 rounded-md object-contain"
+                  className="w-30 h-25 sm:w-30 sm:h-25 rounded-md object-contain"
                 />
               </div>
 
               {/* Box 4 – Image */}
-              <div className="flex flex-col items-center justify-center gap-[4px] px-2 py-[14px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] w-[116px] h-[99px]">
+              <div
+                className="flex flex-col items-center justify-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] 
+bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
+w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
+              >
                 <img
                   src={truecallerlogo}
                   alt="truecaller logo"
-                  className="w-30 h-25 rounded-md object-contain"
+                  className="w-30 h-25 sm:w-30 sm:h-25 rounded-md object-contain"
                 />
               </div>
             </div>
@@ -156,7 +170,7 @@ export const Home = () => {
         </div>
 
         {/* Brand Section */}
-        <div className="px-4 my-4">
+        <div className="px-16 my-4">
           <LazyComponent
             Component={BrandSection}
             props={{ data: Brandimage }}
@@ -165,10 +179,10 @@ export const Home = () => {
         </div>
 
         {/* Stats Cards Section */}
-        <div className="py-12 px-4">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="py-12 px-16">
+          <div className="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-6 py-8 sm:px-6 flex flex-col items-center justify-center text-center w-full sm:w-[225px] md:w-[280px]">
               <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
                 10<span className="text-[#5956D6]">+</span>
               </p>
@@ -178,7 +192,7 @@ export const Home = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-6 py-8 sm:px-6 flex flex-col items-center justify-center text-center w-full sm:w-[225px] md:w-[280px]">
               <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
                 254<span className="text-[#5956D6]">+</span>
               </p>
@@ -188,7 +202,7 @@ export const Home = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-6 py-8 sm:px-6 flex flex-col items-center justify-center text-center w-full sm:w-[225px] md:w-[280px]">
               <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
                 99.9<span className="text-[#5956D6]">%</span>
               </p>
@@ -198,7 +212,7 @@ export const Home = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-4 py-8 sm:px-6 flex flex-col items-center justify-center text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 px-6 py-8 sm:px-6 flex flex-col items-center justify-center text-center w-full sm:w-[225px] md:w-[280px]">
               <p className="text-[40px] sm:text-[50px] md:text-[60px] font-bold text-black">
                 600<span className="text-[#5956D6]">+</span>
               </p>
@@ -279,18 +293,18 @@ export const Home = () => {
       </div>
 
       <div className="w-full overflow-x-hidden py-8 px-2 sm:px-4 lg:px-[75px]">
-        <div className="max-w-full mx-auto flex justify-between items-center sm:gap-10">
+        <div className="max-w-full mx-auto flex justify-between items-center sm:gap-10 ">
           {/* Left Content */}
           <div className="flex-1 max-w-[600px] space-y-10 text-center md:text-left">
             <div className="">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+              <h2 className="text-[28px] text-start sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
                 Create Your{" "}
                 <span className="text-blue-600">conversational ecosystem</span>{" "}
                 with multiple <br className="hidden sm:block" />
                 integration options
               </h2>
 
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed font-[Afacad] font-medium md:mt-[20px]">
+              <p className="mt-2 text-gray-600 text-[13px] text-start sm:text-base md:text-lg leading-relaxed font-[Afacad] font-medium md:mt-[20px]">
                 We want to keep your operations running smoothly. That’s why our
                 platform is easy to work with. Choose from a wide range of
                 integrations to build and add on top of our SMS API, and easily

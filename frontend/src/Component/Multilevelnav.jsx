@@ -29,10 +29,10 @@ export default function Multilevelnav() {
                 src={logo}
                 alt="logo"
                 loading="lazy"
-                className="h-12 w-12 drop-shadow-lg rounded-full border border-gray-200"
+                className="h-10 w-10 drop-shadow-lg rounded-full border border-gray-200"
               />
-              <div className="text-2xl font-semibold md:text-xl text-gray-800 group-hover:text-gray-900 transition-all duration-300">
-                Connex <span className="text-blue-600">Better</span>
+              <div className="text-2xl font-semibold md:text-2xl md:ml-1 text-gray-800 group-hover:text-gray-900 transition-all duration-300">
+                Connex Better
               </div>
             </div>
           </NavLink>

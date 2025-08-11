@@ -10,7 +10,7 @@ export const Blogcontainer = memo(
           loading="lazy"
           className="w-full h-60 object-cover rounded-t-2xl"
         />
-        <div className="p-5 flex flex-col justify-between flex-1">
+        <div className="p-5 flex flex-col justify-between flex-1 bg-white">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
           <p className="text-gray-600 text-sm flex-1 overflow-y-auto max-h-32 scrollbar-thin scrollbar-thumb-gray-300">
             {content}
