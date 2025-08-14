@@ -23,7 +23,7 @@ export default function Multilevelnav() {
           <NavLink to="/" className="flex items-center gap-3 group">
             <div
               id="logo"
-              className="flex items-center transform transition-all duration-300 ease-in-out hover:scale-105"
+              className="flex items-center transform transition-all duration-300 ease-in-out hover:scale-105 pl-2"
             >
               <img
                 src={logo}
