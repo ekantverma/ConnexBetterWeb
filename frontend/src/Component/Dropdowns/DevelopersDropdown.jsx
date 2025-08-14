@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { MdEmail, MdMessage, MdCall, MdApi } from "react-icons/md";
+import { MdEmail, MdMessage, MdCall, MdApi, MdWhatsapp } from "react-icons/md";
 
 const DevelopersDropdown = ({ dropdown }) => {
   return (
@@ -15,7 +15,7 @@ const DevelopersDropdown = ({ dropdown }) => {
           <DropdownLink to="/Developers/EmailAPI" icon={<MdEmail />} label="Email API" />
           <DropdownLink to="/Developers/SMSAPI" icon={<MdMessage />} label="Bulk SMS API" />
           <DropdownLink to="/Developers/VoiceAPI" icon={<MdCall />} label="Voice API" />
-          <DropdownLink to="/Developers/WhatsdocsApi" icon={<MdApi />} label="WhatsApp API" />
+          <DropdownLink to="/Developers/WhatsdocsApi" icon={<MdWhatsapp />} label="WhatsApp API" />
         </ul>
       </div>
     </div>

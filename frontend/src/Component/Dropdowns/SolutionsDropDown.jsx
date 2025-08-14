@@ -8,7 +8,7 @@ import {
   MdShoppingCart,
   MdAccountBalance,
   MdLocalShipping,
-  MdHowToVote
+  MdHowToVote,
 } from "react-icons/md";
 
 const SolutionsDropDown = ({ dropdown }) => {

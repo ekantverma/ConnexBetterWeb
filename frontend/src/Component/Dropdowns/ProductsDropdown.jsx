@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import {
   MdApi, MdEmail, MdMessage, MdCall, MdWifiCalling, MdShield,
-  MdOutlineLanguage
+  MdOutlineLanguage, MdWhatsapp, MdMarkEmailUnread, 
 } from "react-icons/md";
+import { FaEnvelopesBulk } from "react-icons/fa6";
+import { LuMessagesSquare } from "react-icons/lu";
+
 
 const ProductsDropdown = ({ dropdown }) => {
   return (
@@ -22,11 +25,11 @@ const ProductsDropdown = ({ dropdown }) => {
         <div>
           <p className="text-xl font-bold text-black mb-3">SMS Gateway</p>
           <ul className="space-y-2">
-            <NavItem to="/SMSAPI" icon={<MdApi />} label="SMS API" />
-            <NavItem to="/BulkSMS" icon={<MdMessage />} label="Bulk SMS" />
+            <NavItem to="/SMSAPI" icon={<MdMessage />} label="SMS API" />
+            <NavItem to="/BulkSMS" icon={<FaEnvelopesBulk />} label="Bulk SMS" />
             <NavItem to="/InternationalSMS" icon={<MdOutlineLanguage />} label="International SMS" />
             <NavItem to="/TwoFactorAuthentication" icon={<MdShield />} label="Two Factor Auth" />
-            <NavItem to="/Email" icon={<MdEmail />} label="Bulk Email" />
+            <NavItem to="/Email" icon={<MdMarkEmailUnread />} label="Bulk Email" />
           </ul>
         </div>
 
@@ -34,7 +37,7 @@ const ProductsDropdown = ({ dropdown }) => {
         <div>
           <p className="text-xl font-bold text-black mb-3">Whatsapp API</p>
           <ul className="space-y-2">
-            <NavItem to="/Whatsapp" icon={<MdMessage />} label="WhatsApp Business API" />
+            <NavItem to="/Whatsapp" icon={<MdWhatsapp />} label="WhatsApp Business API" />
           </ul>
         </div>
 
@@ -54,7 +57,7 @@ const ProductsDropdown = ({ dropdown }) => {
         <div>
           <p className="text-xl font-bold text-black mb-3">RCS Messaging</p>
           <ul className="space-y-2">
-            <NavItem to="/RCS" icon={<MdMessage />} label="RCS Messaging" />
+            <NavItem to="/RCS" icon={<LuMessagesSquare />} label="RCS Messaging" />
           </ul>
         </div>
       </div>

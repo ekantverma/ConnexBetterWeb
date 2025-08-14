@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { MdAttachMoney, MdEmail, MdMessage, MdCall, MdChat } from "react-icons/md";
+import { MdAttachMoney, MdEmail, MdMessage, MdCall, MdChat, MdWhatsapp } from "react-icons/md";
 
 const PricingDropdown = ({ dropdown }) => {
   return (
@@ -23,7 +23,7 @@ const PricingDropdown = ({ dropdown }) => {
         <div>
           <p className="text-lg font-bold text-black mb-3">WhatsApp API</p>
           <ul className="space-y-2">
-            <DropdownLink to="/WhatsApppricing" icon={<MdChat />} label="WhatsApp Business API" />
+            <DropdownLink to="/WhatsApppricing" icon={<MdWhatsapp />} label="WhatsApp Business API" />
           </ul>
         </div>
 
