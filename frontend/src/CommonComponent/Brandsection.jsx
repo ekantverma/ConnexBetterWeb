@@ -6,7 +6,7 @@ const BrandSection = memo(({data}) => {
         {/* Render the images */}
         {data.map((logo, index) => (
           <div className="slide p-2 " key={`original-${index}`}>
-            <img src={logo.logo} alt={`Brand ${index + 1}`} loading="lazy"  className="h-auto w-auto max-h-24 max-w-30"/>
+            <img src={logo.logo} alt={`Brand ${index + 1}`} loading="lazy"  className="h-auto max-h-24 max-w-30"/>
           </div>
         ))}
 

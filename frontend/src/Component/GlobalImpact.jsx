@@ -26,7 +26,7 @@ const DeveloperApis = () => {
         </h2>
 
         {/* Brand Section */}
-        <div className="px-16 my-4">
+        <div className="px-16">
           <LazyComponent Component={BrandSection} props={{ data: globalImpact }} />
         </div>
       </div>
