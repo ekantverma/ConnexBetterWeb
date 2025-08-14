@@ -16,7 +16,7 @@ const DeveloperApis = () => {
         {/* Title */}
         <h2 className="
           text-[#0052CC] 
-          text-2xl sm:text-3xl lg:text-[48px] 
+          text-2xl sm:text-3xl lg:text-[40px] 
           font-bold 
           leading-snug sm:leading-[48px] lg:leading-[57.6px] 
           font-[Afacad] 
