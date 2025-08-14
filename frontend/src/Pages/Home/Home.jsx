@@ -74,12 +74,12 @@ export const Home = () => {
             {/* Buttons */}
             <div className="flex gap-4 mt-2">
               <a href="/Contact">
-                <button className="text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[16px] px-14 py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300">
+                <button className="text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300">
                   Get Started
                 </button>
               </a>
               <a href="/SMSpricing">
-                <button className="text-[#5956D6] border border-[#2A7CF5] font-medium text-[16px] px-14 py-[10px] rounded-[8px] hover:bg-[#0052CC] hover:text-white transition-all duration-300">
+                <button className="text-[#5956D6] border border-[#2A7CF5] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#0052CC] hover:text-white transition-all duration-300">
                   View Pricing
                 </button>
               </a>
@@ -92,16 +92,16 @@ export const Home = () => {
             </div>
 
             {/* Info Boxes */}
-            <div className="flex justify-start gap-2 mt-20">
+            <div className="flex justify-start gap-[5px] mt-20">
               {/* Box 1 */}
               <div
                 className="flex flex-col items-center gap-[4px] px-2 py-[10px] rounded-[8px] border border-[#D5D1D1] bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
-w-[90px] h-[80px] md:w-[116px] md:h-[99px] justify-between text-center"
+w-[84px] h-[80px] md:w-[116px] md:h-[99px] justify-between text-center"
               >
                 <p className="text-[#1368C7] font-roboto text-[14px] md:text-[16px] font-semibold leading-[20px] md:leading-[22.5px]">
                   7 Days <br /> Free Trial
                 </p>
-                <p className="text-[10px] md:text-[12px] text-black leading-tight whitespace-nowrap">
+                <p className="text-[9.3px] sm:text-[10px] md:text-[12px] text-black leading-tight whitespace-nowrap">
                   No payment required
                 </p>
               </div>
@@ -110,12 +110,12 @@ w-[90px] h-[80px] md:w-[116px] md:h-[99px] justify-between text-center"
               <div
                 className="flex flex-col items-center gap-[4px] px-2 py-[10px] rounded-[8px] border border-[#D5D1D1] 
 bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
-w-[90px] h-[80px] sm:w-[116px] sm:h-[99px] justify-between text-center"
+w-[82px] h-[80px] sm:w-[116px] sm:h-[99px] justify-between text-center"
               >
                 <p className="text-[#1368C7] font-roboto text-[14px] sm:text-[16px] font-semibold leading-[20px] sm:leading-[22.5px]">
                   An IIM- <br /> Alumni
                 </p>
-                <p className="text-[10px] sm:text-[12px] text-black leading-tight whitespace-nowrap">
+                <p className="text-[9.3px] sm:text-[10px] md::text-[12px] text-black leading-tight whitespace-nowrap">
                   Founded Company
                 </p>
               </div>
@@ -124,7 +124,7 @@ w-[90px] h-[80px] sm:w-[116px] sm:h-[99px] justify-between text-center"
               <div
                 className="flex flex-col items-center justify-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] 
 bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
-w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
+w-[82px] h-[80px] sm:w-[116px] sm:h-[99px]"
               >
                 <img
                   src={metalogo}
@@ -137,7 +137,7 @@ w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
               <div
                 className="flex flex-col items-center justify-center gap-[4px] px-2 py-[12px] rounded-[8px] border border-[#D5D1D1] 
 bg-white shadow-[0_0_3px_rgba(0,0,0,0.25)] 
-w-[90px] h-[80px] sm:w-[116px] sm:h-[99px]"
+w-[82px] h-[80px] sm:w-[116px] sm:h-[99px]"
               >
                 <img
                   src={truecallerlogo}
