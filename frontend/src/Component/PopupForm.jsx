@@ -6,6 +6,8 @@ import { SiGmail } from "react-icons/si";
 import metalogo from "../assets/HomeImage/IMAGE/metalogo.png";
 import truecallerlogo from "../assets/HomeImage/IMAGE/truecallerlogo.png";
 import { FaStar } from "react-icons/fa";
+import { createPortal } from "react-dom";
+
 
 const PopupForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -68,14 +70,18 @@ const PopupForm = ({ onClose }) => {
     }
   };
 
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-[999999] px-3">
+  return createPortal(
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black/50 z-[9999999] px-3"
+      onClick={onClose} // backdrop click se band hoga
+    >
       {/* Modal Box */}
       <div
         className="relative w-full max-w-6xl max-h-[100vh] overflow-y-auto p-3 rounded-[10px] shadow-2xl px-6"
         style={{
           background: "linear-gradient(234deg, #E2E8FF 3.46%, #FBFCFF 98.63%)",
         }}
+        onClick={(e) => e.stopPropagation()} // andar click se close na ho
       >
         {/* Close Button */}
         <button
@@ -398,7 +404,8 @@ const PopupForm = ({ onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
