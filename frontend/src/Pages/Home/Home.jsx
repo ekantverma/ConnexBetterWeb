@@ -23,6 +23,7 @@ import ecosystemimg from "../../assets/HomeImage/IMAGE/ecosystem-img.png";
 import RevenueCardContainer from "../../CommonComponent/RevenueCardConatainer";
 import Reviews from "../../Component/Reviews";
 import CallforAction from "../../Component/CallforAction";
+import PopupForm from "../../Component/PopupForm";
 
 const LottieAnimation = lazy(() =>
   import("../../CommonComponent/LottieAnimation")
@@ -51,9 +52,13 @@ const LazyImage = ({ src, alt, height, width }) => (
   <img src={src} alt={alt} loading="lazy" height={height} width={width} />
 );
 
+import { useState } from "react";
+
 export const Home = () => {
+  const [openPopup, setOpenPopup] = useState(false);
+
   return (
-    <section>
+    <section className="-z-10">
       <div className="relative w-full h-full overflow-hidden flex items-start justify-center mb-16">
         {/* Hero Section */}
         <div className="relative grid gap-10 md:grid-cols-2 items-center">
@@ -73,17 +78,32 @@ export const Home = () => {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-2">
-              <a href="/Contact">
-                <button className="text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300">
-                  Get Started
-                </button>
+              {/* Get Started Button - Desktop par popup kholega */}
+              <button
+                onClick={() => setOpenPopup(true)}
+                className="hidden sm:block text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300"
+              >
+                Get Started
+              </button>
+
+              {/* Get Started Link - Mobile par simple redirect karega */}
+              <a
+                href="/Contact"
+                className="block sm:hidden text-white border border-[#2A7CF5] bg-[#0052CC] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#2A7CF5] transition-all duration-300 text-center"
+              >
+                Get Started
               </a>
+
+              {/* View Pricing Normal Link */}
               <a href="/SMSpricing">
                 <button className="text-[#5956D6] border border-[#2A7CF5] font-medium text-[14px] sm:text-[16px] px-6 sm:px-14 py-[8px] sm:py-[10px] rounded-[8px] hover:bg-[#0052CC] hover:text-white transition-all duration-300">
                   View Pricing
                 </button>
               </a>
             </div>
+
+            {/* Popup Open hone par */}
+            {openPopup && <PopupForm onClose={() => setOpenPopup(false)} />}
 
             {/* Trial Text – moved closer to buttons */}
             <div className="text-[15px] text-black font-medium">
@@ -149,7 +169,7 @@ w-[82px] h-[80px] sm:w-[116px] sm:h-[99px]"
           </div>
 
           {/* Right Section (Image) */}
-          <div className="relative flex justify-center animate-zoomIn mt-[10px] md:mt-[2px]">
+          <div className="relative flex justify-center animate-zoomIn mt-[10px] md:mt-[2px] -z-10">
             <LazyImage
               src={heroimage}
               alt="Hero"
