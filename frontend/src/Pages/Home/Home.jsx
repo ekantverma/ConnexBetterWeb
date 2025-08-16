@@ -115,7 +115,7 @@ w-[82px] h-[80px] sm:w-[116px] sm:h-[99px] justify-between text-center"
                 <p className="text-[#1368C7] font-roboto text-[14px] sm:text-[16px] font-semibold leading-[20px] sm:leading-[22.5px]">
                   An IIM- <br /> Alumni
                 </p>
-                <p className="text-[9.3px] sm:text-[10px] md::text-[12px] text-black leading-tight whitespace-nowrap">
+                <p className="text-[9.3px] sm:text-[12px] md::text-[12px] text-black leading-tight whitespace-nowrap">
                   Founded Company
                 </p>
               </div>
