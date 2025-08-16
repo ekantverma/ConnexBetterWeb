@@ -8,7 +8,6 @@ import truecallerlogo from "../assets/HomeImage/IMAGE/truecallerlogo.png";
 import { FaStar } from "react-icons/fa";
 import { createPortal } from "react-dom";
 
-
 const PopupForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -227,9 +226,9 @@ const PopupForm = ({ onClose }) => {
               </div>
               <div>
                 <h3 className="text-2xl">
-                  Rated <span className="text-[#4D49FC]">4.9</span> by 
-                  <span className="text-[#4D49FC]">1000+</span> Happy
-                  Customers. <span className="text-[#4D49FC]">10+ Years</span>
+                  Rated <span className="text-[#4D49FC]">4.9</span> by  
+                  <span className="text-[#4D49FC]"> 1000+</span> Happy
+                  Customers. <span className="text-[#4D49FC]">10+ Years </span>
                    of Industry-experience.
                 </h3>
               </div>
