@@ -288,39 +288,37 @@ export const Brandimage=[
   export const homeFAQ =[
     {
       id:"hFAQ1",
-      que:"What is a cloud communication platform?",
-      ans:"A cloud communication platform is an advanced technology that integrates real-time features like messaging, IVR, and video into your business applications. This enables seamless, contextual customer communication and provides numerous benefits for both businesses and customers."
+      que:"Do you provide APIs for developers?",
+      ans:"Yes. We offer robust REST APIs that enable developers to send messages, make calls, and automate workflows directly from your applications."
     },
     {
       id:"hFAQ2",
-      que:"What types of communication channels does a Cloud Communication Platform support?",
-      ans:"Cloud Communication Platforms usually support a variety of channels, including bulk SMS, voice calls, bulk email marketing, WhatsApp CRM, WhatsApp Business API, and push notifications.We provides all these services. For more information, email us at Support@connexbetter.com"
+      que:"Do you offer a free trial or demo?",
+      ans:"Yes. You can request a free trial or schedule a live demo with our team before subscribing."
     },
     {
       id:"hFAQ3",
-      que:"What are the available pricing options for different communication services?",
-      ans:"We have flexible pricing option for each of the communication. For detail pricing plan click on pricing."
+      que:"How secure is your Cloud Communication Platform?",
+      ans:"We use industry-standard encryption (TLS/SSL) to protect data in transit and secure servers for data at rest. Access is restricted and monitored to ensure maximum security."
     },
     {
       id:"hFAQ4",
-      que:"How customer support system works?",
-      ans:"We have 24/7 dedicated support system with call, WhatsApp group and email support."
+      que:"Do you offer onboarding or training for new users?",
+      ans:"Yes. Our team provides onboarding assistance, training sessions, and documentation to help you start quickly."
     },
     {
       id:"hFAQ5",
-      que:"What type of API we provide?",
-      ans:"We provide ready to use rest API’s for SMS, RCS , email and Voice."
+      que:"What kind of customer support do you offer?",
+      ans:"We offer email, chat, and phone support during business hours, with 24/7 support available for premium accounts.."
     },
     {
       id:"hFAQ6",
-      que:"How are your SMS, WhatsApp API, and RCS services priced?",
-      ans:"Our SMS, WhatsApp API, and RCS services are priced based on message volume, offering flexibility and affordability. Contact us to learn more about our cost-effective solutions!"
+      que:"Do you provide AI chatbots or automated reply systems?",
+      ans:"Yes. We offer AI-powered chatbot integration to automate responses, lead qualification, and customer service."
     },
     {
-      id:"hFAQ7",
-      que:"Is it possible to integrate your services with my current software?",
-      ans:"Yes, you can! Our APIs are designed for effortless integration with CRM, ERP, and other business tools, making your communication processes smoother and more efficient."
-    },
-  
-  
+      id:"hFAQ6",
+      que: "Can your platform handle two-way messaging?",
+      ans: "Yes. Our platform supports two-way communication for SMS, WhatsApp, and other interactive channels"
+    }
   ]
