@@ -13,7 +13,7 @@ const DeveloperApis = () => {
   const BrandSection = memo(({ data }) => {
     return (
       <div className="image-slider overflow-hidden relative">
-        <div className="slider-track flex items-center gap-20">
+        <div className="slider-track flex items-center gap-10">
           {/* Render the images */}
           {data.map((logo, index) => (
             <div className="inline-flex" key={`original-${index}`}>

@@ -9,6 +9,8 @@ import {
   MdAccountBalance,
   MdLocalShipping,
   MdHowToVote,
+  MdApartment,
+  MdRocketLaunch
 } from "react-icons/md";
 
 const SolutionsDropDown = ({ dropdown }) => {
@@ -24,17 +26,21 @@ const SolutionsDropDown = ({ dropdown }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-w-[500px] mt-4">
-        <ul className="space-y-2">
+        <ul className="space-y-1">
+         <p className="text-lg font-bold text-black mb-3">By Industry</p>
           <DropdownLink to="/solutions/healthcare" icon={<MdHealthAndSafety />} label="Healthcare" />
           <DropdownLink to="/solutions/fintech" icon={<MdPayment />} label="Fintech" />
           <DropdownLink to="/solutions/travel" icon={<MdFlightTakeoff />} label="Travel & Holidays" />
           <DropdownLink to="/solutions/realestate" icon={<MdHome />} label="Real Estate" />
-        </ul>
-        <ul className="space-y-2">
           <DropdownLink to="/solutions/ecommerce" icon={<MdShoppingCart />} label="Ecommerce" />
           <DropdownLink to="/solutions/bsfi" icon={<MdAccountBalance />} label="BSFI" />
           <DropdownLink to="/solutions/logistics" icon={<MdLocalShipping />} label="Logistics" />
           <DropdownLink to="/solutions/political" icon={<MdHowToVote />} label="Political" />
+        </ul>
+        <ul className="space-y-1">
+          <p className="text-lg font-bold text-black mb-3">By Business</p>
+          <DropdownLink to="/solutions/ecommerce" icon={<MdRocketLaunch />} label="ConnexBetter for Startup" />
+          <DropdownLink to="/solutions/bsfi" icon={<MdApartment />} label="ConnexBetter for Enterprices" />
         </ul>
       </div>
     </div>

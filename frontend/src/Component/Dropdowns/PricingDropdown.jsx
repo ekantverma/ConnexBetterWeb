@@ -12,27 +12,32 @@ const PricingDropdown = ({ dropdown }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-w-[550px] mt-4">
         {/* Email & SMS */}
         <div>
-          <p className="text-lg font-bold text-black mb-3">Email & SMS</p>
-          <ul className="space-y-2">
+          <p className="text-lg font-bold text-black mb-3">SMS & RCS Pricing</p>
+          <ul className="space-y-2 mb-6">
             <DropdownLink to="/EmailPricing" icon={<MdEmail />} label="Bulk Email Pricing" />
             <DropdownLink to="/SMSpricing" icon={<MdMessage />} label="Bulk SMS Pricing" />
+            <DropdownLink to="/RCSpricing" icon={<MdAttachMoney />} label="RCS Pricing" />
+          </ul>
+
+          <p className="text-lg font-bold text-black mb-2">Email Pricing</p>
+          <ul className="space-y-2">
+            <DropdownLink to="/EmailPricing" icon={<MdEmail />} label="Bulk Email Pricing" />
           </ul>
         </div>
 
         {/* WhatsApp */}
         <div>
-          <p className="text-lg font-bold text-black mb-3">WhatsApp API</p>
+          <p className="text-lg font-bold text-black mb-3">WhatsApp API Price</p>
           <ul className="space-y-2">
-            <DropdownLink to="/WhatsApppricing" icon={<MdWhatsapp />} label="WhatsApp Business API" />
+            <DropdownLink to="/WhatsApppricing" icon={<MdWhatsapp />} label="WhatsApp API Pricing" />
           </ul>
         </div>
 
         {/* Voice & RCS */}
         <div>
-          <p className="text-lg font-bold text-black mb-3">Voice & RCS</p>
+          <p className="text-lg font-bold text-black mb-3">Voice Price</p>
           <ul className="space-y-2">
             <DropdownLink to="/Voicepricing" icon={<MdCall />} label="Voice Pricing" />
-            <DropdownLink to="/RCSpricing" icon={<MdAttachMoney />} label="RCS Pricing" />
           </ul>
         </div>
       </div>

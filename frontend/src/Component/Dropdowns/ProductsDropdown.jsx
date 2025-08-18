@@ -29,7 +29,6 @@ const ProductsDropdown = ({ dropdown }) => {
             <NavItem to="/BulkSMS" icon={<FaEnvelopesBulk />} label="Bulk SMS" />
             <NavItem to="/InternationalSMS" icon={<MdOutlineLanguage />} label="International SMS" />
             <NavItem to="/TwoFactorAuthentication" icon={<MdShield />} label="Two Factor Auth" />
-            <NavItem to="/Email" icon={<MdMarkEmailUnread />} label="Bulk Email" />
           </ul>
         </div>
 
@@ -48,16 +47,21 @@ const ProductsDropdown = ({ dropdown }) => {
             <NavItem to="/Voice" icon={<MdCall />} label="Voice" />
             <NavItem to="/IVR" icon={<MdWifiCalling />} label="IVR" />
             <NavItem to="/ContactCenter" icon={<MdCall />} label="Contact Center Solution" />
-            <NavItem to="/VoiceOBD" icon={<MdCall />} label="Voice OBC" />
+            <NavItem to="/VoiceOBD" icon={<MdCall />} label="Voice OBD" />
             <NavItem to="/CallPatch" icon={<MdCall />} label="Call Masking" />
           </ul>
         </div>
 
         {/* RCS Messaging */}
-        <div>
+        <div className="">
           <p className="text-xl font-bold text-black mb-3">RCS Messaging</p>
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-20">
             <NavItem to="/RCS" icon={<LuMessagesSquare />} label="RCS Messaging" />
+          </ul>
+
+          <p className="text-xl font-bold text-black mb-3">Bulk Emails</p>
+          <ul className="space-y-2">
+            <NavItem to="/Email" icon={<MdMarkEmailUnread />} label="Bulk Email" />
           </ul>
         </div>
       </div>
