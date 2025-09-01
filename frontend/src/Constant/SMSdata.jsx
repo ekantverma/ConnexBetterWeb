@@ -573,7 +573,7 @@ export const BulkSMSFAQ=[
     {
       id:"hFAQ2",
       que:"What kind of customer support is available and what are the hours of availability?",
-      ans:"connexbetter has 24*7 Customer support facility. User can connect with support team any time or they can drop a mail on support@connexbetter.com"
+      ans:"connexbetter has 24*7 Customer support facility. User can connect with support team any time or they can drop a mail on hello@connexbetter.com"
     },
     {
       id:"hFAQ3",

@@ -169,7 +169,7 @@ const PopupForm = ({ onClose }) => {
                   </span>
                 </span>
                 <div className="text-[#44444C] font-semibold text-lg ml-7">
-                  Support@connexbetter.com
+                  hello@connexbetter.com
                 </div>
               </div>
             </div>

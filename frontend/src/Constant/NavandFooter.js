@@ -29,8 +29,8 @@ export const footerpart = [
     h: "Contact",
     l1: { text: "📞 +91 92206 96606", link: "" },
     l2: {
-      text: "support@connexbetter.com",
-      link: "mailto:support@connexbetter.com",
+      text: "hello@connexbetter.com",
+      link: "mailto:hello@connexbetter.com",
     },
     l3: {
       text: "Innov8, 3rd Floor, Plot No. 211, Okhla Phase 3 , Delhi 110020, IN",

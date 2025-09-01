@@ -103,7 +103,7 @@ function ScheduleDemo() {
                 <div>
                   <p className="text-xl text-white opacity-80">More inquiries:</p>
                   <p className="ttext-lg font-semibold text-white">
-                    Support@connexbetter.com
+                    hello@connexbetter.com
                   </p>
                 </div>
 
