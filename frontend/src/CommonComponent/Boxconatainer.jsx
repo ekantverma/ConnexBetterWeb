@@ -4,15 +4,16 @@ import { memo } from "react";
 
 const Boxcontainer = memo(({ heading, para, carddata }) => {
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-1 mx-auto">
+    <div className="flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-screen-xl space-y-10 mx-auto">
       
       {/* Heading Section */}
-      <div className="text-center max-w-3xl w-full">
-        <CommonHeading
-          h={heading}
-          p={para}
-          className="text-lg font-semibold md:text-2xl lg:text-xl text-gray-800"
-        />
+      <div className="text-center w-full max-w-5xl">
+        <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+          {heading}
+        </h2>
+        <p className="mt-4 text-base md:text-xl text-gray-600 max-w-3xl mx-auto font-semibold">
+          {para}
+        </p>
       </div>
 
       {/* Responsive Card Grid */}

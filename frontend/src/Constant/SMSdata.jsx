@@ -39,6 +39,14 @@ import longService from "../assets/SMSImage/IMAGE/longService.svg"
 import marketSms from "../assets/SMSImage/IMAGE/marketSms.svg"
 import sms2Fa from "../assets/SMSImage/IMAGE/sms2Fa.svg"
 import smstrans from "../assets/SMSImage/IMAGE/smsTrans.svg"
+// chhose 
+import savingicon from "../assets/HomeImage/IMAGE/SavingSVG.svg";
+import benifiticon from "../assets/HomeImage/IMAGE/verticleLine.svg";
+import needicon from "../assets/HomeImage/IMAGE/boxPattern.svg";
+import featureicon from "../assets/HomeImage/IMAGE/concentricPoint.svg";
+import onboarding from "../assets/HomeImage/IMAGE/handShake.svg";
+import supporticon from "../assets/HomeImage/IMAGE/tapeRecord.svg";
+
 // Data of SMSAPI Boxcontainer
 export const SMSAPIBox=[
     {
@@ -582,3 +590,41 @@ export const BulkSMSFAQ=[
     },
   
   ]
+
+export const chooseConnex = [
+    {
+      id: "choose-1",
+      img: savingicon,
+      title: "Bulk SMS API in India",
+      content:
+        "Reach your customers instantly with marketing SMS campaigns, festive offers, and promotional messages.",
+    },
+    {
+      id: "choose-2",
+      img: benifiticon,
+      title: " OTP & 2FA SMS",
+      content:
+        "Deliver instant OTPs for apps, banking, fintech, and e-commerce with sub-second delivery rates.",
+    },
+    {
+      id: "choose-3",
+      img: needicon,
+      title: "Transactional SMS",
+      content:
+        "Send secure account alerts, balance updates, EMI reminders, and payment confirmations.",
+    },
+    {
+      id: "choose-4",
+      img: featureicon,
+      title: "Developer-Friendly Integration",
+      content:
+        "Easy REST API, sample codes, and SDKs. Go live in minutes, with support for popular platforms (PHP, Node.js, Java, Python).",
+    },
+    {
+      id: "choose-5",
+      img: onboarding,
+      title: "DLT-Compliant & Reliable",
+      content:
+        "All messages are routed via TRAI-approved operators, ensuring high delivery rates and legal compliance.",
+    },
+  ];
